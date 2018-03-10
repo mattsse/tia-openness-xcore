@@ -13,8 +13,6 @@ import org.tia.openness.model.access.InstanceT
 import org.tia.openness.model.access.NameType
 import org.tia.openness.model.access.TemplateValueT
 import org.eclipse.emf.ecore.EFeatureMapEntry
-import org.eclipse.emf.ecore.xml.^type.Boolean
-import org.eclipse.emf.ecore.xml.^type.Int
 
 
 @ExtendedMetaData(name="AutomaticTyped_T", kind="empty")
@@ -42,7 +40,7 @@ class CallT {
 	@ExtendedMetaData(kind="element", name="Comment", namespace="##targetNamespace")
 	contains CommentType comment
 	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
-	unsettable Int[1] uId
+	unsettable int uId
 }
 
 
@@ -71,7 +69,7 @@ type GateNameTE wraps String
 @ExtendedMetaData(name="IdentCon_T", kind="empty")
 class IdentConT {
 	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
-	unsettable Int[1] uId
+	unsettable int uId
 }
 
 @ExtendedMetaData(name="Invisible_T", kind="empty")
@@ -94,7 +92,7 @@ class NameConT {
 	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
 	String name
 	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
-	unsettable Int[1] uId
+	unsettable int uId
 }
 
 @ExtendedMetaData(name="Neg_T", kind="empty")
@@ -111,7 +109,7 @@ class OpenbranchT {
 @ExtendedMetaData(name="OpenCon_T", kind="empty")
 class OpenConT {
 	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
-	unsettable Int[1] uId
+	unsettable int uId
 }
 
 @ExtendedMetaData(name="Parts_T", kind="elementOnly")
@@ -147,11 +145,11 @@ class PartT {
 	@ExtendedMetaData(kind="element", name="Comment", namespace="##targetNamespace")
 	contains CommentType comment
 	@ExtendedMetaData(kind="attribute", name="DisabledENO", namespace="##targetNamespace")
-	unsettable org.eclipse.emf.ecore.xml.^type.Boolean disabledENO = "false"
+	unsettable boolean disabledENO = "false"
 	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
 	NameType[1] name
 	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
-	unsettable Int[1] uId
+	unsettable int uId
 	@ExtendedMetaData(kind="attribute", name="Version", namespace="##targetNamespace")
 	VersionStringTP version
 }
@@ -182,7 +180,7 @@ class WireT {
 	@ExtendedMetaData(kind="element", name="OpenCon", namespace="##targetNamespace", group="group:0")
 	contains transient volatile derived OpenConT[] openCon
 	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
-	unsettable Int[1] uId
+	unsettable int uId
 }
 
 /***

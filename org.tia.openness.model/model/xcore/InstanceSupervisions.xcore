@@ -4,7 +4,7 @@
 	importerID="org.eclipse.xsd.ecore.importer",updateClasspath="false", complianceLevel="8.0")
 package org.tia.openness.model.instancesupervisions
 
-import org.eclipse.emf.ecore.xml.^type.Int
+
 
 @ExtendedMetaData(name="BlockInstSupervisionGroupsType", kind="elementOnly")
 class BlockInstSupervisionGroupsType {
@@ -23,11 +23,11 @@ class BlockInstSupervisionGroupType {
 @ExtendedMetaData(name="BlockInstSupervision_._type", kind="elementOnly")
 class BlockInstSupervisionType {
 	@ExtendedMetaData(kind="element", name="Number", namespace="##targetNamespace")
-	unsettable Int[1] number
+	unsettable int number
 	@ExtendedMetaData(kind="element", name="StateStruct", namespace="##targetNamespace")
 	contains StateStructType[1] stateStruct
 	@ExtendedMetaData(kind="element", name="BlockTypeSupervisionNumber", namespace="##targetNamespace")
-	unsettable Int[1] blockTypeSupervisionNumber
+	unsettable int blockTypeSupervisionNumber
 }
 
 @ExtendedMetaData(name="Multiinstance_._type", kind="empty")

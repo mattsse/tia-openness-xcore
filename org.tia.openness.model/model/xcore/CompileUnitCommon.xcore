@@ -12,7 +12,7 @@ import org.tia.openness.model.common.LineCommentT
 import org.tia.openness.model.common.TokenT
 import org.tia.openness.model.access.LabelT
 import org.eclipse.emf.ecore.EFeatureMapEntry
-import org.eclipse.emf.ecore.xml.^type.Int	
+	
 	
 	
 	
@@ -44,7 +44,7 @@ class LabelDeclarationT {
 	contains transient volatile derived LineCommentT[] lineComment1
 	@GenModel(documentation="Not allowed in STL")
 	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
-	unsettable Int uId
+	unsettable int uId
 }
 
 	

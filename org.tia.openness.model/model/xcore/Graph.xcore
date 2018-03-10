@@ -15,7 +15,7 @@ import org.tia.openness.model.access.AccessT
 import org.eclipse.emf.ecore.EFeatureMapEntry
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.xml.^type.AnySimpleType
-import org.eclipse.emf.ecore.xml.^type.Int
+
 import org.eclipse.emf.ecore.xml.^type.UnsignedShort
 
 @ExtendedMetaData(name="Actions_T", kind="elementOnly")
@@ -79,7 +79,7 @@ class ActionT {
 	@ExtendedMetaData(kind="attribute", name="Event", namespace="##targetNamespace")
 	unsettable EventTE event
 	@ExtendedMetaData(kind="attribute", name="Interlock", namespace="##targetNamespace")
-	unsettable org.eclipse.emf.ecore.xml.^type.Boolean interlock
+	unsettable boolean interlock
 	@ExtendedMetaData(kind="attribute", name="Qualifier", namespace="##targetNamespace")
 	unsettable QualifierTE qualifier
 }
@@ -150,19 +150,19 @@ class BranchesT {
 @ExtendedMetaData(name="BranchRef_T", kind="empty")
 class BranchRefT {
 	@ExtendedMetaData(kind="attribute", name="In", namespace="##targetNamespace")
-	unsettable Int in
+	unsettable int in
 	@ExtendedMetaData(kind="attribute", name="Number", namespace="##targetNamespace")
-	unsettable Int[1] number
+	unsettable int number
 	@ExtendedMetaData(kind="attribute", name="Out", namespace="##targetNamespace")
-	unsettable Int out
+	unsettable int out
 }
 
 @ExtendedMetaData(name="Branch_T", kind="empty")
 class BranchT {
 	@ExtendedMetaData(kind="attribute", name="Cardinality", namespace="##targetNamespace")
-	unsettable Int[1] cardinality
+	unsettable int cardinality
 	@ExtendedMetaData(kind="attribute", name="Number", namespace="##targetNamespace")
-	unsettable Int[1] number
+	unsettable int number
 	@ExtendedMetaData(kind="attribute", name="Type", namespace="##targetNamespace")
 	unsettable BranchTE[1] ^type
 }
@@ -218,7 +218,7 @@ class GraphT {
 @ExtendedMetaData(name="IdentCon_T", kind="empty")
 class IdentConT {
 	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
-	unsettable Int[1] uId
+	unsettable int uId
 }
 
 @ExtendedMetaData(name="IdentRef_T", kind="elementOnly")
@@ -229,7 +229,7 @@ class IdentRefT {
 	@ExtendedMetaData(kind="element", name="ViewInfo", namespace="##targetNamespace")
 	contains ViewInfoT viewInfo
 	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
-	unsettable Int[1] uId
+	unsettable int uId
 }
 
 @ExtendedMetaData(name="Interlocks_T", kind="elementOnly")
@@ -306,7 +306,7 @@ class SupervisionsT {
 @ExtendedMetaData(name="StepRef_T", kind="empty")
 class StepRefT {
 	@ExtendedMetaData(kind="attribute", name="Number", namespace="##targetNamespace")
-	unsettable Int[1] number
+	unsettable int number
 }
 
 @ExtendedMetaData(name="Steps_T", kind="elementOnly")
@@ -329,15 +329,15 @@ class StepT {
 	@ExtendedMetaData(kind="element", name="Interlocks", namespace="##targetNamespace")
 	contains InterlocksT[1] interlocks
 	@ExtendedMetaData(kind="attribute", name="Init", namespace="##targetNamespace")
-	unsettable org.eclipse.emf.ecore.xml.^type.Boolean init = "false"
+	unsettable boolean init = "false"
 	@ExtendedMetaData(kind="attribute", name="IsMissing", namespace="##targetNamespace")
-	unsettable org.eclipse.emf.ecore.xml.^type.Boolean isMissing = "false"
+	unsettable boolean isMissing = "false"
 	@ExtendedMetaData(kind="attribute", name="MaximumStepTime", namespace="##targetNamespace")
 	String maximumStepTime
 	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
 	AnySimpleType[1] name
 	@ExtendedMetaData(kind="attribute", name="Number", namespace="##targetNamespace")
-	unsettable Int[1] number
+	unsettable int number
 	@ExtendedMetaData(kind="attribute", name="WarningTime", namespace="##targetNamespace")
 	String warningTime
 }
@@ -345,7 +345,7 @@ class StepT {
 @ExtendedMetaData(name="TransitionRef_T", kind="empty")
 class TransitionRefT {
 	@ExtendedMetaData(kind="attribute", name="Number", namespace="##targetNamespace")
-	unsettable Int[1] number
+	unsettable int number
 }
 
 @ExtendedMetaData(name="Transitions_T", kind="elementOnly")
@@ -364,11 +364,11 @@ class TransitionT {
 	@ExtendedMetaData(kind="element", name="FlgNet", namespace="##targetNamespace")
 	contains FlgNetT[1] flgNet
 	@ExtendedMetaData(kind="attribute", name="IsMissing", namespace="##targetNamespace")
-	unsettable org.eclipse.emf.ecore.xml.^type.Boolean isMissing = "false"
+	unsettable boolean isMissing = "false"
 	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
 	AnySimpleType[1] name
 	@ExtendedMetaData(kind="attribute", name="Number", namespace="##targetNamespace")
-	unsettable Int[1] number
+	unsettable int number
 	@ExtendedMetaData(kind="attribute", name="ProgrammingLanguage", namespace="##targetNamespace")
 	unsettable ProgrammingLanguageTE[1] programmingLanguage
 }
@@ -376,13 +376,13 @@ class TransitionT {
 @ExtendedMetaData(name="ViewInfo_T", kind="empty")
 class ViewInfoT {
 	@ExtendedMetaData(kind="attribute", name="Height", namespace="##targetNamespace")
-	unsettable Int height
+	unsettable int height
 	@ExtendedMetaData(kind="attribute", name="Start", namespace="##targetNamespace")
-	unsettable org.eclipse.emf.ecore.xml.^type.Boolean start
+	unsettable boolean start
 	@ExtendedMetaData(kind="attribute", name="Width", namespace="##targetNamespace")
-	unsettable Int width
+	unsettable int width
 	@ExtendedMetaData(kind="attribute", name="XPos", namespace="##targetNamespace")
-	unsettable Int xPos
+	unsettable int xPos
 	@ExtendedMetaData(kind="attribute", name="YPos", namespace="##targetNamespace")
-	unsettable Int yPos
+	unsettable int yPos
 }

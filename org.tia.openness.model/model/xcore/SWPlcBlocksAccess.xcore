@@ -16,14 +16,14 @@ import org.tia.openness.model.common.TokenT
 import org.tia.openness.model.common.VersionStringTP
 import org.eclipse.emf.ecore.EFeatureMapEntry
 import org.eclipse.emf.ecore.xml.^type.AnySimpleType
-import org.eclipse.emf.ecore.xml.^type.Boolean
-import org.eclipse.emf.ecore.xml.^type.Int
+
+
 
 @ExtendedMetaData(name="AbsoluteOffset_T", kind="empty")
 class AbsoluteOffsetT {
 	@GenModel(documentation="Byte * 8 + Bit")
 	@ExtendedMetaData(kind="attribute", name="BitOffset", namespace="##targetNamespace")
-	unsettable Int[1] bitOffset
+	unsettable int bitOffset
 	@ExtendedMetaData(kind="attribute", name="Type", namespace="##targetNamespace")
 	String[1] ^type
 }
@@ -69,7 +69,7 @@ class AccessT {
 	ScopeType[1] scope
 	@GenModel(documentation="Not allowed in STL")
 	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
-	unsettable Int uId
+	unsettable int uId
 }
 
 @ExtendedMetaData(name="Address_T", kind="empty")
@@ -78,13 +78,13 @@ class AddressT {
 	unsettable AreaTE[1] area
 	@GenModel(documentation="In general it is Byte * 8 + Bit. But if it is used for addressing a DB we will find the number of the DB here (e.g. \"DB12\" ->12).")
 	@ExtendedMetaData(kind="attribute", name="BitOffset", namespace="##targetNamespace")
-	unsettable Int bitOffset
+	unsettable int bitOffset
 	@GenModel(documentation="for DB access")
 	@ExtendedMetaData(kind="attribute", name="BlockNumber", namespace="##targetNamespace")
-	unsettable Int blockNumber
+	unsettable int blockNumber
 	@GenModel(documentation="if true, the import unnoted it")
 	@ExtendedMetaData(kind="attribute", name="Informative", namespace="##targetNamespace")
-	unsettable org.eclipse.emf.ecore.xml.^type.Boolean informative = "false"
+	unsettable boolean informative = "false"
 	@ExtendedMetaData(kind="attribute", name="Type", namespace="##targetNamespace")
 	SimaticNameTP ^type
 }
@@ -202,7 +202,7 @@ class ConstantTypeType {
 	@ExtendedMetaData(name=":0", kind="simple")
 	String value
 	@ExtendedMetaData(kind="attribute", name="Informative", namespace="##targetNamespace")
-	unsettable org.eclipse.emf.ecore.xml.^type.Boolean informative
+	unsettable boolean informative
 }
 
 @ExtendedMetaData(name="ConstantValue_T", kind="simple")
@@ -214,7 +214,7 @@ class ConstantValueT {
 @ExtendedMetaData(name="ConstantValue_._type", kind="simple")
 class ConstantValueType extends ConstantValueT {
 	@ExtendedMetaData(kind="attribute", name="Informative", namespace="##targetNamespace")
-	unsettable org.eclipse.emf.ecore.xml.^type.Boolean informative
+	unsettable boolean informative
 }
 
 @ExtendedMetaData(name="Expression_T", kind="elementOnly")
@@ -232,7 +232,7 @@ class ExpressionT {
 	@ExtendedMetaData(kind="element", name="LineComment", namespace="##targetNamespace", group="group:0")
 	contains transient volatile derived LineCommentT[] lineComment
 	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
-	unsettable Int uId
+	unsettable int uId
 }
 
 @ExtendedMetaData(name="FormatFlags_TE", baseType="http://www.eclipse.org/emf/2003/XMLType#string",
@@ -317,7 +317,7 @@ class InstanceT {
 	unsettable ScopeTE[1] scope
 	@GenModel(documentation="Not allowed in STL")
 	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
-	unsettable Int uId
+	unsettable int uId
 }
 
 @ExtendedMetaData(name="Instruction_T", kind="elementOnly")
@@ -529,7 +529,7 @@ class SymbolT {
 	unsettable ScopeTE scope
 	@GenModel(documentation="Not allowed in STL")
 	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
-	unsettable Int uId
+	unsettable int uId
 }
 
 @ExtendedMetaData(name="TemplateType_TE")

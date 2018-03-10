@@ -9,7 +9,7 @@ import org.tia.openness.model.common.CommentType
 import org.tia.openness.model.common.SimaticNameTP
 import org.tia.openness.model.common.SimaticTypeTE
 import org.eclipse.emf.ecore.EFeatureMapEntry
-import org.eclipse.emf.ecore.xml.^type.Boolean
+
 
 @ExtendedMetaData(name="Accessibility_TE")
 enum AccessibilityTE {
@@ -44,7 +44,7 @@ class MemberT {
 	@ExtendedMetaData(kind="attribute", name="Datatype", namespace="##targetNamespace")
 	SimaticTypeTE[1] datatype
 	@ExtendedMetaData(kind="attribute", name="Informative", namespace="##targetNamespace")
-	unsettable org.eclipse.emf.ecore.xml.^type.Boolean informative = "false"
+	unsettable boolean informative = "false"
 	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
 	String[1] name
 	@ExtendedMetaData(kind="attribute", name="Remanence", namespace="##targetNamespace")
@@ -111,9 +111,9 @@ class StartValueT {
 	@ExtendedMetaData(kind="attribute", name="ConstantName", namespace="##targetNamespace")
 	SimaticNameTP constantName
 	@ExtendedMetaData(kind="attribute", name="Informative", namespace="##targetNamespace")
-	unsettable org.eclipse.emf.ecore.xml.^type.Boolean informative = "false"
+	unsettable boolean informative = "false"
 	@ExtendedMetaData(kind="attribute", name="IsBulkValue", namespace="##targetNamespace")
-	unsettable org.eclipse.emf.ecore.xml.^type.Boolean isBulkValue = "false"
+	unsettable boolean isBulkValue = "false"
 }
 
 @ExtendedMetaData(name="Subelement_T", kind="elementOnly")

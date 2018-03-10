@@ -11,7 +11,7 @@ import org.tia.openness.model.common.LineCommentT
 import org.tia.openness.model.common.TokenT
 import org.tia.openness.model.access.AccessT
 import org.eclipse.emf.ecore.EFeatureMapEntry
-import org.eclipse.emf.ecore.xml.^type.Int
+
 
 @ExtendedMetaData(name="StatementList_T", kind="elementOnly")
 class StatementListT {
@@ -46,7 +46,7 @@ class StlStatementT {
 	contains AccessT access
 	@GenModel(documentation="Not allowed in STL")
 	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
-	unsettable Int uId
+	unsettable int uId
 }
 
 @ExtendedMetaData(name="STL_TE")
@@ -310,5 +310,5 @@ class StlTokenT {
 	unsettable STLTE[1] text
 	@GenModel(documentation="Not allowed in STL")
 	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
-	unsettable Int uId
+	unsettable int uId
 }

@@ -7,7 +7,7 @@ package org.tia.openness.model.common
 import org.eclipse.emf.ecore.EFeatureMapEntry
 import org.eclipse.emf.ecore.EStringToStringMapEntry
 import org.eclipse.emf.ecore.xml.^type.DateTime
-import org.eclipse.emf.ecore.xml.^type.Int
+
 
 @ExtendedMetaData(name="AttributList_T", kind="elementOnly")
 class AttributListT {
@@ -30,15 +30,15 @@ class AttributListT {
 @ExtendedMetaData(name="BooleanAttribute_T", kind="simple")
 class BooleanAttributeT {
 	@ExtendedMetaData(name=":0", kind="simple")
-	unsettable org.eclipse.emf.ecore.xml.^type.Boolean value
+	unsettable boolean value
 	@GenModel(documentation="Exported only with ReadOnly option, ignored during import.")
 	@ExtendedMetaData(kind="attribute", name="Informative", namespace="##targetNamespace")
-	unsettable org.eclipse.emf.ecore.xml.^type.Boolean informative = "false"
+	unsettable boolean informative = "false"
 	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
 	String[1] name
 	@GenModel(documentation="An attribute of attribute, denotes if it is defined by a user or the system itself. In V14, if exists it is always true.")
 	@ExtendedMetaData(kind="attribute", name="SystemDefined", namespace="##targetNamespace")
-	unsettable org.eclipse.emf.ecore.xml.^type.Boolean systemDefined = "true"
+	unsettable boolean systemDefined = "true"
 }
 
 @ExtendedMetaData(name="Comment_T", kind="elementOnly")
@@ -52,10 +52,10 @@ class CommentT {
 	contains transient volatile derived MultiLanguageTextT[] multiLanguageText
 	@GenModel(documentation="Exported only with ReadOnly option, ignored during import.")
 	@ExtendedMetaData(kind="attribute", name="Informative", namespace="##targetNamespace")
-	unsettable org.eclipse.emf.ecore.xml.^type.Boolean informative = "false"
+	unsettable boolean informative = "false"
 	@GenModel(documentation="Denotes if the comment is at the end of the line (using //) or inside the line (using /* *&#47;)")
 	@ExtendedMetaData(kind="attribute", name="Inserted", namespace="##targetNamespace")
-	unsettable org.eclipse.emf.ecore.xml.^type.Boolean inserted = "false"
+	unsettable boolean inserted = "false"
 }
 
 @ExtendedMetaData(name="Comment_._type", kind="elementOnly")
@@ -68,12 +68,12 @@ class DateAttributeT {
 	DateTime value
 	@GenModel(documentation="Exported only with ReadOnly option, ignored during import.")
 	@ExtendedMetaData(kind="attribute", name="Informative", namespace="##targetNamespace")
-	unsettable org.eclipse.emf.ecore.xml.^type.Boolean informative = "false"
+	unsettable boolean informative = "false"
 	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
 	String[1] name
 	@GenModel(documentation="An attribute of attribute, denotes if it is defined by a user or the system itself. In V14, if exists it is always true.")
 	@ExtendedMetaData(kind="attribute", name="SystemDefined", namespace="##targetNamespace")
-	unsettable org.eclipse.emf.ecore.xml.^type.Boolean systemDefined = "true"
+	unsettable boolean systemDefined = "true"
 }
 
 @ExtendedMetaData(name="", kind="mixed")
@@ -127,12 +127,12 @@ class IntegerAttributeT {
 	org.eclipse.emf.ecore.xml.^type.Integer value
 	@GenModel(documentation="Exported only with ReadOnly option, ignored during import.")
 	@ExtendedMetaData(kind="attribute", name="Informative", namespace="##targetNamespace")
-	unsettable org.eclipse.emf.ecore.xml.^type.Boolean informative = "false"
+	unsettable boolean informative = "false"
 	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
 	String[1] name
 	@GenModel(documentation="An attribute of attribute, denotes if it is defined by a user or the system itself. In V14, if exists it is always true.")
 	@ExtendedMetaData(kind="attribute", name="SystemDefined", namespace="##targetNamespace")
-	unsettable org.eclipse.emf.ecore.xml.^type.Boolean systemDefined = "true"
+	unsettable boolean systemDefined = "true"
 }
 
 @ExtendedMetaData(name="Lang_TP", baseType="http://www.eclipse.org/emf/2003/XMLType#string",
@@ -149,7 +149,7 @@ class LineCommentT {
 	contains TextT[1] text
 	@GenModel(documentation="Denotes if the comment is at the end of the line (using // or inside the line (using /* *&#47;)")
 	@ExtendedMetaData(kind="attribute", name="Inserted", namespace="##targetNamespace")
-	unsettable org.eclipse.emf.ecore.xml.^type.Boolean inserted = "false"
+	unsettable boolean inserted = "false"
 }
 
 @ExtendedMetaData(name="MultiLanguageText_T", kind="simple")
@@ -186,12 +186,12 @@ class RealAttributeT {
 	unsettable org.eclipse.emf.ecore.xml.^type.Double value
 	@GenModel(documentation="Exported only with ReadOnly option, ignored during import.")
 	@ExtendedMetaData(kind="attribute", name="Informative", namespace="##targetNamespace")
-	unsettable org.eclipse.emf.ecore.xml.^type.Boolean informative = "false"
+	unsettable boolean informative = "false"
 	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
 	String[1] name
 	@GenModel(documentation="An attribute of attribute, denotes if it is defined by a user or the system itself. In V14, if exists it is always true.")
 	@ExtendedMetaData(kind="attribute", name="SystemDefined", namespace="##targetNamespace")
-	unsettable org.eclipse.emf.ecore.xml.^type.Boolean systemDefined = "true"
+	unsettable boolean systemDefined = "true"
 }
 
 @ExtendedMetaData(name="SectionName_TE")
@@ -222,12 +222,12 @@ class StringAttributeT {
 	String value
 	@GenModel(documentation="Exported only with ReadOnly option, ignored during import.")
 	@ExtendedMetaData(kind="attribute", name="Informative", namespace="##targetNamespace")
-	unsettable org.eclipse.emf.ecore.xml.^type.Boolean informative = "false"
+	unsettable boolean informative = "false"
 	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
 	String[1] name
 	@GenModel(documentation="An attribute of attribute, denotes if it is defined by a user or the system itself. In V14, if exists it is always true.")
 	@ExtendedMetaData(kind="attribute", name="SystemDefined", namespace="##targetNamespace")
-	unsettable org.eclipse.emf.ecore.xml.^type.Boolean systemDefined = "true"
+	unsettable boolean systemDefined = "true"
 }
 
 @ExtendedMetaData(name="Text_T", kind="simple")
@@ -245,7 +245,7 @@ class TokenT {
 	TokenTE[1] text
 	@GenModel(documentation="Not allowed in STL")
 	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
-	unsettable Int uId
+	unsettable int uId
 }
 
 @ExtendedMetaData(name="Token_TE", baseType="http://www.eclipse.org/emf/2003/XMLType#string")
@@ -258,15 +258,15 @@ type VersionStringTP wraps String
 @ExtendedMetaData(name="ViewInfo_T", kind="empty")
 class ViewInfoT {
 	@ExtendedMetaData(kind="attribute", name="Height", namespace="##targetNamespace")
-	unsettable Int height
+	unsettable int height
 	@ExtendedMetaData(kind="attribute", name="Start", namespace="##targetNamespace")
-	unsettable org.eclipse.emf.ecore.xml.^type.Boolean start
+	unsettable boolean start
 	@ExtendedMetaData(kind="attribute", name="Width", namespace="##targetNamespace")
-	unsettable Int width
+	unsettable int width
 	@ExtendedMetaData(kind="attribute", name="XPos", namespace="##targetNamespace")
-	unsettable Int xPos
+	unsettable int xPos
 	@ExtendedMetaData(kind="attribute", name="YPos", namespace="##targetNamespace")
-	unsettable Int yPos
+	unsettable int yPos
 }
 
 

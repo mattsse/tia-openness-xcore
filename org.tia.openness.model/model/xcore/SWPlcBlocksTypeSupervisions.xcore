@@ -6,8 +6,7 @@ package org.tia.openness.model.typesupervisions
 
 import org.tia.openness.model.common.MultiLanguageTextT
 import org.eclipse.emf.ecore.EFeatureMapEntry
-import org.eclipse.emf.ecore.xml.^type.Boolean
-import org.eclipse.emf.ecore.xml.^type.Int
+
 
 @ExtendedMetaData(name="AssociatedValueOperand_._type", kind="empty")
 class AssociatedValueOperandType {
@@ -44,7 +43,7 @@ class BlockTypeSupervisionType {
 	@ExtendedMetaData(kind="element", name="SupervisedOperand", namespace="##targetNamespace")
 	contains SupervisedOperandType[1] supervisedOperand
 	@ExtendedMetaData(kind="element", name="SupervisedStatus", namespace="##targetNamespace")
-	unsettable org.eclipse.emf.ecore.xml.^type.Boolean[1] supervisedStatus
+	unsettable boolean supervisedStatus
 	@ExtendedMetaData(kind="element", name="DelayOperand", namespace="##targetNamespace")
 	contains DelayOperandType delayOperand
 	@ExtendedMetaData(kind="element", name="Conditions", namespace="##targetNamespace")
@@ -52,13 +51,13 @@ class BlockTypeSupervisionType {
 	@ExtendedMetaData(kind="element", name="CategoryNumber", namespace="##targetNamespace")
 	unsettable CategoryNumberType[1] categoryNumber
 	@ExtendedMetaData(kind="element", name="SubCategory1Number", namespace="##targetNamespace")
-	unsettable Int subCategory1Number
+	unsettable int subCategory1Number
 	@ExtendedMetaData(kind="element", name="SubCategory2Number", namespace="##targetNamespace")
-	unsettable Int subCategory2Number
+	unsettable int subCategory2Number
 	@ExtendedMetaData(kind="element", name="SpecificField", namespace="##targetNamespace")
 	contains SpecificFieldType specificField
 	@ExtendedMetaData(kind="attribute", name="Number", namespace="##targetNamespace")
-	unsettable Int[1] number
+	unsettable int number
 	@ExtendedMetaData(kind="attribute", name="Type", namespace="##targetNamespace")
 	unsettable TypeType1[1] ^type
 }
@@ -89,7 +88,7 @@ class ConditionType {
 	@ExtendedMetaData(kind="element", name="ConditionOperand", namespace="##targetNamespace")
 	contains ConditionOperandType[1] conditionOperand
 	@ExtendedMetaData(kind="element", name="TriggeringStatus", namespace="##targetNamespace")
-	unsettable org.eclipse.emf.ecore.xml.^type.Boolean[1] triggeringStatus
+	unsettable boolean triggeringStatus
 }
 
 @ExtendedMetaData(name="DelayOperand_._type", kind="empty")
