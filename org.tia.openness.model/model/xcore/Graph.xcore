@@ -1,6 +1,6 @@
 @Ecore(nsURI="http://www.tia.openness.model.org/schemas/SW/PlcBlocks/Graph")
 @ExtendedMetaData(qualified="false")
-@GenModel(bundleManifest="false", forceOverwrite="true",modelDirectory="/org.tia.openness.model/src/main/xcore-gen", modelName="Openness",
+@GenModel(bundleManifest="false", forceOverwrite="true",modelDirectory="org.tia.openness.model/src/main/java-gen", modelName="Openness",
 	importerID="org.eclipse.xsd.ecore.importer",updateClasspath="false", complianceLevel="8.0")
 package org.tia.openness.model.graph
 
@@ -15,9 +15,7 @@ import org.tia.openness.model.access.AccessT
 import org.eclipse.emf.ecore.EFeatureMapEntry
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.xml.^type.AnySimpleType
-import org.eclipse.emf.ecore.xml.^type.Boolean
 import org.eclipse.emf.ecore.xml.^type.Int
-import org.eclipse.emf.ecore.xml.^type.String
 import org.eclipse.emf.ecore.xml.^type.UnsignedShort
 
 @ExtendedMetaData(name="Actions_T", kind="elementOnly")
@@ -32,7 +30,8 @@ class ActionsT {
 
 @ExtendedMetaData(name="Event_TE")
 enum EventTE {
-	_ as ""
+	@ExtendedMetaData(name="_")
+	NONE as ""
 	A1 = 1
 	L0 = 2
 	L1 = 3
@@ -44,7 +43,8 @@ enum EventTE {
 }
 @ExtendedMetaData(name="Qualifier_TE")
 enum QualifierTE {
-	_ as ""
+	@ExtendedMetaData(name="_")
+	NONE as ""
 	CD = 1
 	CR = 2
 	CS = 3
@@ -333,13 +333,13 @@ class StepT {
 	@ExtendedMetaData(kind="attribute", name="IsMissing", namespace="##targetNamespace")
 	unsettable org.eclipse.emf.ecore.xml.^type.Boolean isMissing = "false"
 	@ExtendedMetaData(kind="attribute", name="MaximumStepTime", namespace="##targetNamespace")
-	org.eclipse.emf.ecore.xml.^type.String maximumStepTime
+	String maximumStepTime
 	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
 	AnySimpleType[1] name
 	@ExtendedMetaData(kind="attribute", name="Number", namespace="##targetNamespace")
 	unsettable Int[1] number
 	@ExtendedMetaData(kind="attribute", name="WarningTime", namespace="##targetNamespace")
-	org.eclipse.emf.ecore.xml.^type.String warningTime
+	String warningTime
 }
 
 @ExtendedMetaData(name="TransitionRef_T", kind="empty")

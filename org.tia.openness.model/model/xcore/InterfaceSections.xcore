@@ -1,6 +1,6 @@
 @Ecore(nsURI="http://www.tia.openness.model.org/schemas/SW/InterfaceSections/v2")
 @ExtendedMetaData(qualified="false")
-@GenModel(bundleManifest="false", forceOverwrite="true",modelDirectory="/org.tia.openness.model/src/main/xcore-gen", modelName="Openness",
+@GenModel(bundleManifest="false", forceOverwrite="true",modelDirectory="org.tia.openness.model/src/main/java-gen", modelName="Openness",
 	importerID="org.eclipse.xsd.ecore.importer",updateClasspath="false", complianceLevel="8.0")
 package org.tia.openness.model.interfacesections
 
@@ -10,7 +10,6 @@ import org.tia.openness.model.common.SimaticNameTP
 import org.tia.openness.model.common.SimaticTypeTE
 import org.eclipse.emf.ecore.EFeatureMapEntry
 import org.eclipse.emf.ecore.xml.^type.Boolean
-import org.eclipse.emf.ecore.xml.^type.String
 
 @ExtendedMetaData(name="Accessibility_TE")
 enum AccessibilityTE {
@@ -47,12 +46,12 @@ class MemberT {
 	@ExtendedMetaData(kind="attribute", name="Informative", namespace="##targetNamespace")
 	unsettable org.eclipse.emf.ecore.xml.^type.Boolean informative = "false"
 	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
-	org.eclipse.emf.ecore.xml.^type.String[1] name
+	String[1] name
 	@ExtendedMetaData(kind="attribute", name="Remanence", namespace="##targetNamespace")
 	unsettable RemanenceTE remanence = "NonRetain"
 	@GenModel(documentation="The version of the library type to use. Previous to this, the version was written inside the Datatype attribute itself, like \"dtl:v1.0\". Now, this is written in two separate attributes, to mitigate problems with weird names (\"dtl:v1.0\" could be a UDT name!).")
 	@ExtendedMetaData(kind="attribute", name="Version", namespace="##targetNamespace")
-	org.eclipse.emf.ecore.xml.^type.String version
+	String version
 }
 
 
@@ -91,7 +90,7 @@ class SectionsT {
 	@ExtendedMetaData(kind="attribute", name="Datatype", namespace="##targetNamespace")
 	SimaticTypeTE datatype
 	@ExtendedMetaData(kind="attribute", name="Version", namespace="##targetNamespace")
-	org.eclipse.emf.ecore.xml.^type.String version
+	String version
 }
 
 @ExtendedMetaData(name="Section_T", kind="elementOnly")
@@ -108,7 +107,7 @@ class SectionT {
 @ExtendedMetaData(name="StartValue_T", kind="simple")
 class StartValueT {
 	@ExtendedMetaData(name=":0", kind="simple")
-	org.eclipse.emf.ecore.xml.^type.String value
+	String value
 	@ExtendedMetaData(kind="attribute", name="ConstantName", namespace="##targetNamespace")
 	SimaticNameTP constantName
 	@ExtendedMetaData(kind="attribute", name="Informative", namespace="##targetNamespace")

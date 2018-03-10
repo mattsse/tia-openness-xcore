@@ -1,8 +1,8 @@
 @Ecore(nsURI="http://www.tia.openness.model.org/schemas/SW/PlcBlocks/CompileUnitCommon")
 @ExtendedMetaData(qualified="false")
 @GenModel(bundleManifest="false", forceOverwrite="true", 
-	modelDirectory="/org.tia.openness.model/src/main/xcore-gen", modelName="Openness",
-	importerID="org.eclipse.xsd.ecore.importer"	,updateClasspath="false", complianceLevel="8.0")
+	modelDirectory="org.tia.openness.model/src/main/java-gen", modelName="Openness",
+	importerID="org.eclipse.xsd.ecore.importer", updateClasspath="false", complianceLevel="8.0")
 
 package org.tia.openness.model.compileunit
 

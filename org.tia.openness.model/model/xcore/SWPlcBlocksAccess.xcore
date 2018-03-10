@@ -1,6 +1,6 @@
 @Ecore(nsURI="http://www.tia.openness.model.org/schemas/SW/PlcBlocks/Access")
 @ExtendedMetaData(qualified="false")
-@GenModel(bundleManifest="false", forceOverwrite="true",modelDirectory="/org.tia.openness.model/src/main/xcore-gen", modelName="Openness",
+@GenModel(bundleManifest="false", forceOverwrite="true",modelDirectory="org.tia.openness.model/src/main/java-gen", modelName="Openness",
 	importerID="org.eclipse.xsd.ecore.importer",updateClasspath="false", complianceLevel="8.0")
 package org.tia.openness.model.access
 
@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.EFeatureMapEntry
 import org.eclipse.emf.ecore.xml.^type.AnySimpleType
 import org.eclipse.emf.ecore.xml.^type.Boolean
 import org.eclipse.emf.ecore.xml.^type.Int
-import org.eclipse.emf.ecore.xml.^type.String
 
 @ExtendedMetaData(name="AbsoluteOffset_T", kind="empty")
 class AbsoluteOffsetT {
@@ -26,7 +25,7 @@ class AbsoluteOffsetT {
 	@ExtendedMetaData(kind="attribute", name="BitOffset", namespace="##targetNamespace")
 	unsettable Int[1] bitOffset
 	@ExtendedMetaData(kind="attribute", name="Type", namespace="##targetNamespace")
-	org.eclipse.emf.ecore.xml.^type.String[1] ^type
+	String[1] ^type
 }
 
 @ExtendedMetaData(name="Access_T", kind="elementOnly")
@@ -178,7 +177,7 @@ class ComponentT {
 	@ExtendedMetaData(kind="element", name="Access", namespace="##targetNamespace")
 	contains AccessT[] access
 	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
-	org.eclipse.emf.ecore.xml.^type.String[1] name
+	String[1] name
 	@ExtendedMetaData(kind="attribute", name="SimpleAccessModifier", namespace="##targetNamespace")
 	unsettable SimpleAccessModifierTP simpleAccessModifier = "None"
 	@ExtendedMetaData(kind="attribute", name="SliceAccessModifier", namespace="##targetNamespace")
@@ -201,7 +200,7 @@ class ConstantT {
 @ExtendedMetaData(name="ConstantType_._type", kind="simple")
 class ConstantTypeType {
 	@ExtendedMetaData(name=":0", kind="simple")
-	org.eclipse.emf.ecore.xml.^type.String value
+	String value
 	@ExtendedMetaData(kind="attribute", name="Informative", namespace="##targetNamespace")
 	unsettable org.eclipse.emf.ecore.xml.^type.Boolean informative
 }
@@ -209,7 +208,7 @@ class ConstantTypeType {
 @ExtendedMetaData(name="ConstantValue_T", kind="simple")
 class ConstantValueT {
 	@ExtendedMetaData(name=":0", kind="simple")
-	org.eclipse.emf.ecore.xml.^type.String value
+	String value
 }
 
 @ExtendedMetaData(name="ConstantValue_._type", kind="simple")
@@ -399,7 +398,7 @@ class ParameterT {
 	@ExtendedMetaData(kind="attribute", name="Section", namespace="##targetNamespace")
 	unsettable SectionNameTE section
 	@ExtendedMetaData(kind="attribute", name="TemplateReference", namespace="##targetNamespace")
-	org.eclipse.emf.ecore.xml.^type.String templateReference
+	String templateReference
 	@ExtendedMetaData(kind="attribute", name="Type", namespace="##targetNamespace")
 	SimaticTypeTE ^type
 }
@@ -546,7 +545,7 @@ type TemplateTypeTEObject wraps org.eclipse.emf.common.util.Enumerator
 @ExtendedMetaData(name="TemplateValue_T", kind="simple")
 class TemplateValueT {
 	@ExtendedMetaData(name=":0", kind="simple")
-	org.eclipse.emf.ecore.xml.^type.String value
+	String value
 	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
 	SimaticNameTP[1] name
 	@ExtendedMetaData(kind="attribute", name="Type", namespace="##targetNamespace")
