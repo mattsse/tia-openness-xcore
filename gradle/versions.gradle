@@ -1,0 +1,13 @@
+
+
+version = '1.0.0-SNAPSHOT'
+
+ext.versions = [
+        guice    : '4.0',
+        xtext    : '2.13.0',
+        gson     : '2.8.0',
+        websocket: '1.0',
+        slf4j    : '1.7.24',
+        log4j    : '1.2.16',
+        junit    : '4.12'
+]

@@ -1,0 +1,19 @@
+target
+build
+src-gen
+xtend-gen
+xtext-gen
+*.DS_Store
+
+gradle buildwrapper.jar
+gradle-wrapper.jar
+gradle-app.setting
+.env
+.gradle
+.gradletasknamecache
+.classpath
+*.launch
+.settings
+.project
+text
+*.jar

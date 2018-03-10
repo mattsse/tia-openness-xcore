@@ -1,0 +1,11 @@
+bin/
+target/
+xtend.gen/
+xtext_gen
+src-gen/
+build/
+schemas
+META-INF
+build.properties
+plugin.properties
+plugin.xml
