@@ -1,7 +1,7 @@
 @Ecore(nsURI="http://www.tia.openness.model.org/schemas/SW/PlcBlocks/Access")
 @ExtendedMetaData(qualified="false")
-@GenModel(modelDirectory="/org.tia.openness.model/src/main/xcore-gen", modelName="Openness",
-	importerID="org.eclipse.xsd.ecore.importer")
+@GenModel(bundleManifest="false", forceOverwrite="true",modelDirectory="/org.tia.openness.model/src/main/xcore-gen", modelName="Openness",
+	importerID="org.eclipse.xsd.ecore.importer",updateClasspath="false", complianceLevel="8.0")
 package org.tia.openness.model.access
 
 import org.tia.openness.model.common.CommentType
