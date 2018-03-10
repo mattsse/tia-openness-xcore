@@ -1,0 +1,49 @@
+@Ecore(nsURI="http://www.tia.openness.model.org/schemas/SW/PlcBlocks/InstanceSupervisions")
+@ExtendedMetaData(qualified="false")
+@GenModel(modelDirectory="/org.tia.openness.model/src/main/xcore-gen", modelName="Openness",
+	importerID="org.eclipse.xsd.ecore.importer")
+package org.tia.openness.model.instancesupervisions
+
+import org.eclipse.emf.ecore.xml.^type.Int
+
+@ExtendedMetaData(name="BlockInstSupervisionGroupsType", kind="elementOnly")
+class BlockInstSupervisionGroupsType {
+	@ExtendedMetaData(kind="element", name="BlockInstSupervisionGroup", namespace="##targetNamespace")
+	contains BlockInstSupervisionGroupType[+] blockInstSupervisionGroup
+}
+
+@ExtendedMetaData(name="BlockInstSupervisionGroup_._type", kind="elementOnly")
+class BlockInstSupervisionGroupType {
+	@ExtendedMetaData(kind="element", name="Multiinstance", namespace="##targetNamespace")
+	contains MultiinstanceType multiinstance
+	@ExtendedMetaData(kind="element", name="BlockInstSupervision", namespace="##targetNamespace")
+	contains BlockInstSupervisionType[+] blockInstSupervision
+}
+
+@ExtendedMetaData(name="BlockInstSupervision_._type", kind="elementOnly")
+class BlockInstSupervisionType {
+	@ExtendedMetaData(kind="element", name="Number", namespace="##targetNamespace")
+	unsettable Int[1] number
+	@ExtendedMetaData(kind="element", name="StateStruct", namespace="##targetNamespace")
+	contains StateStructType[1] stateStruct
+	@ExtendedMetaData(kind="element", name="BlockTypeSupervisionNumber", namespace="##targetNamespace")
+	unsettable Int[1] blockTypeSupervisionNumber
+}
+
+@ExtendedMetaData(name="Multiinstance_._type", kind="empty")
+class MultiinstanceType {
+	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
+	org.eclipse.emf.ecore.xml.^type.String[1] name
+}
+
+@ExtendedMetaData(name="StateStruct_._type", kind="empty")
+class StateStructType {
+	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
+	org.eclipse.emf.ecore.xml.^type.String[1] name
+}
+
+@ExtendedMetaData(name="SupervisionFB_._type", kind="empty")
+class SupervisionFBType {
+	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
+	org.eclipse.emf.ecore.xml.^type.String[1] name
+}

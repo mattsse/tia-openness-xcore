@@ -1,0 +1,201 @@
+@Ecore(nsURI="http://www.tia.openness.model.org/schemas/SW/PlcBlocks/LADFBD")
+@ExtendedMetaData(qualified="false")
+@GenModel(modelDirectory="/org.tia.openness.model/src/main/xcore-gen", modelName="Openness",
+	importerID="org.eclipse.xsd.ecore.importer")
+package org.tia.openness.model.ladfbd
+
+import org.tia.openness.model.compileunit.LabelDeclarationT
+import org.tia.openness.model.common.CommentType
+import org.tia.openness.model.common.VersionStringTP
+import org.tia.openness.model.access.AccessT
+import org.tia.openness.model.access.CallInfoType
+import org.tia.openness.model.access.InstanceT
+import org.tia.openness.model.access.NameType
+import org.tia.openness.model.access.TemplateValueT
+import org.eclipse.emf.ecore.EFeatureMapEntry
+import org.eclipse.emf.ecore.xml.^type.Boolean
+import org.eclipse.emf.ecore.xml.^type.Int
+import org.eclipse.emf.ecore.xml.^type.String
+
+
+@ExtendedMetaData(name="AutomaticTyped_T", kind="empty")
+class AutomaticTypedT {
+	@GenModel(documentation="The name of the automatic chosen template parameter. Not for InstructionRef")
+	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
+	org.eclipse.emf.ecore.xml.^type.String name
+}
+
+@ExtendedMetaData(name="Call_T", kind="elementOnly")
+class CallT {
+	@ExtendedMetaData(kind="element", name="CallInfo", namespace="##targetNamespace")
+	contains CallInfoType[1] callInfo
+	@ExtendedMetaData(kind="element", name="TemplateValue", namespace="##targetNamespace")
+	contains TemplateValueT[] templateValue
+	@ExtendedMetaData(kind="element", name="AutomaticTyped", namespace="##targetNamespace")
+	contains AutomaticTypedT[] automaticTyped
+	@GenModel(documentation="The invisible pins of this part.")
+	@ExtendedMetaData(kind="element", name="Invisible", namespace="##targetNamespace")
+	contains InvisibleT[] invisible
+	@GenModel(documentation="The negated pins of this part.")
+	@ExtendedMetaData(kind="element", name="Negated", namespace="##targetNamespace")
+	contains NegT[] negated
+	@GenModel(documentation="Not allowed in STL")
+	@ExtendedMetaData(kind="element", name="Comment", namespace="##targetNamespace")
+	contains CommentType comment
+	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
+	unsettable Int[1] uId
+}
+
+
+@ExtendedMetaData(name="Equation_T", kind="simple")
+class EquationT {
+	@ExtendedMetaData(name=":0", kind="simple")
+	org.eclipse.emf.ecore.xml.^type.String value
+}
+
+@ExtendedMetaData(name="FlgNet_T", kind="elementOnly")
+class FlgNetT {
+	@ExtendedMetaData(kind="element", name="Labels", namespace="##targetNamespace")
+	contains LabelsT labels
+	@ExtendedMetaData(kind="element", name="Parts", namespace="##targetNamespace")
+	contains PartsT[1] parts
+	@ExtendedMetaData(kind="element", name="Wires", namespace="##targetNamespace")
+	contains WiresT wires
+}
+
+@ExtendedMetaData(name="Format_TE:Object", baseType="Format_TE")
+type FormatTEObject wraps org.eclipse.emf.common.util.Enumerator
+
+@ExtendedMetaData(name="GateName_TE", baseType="http://www.eclipse.org/emf/2003/XMLType#string")
+type GateNameTE wraps String
+
+@ExtendedMetaData(name="IdentCon_T", kind="empty")
+class IdentConT {
+	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
+	unsettable Int[1] uId
+}
+
+@ExtendedMetaData(name="Invisible_T", kind="empty")
+class InvisibleT {
+	@GenModel(documentation="The name of the invisible pin.")
+	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
+	org.eclipse.emf.ecore.xml.^type.String name
+}
+
+@ExtendedMetaData(name="Labels_T", kind="elementOnly")
+class LabelsT {
+	@ExtendedMetaData(kind="group", name="group:0")
+	EFeatureMapEntry[] group
+	@ExtendedMetaData(kind="element", name="LabelDeclaration", namespace="##targetNamespace", group="group:0")
+	contains transient volatile derived LabelDeclarationT[] labelDeclaration
+}
+
+@ExtendedMetaData(name="NameCon_T", kind="empty")
+class NameConT {
+	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
+	org.eclipse.emf.ecore.xml.^type.String name
+	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
+	unsettable Int[1] uId
+}
+
+@ExtendedMetaData(name="Neg_T", kind="empty")
+class NegT {
+	@GenModel(documentation="The name of the negated pin.")
+	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
+	org.eclipse.emf.ecore.xml.^type.String name
+}
+
+@ExtendedMetaData(name="Openbranch_T", kind="empty")
+class OpenbranchT {
+}
+
+@ExtendedMetaData(name="OpenCon_T", kind="empty")
+class OpenConT {
+	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
+	unsettable Int[1] uId
+}
+
+@ExtendedMetaData(name="Parts_T", kind="elementOnly")
+class PartsT {
+	@ExtendedMetaData(kind="group", name="group:0")
+	EFeatureMapEntry[] group
+	@ExtendedMetaData(kind="element", name="Access", namespace="##targetNamespace", group="group:0")
+	contains transient volatile derived AccessT[] access
+	@ExtendedMetaData(kind="element", name="Part", namespace="##targetNamespace", group="group:0")
+	contains transient volatile derived PartT[] part
+	@ExtendedMetaData(kind="element", name="Call", namespace="##targetNamespace", group="group:0")
+	contains transient volatile derived CallT[] call
+}
+
+@ExtendedMetaData(name="Part_T", kind="elementOnly")
+class PartT {
+	@GenModel(documentation="The equation of this part. This is only used for the Calculate box.")
+	@ExtendedMetaData(kind="element", name="Equation", namespace="##targetNamespace")
+	contains EquationT equation
+	@ExtendedMetaData(kind="element", name="Instance", namespace="##targetNamespace")
+	contains InstanceT instance
+	@ExtendedMetaData(kind="element", name="TemplateValue", namespace="##targetNamespace")
+	contains TemplateValueT[] templateValue
+	@ExtendedMetaData(kind="element", name="AutomaticTyped", namespace="##targetNamespace")
+	contains AutomaticTypedT[] automaticTyped
+	@GenModel(documentation="The invisible pins of this part.")
+	@ExtendedMetaData(kind="element", name="Invisible", namespace="##targetNamespace")
+	contains InvisibleT[] invisible
+	@GenModel(documentation="The negated pins of this part.")
+	@ExtendedMetaData(kind="element", name="Negated", namespace="##targetNamespace")
+	contains NegT[] negated
+	@GenModel(documentation="Not allowed in STL")
+	@ExtendedMetaData(kind="element", name="Comment", namespace="##targetNamespace")
+	contains CommentType comment
+	@ExtendedMetaData(kind="attribute", name="DisabledENO", namespace="##targetNamespace")
+	unsettable org.eclipse.emf.ecore.xml.^type.Boolean disabledENO = "false"
+	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
+	NameType[1] name
+	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
+	unsettable Int[1] uId
+	@ExtendedMetaData(kind="attribute", name="Version", namespace="##targetNamespace")
+	VersionStringTP version
+}
+
+@ExtendedMetaData(name="Powerrail_T", kind="empty")
+class PowerrailT {
+}
+@ExtendedMetaData(name="Wires_T", kind="elementOnly")
+class WiresT {
+	@ExtendedMetaData(kind="group", name="group:0")
+	EFeatureMapEntry[] group
+	@ExtendedMetaData(kind="element", name="Wire", namespace="##targetNamespace", group="group:0")
+	contains transient volatile derived WireT[+] wire
+}
+
+@ExtendedMetaData(name="Wire_T", kind="elementOnly")
+class WireT {
+	@ExtendedMetaData(kind="group", name="group:0")
+	EFeatureMapEntry[] group
+	@ExtendedMetaData(kind="element", name="Powerrail", namespace="##targetNamespace", group="group:0")
+	contains transient volatile derived PowerrailT[] powerrail
+	@ExtendedMetaData(kind="element", name="NameCon", namespace="##targetNamespace", group="group:0")
+	contains transient volatile derived NameConT[] nameCon
+	@ExtendedMetaData(kind="element", name="IdentCon", namespace="##targetNamespace", group="group:0")
+	contains transient volatile derived IdentConT[] identCon
+	@ExtendedMetaData(kind="element", name="Openbranch", namespace="##targetNamespace", group="group:0")
+	contains transient volatile derived OpenbranchT[] openbranch
+	@ExtendedMetaData(kind="element", name="OpenCon", namespace="##targetNamespace", group="group:0")
+	contains transient volatile derived OpenConT[] openCon
+	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
+	unsettable Int[1] uId
+}
+
+/***
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ *  */
+ 
+
+
+
+

@@ -1,0 +1,173 @@
+@Ecore(nsURI="http://www.tia.openness.model.org/schemas/SW/PlcBlocks/TypeSupervisions")
+@ExtendedMetaData(qualified="false")
+@GenModel(modelDirectory="/org.tia.openness.model/src/main/xcore-gen", modelName="Openness",
+	importerID="org.eclipse.xsd.ecore.importer")
+package org.tia.openness.model.typesupervisions
+
+import org.tia.openness.model.common.MultiLanguageTextT
+import org.eclipse.emf.ecore.EFeatureMapEntry
+import org.eclipse.emf.ecore.xml.^type.Boolean
+import org.eclipse.emf.ecore.xml.^type.Int
+import org.eclipse.emf.ecore.xml.^type.String
+
+@ExtendedMetaData(name="AssociatedValueOperand_._type", kind="empty")
+class AssociatedValueOperandType {
+	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
+	org.eclipse.emf.ecore.xml.^type.String[1] name
+	@ExtendedMetaData(kind="attribute", name="Number", namespace="##targetNamespace")
+	unsettable NumberType1[1] number
+}
+
+@ExtendedMetaData(name="AssociatedValues_._type", kind="elementOnly")
+class AssociatedValuesType {
+	@ExtendedMetaData(kind="element", name="AssociatedValue", namespace="##targetNamespace")
+	contains AssociatedValueType[1..3] associatedValue
+}
+
+@ExtendedMetaData(name="AssociatedValue_._type", kind="elementOnly")
+class AssociatedValueType {
+	@ExtendedMetaData(kind="element", name="AssociatedValueOperand", namespace="##targetNamespace")
+	contains AssociatedValueOperandType associatedValueOperand
+}
+
+@ExtendedMetaData(name="BlockTypeSupervisionsType", kind="elementOnly")
+class BlockTypeSupervisionsType {
+	@ExtendedMetaData(kind="element", name="BlockTypeSupervision", namespace="##targetNamespace")
+	contains BlockTypeSupervisionType[+] blockTypeSupervision
+}
+
+@ExtendedMetaData(name="BlockTypeSupervisions_._type", kind="elementOnly")
+class BlockTypeSupervisionsType1 extends BlockTypeSupervisionsType {
+}
+
+@ExtendedMetaData(name="BlockTypeSupervision_._type", kind="elementOnly")
+class BlockTypeSupervisionType {
+	@ExtendedMetaData(kind="element", name="SupervisedOperand", namespace="##targetNamespace")
+	contains SupervisedOperandType[1] supervisedOperand
+	@ExtendedMetaData(kind="element", name="SupervisedStatus", namespace="##targetNamespace")
+	unsettable org.eclipse.emf.ecore.xml.^type.Boolean[1] supervisedStatus
+	@ExtendedMetaData(kind="element", name="DelayOperand", namespace="##targetNamespace")
+	contains DelayOperandType delayOperand
+	@ExtendedMetaData(kind="element", name="Conditions", namespace="##targetNamespace")
+	contains ConditionsType conditions
+	@ExtendedMetaData(kind="element", name="CategoryNumber", namespace="##targetNamespace")
+	unsettable CategoryNumberType[1] categoryNumber
+	@ExtendedMetaData(kind="element", name="SubCategory1Number", namespace="##targetNamespace")
+	unsettable Int subCategory1Number
+	@ExtendedMetaData(kind="element", name="SubCategory2Number", namespace="##targetNamespace")
+	unsettable Int subCategory2Number
+	@ExtendedMetaData(kind="element", name="SpecificField", namespace="##targetNamespace")
+	contains SpecificFieldType specificField
+	@ExtendedMetaData(kind="attribute", name="Number", namespace="##targetNamespace")
+	unsettable Int[1] number
+	@ExtendedMetaData(kind="attribute", name="Type", namespace="##targetNamespace")
+	unsettable TypeType1[1] ^type
+}
+
+@ExtendedMetaData(name="CategoryNumber_._type", baseType="http://www.eclipse.org/emf/2003/XMLType#int",
+	minInclusive="1", maxInclusive="8")
+type CategoryNumberType wraps int
+
+@ExtendedMetaData(name="CategoryNumber_._type:Object", baseType="CategoryNumber_._type")
+type CategoryNumberTypeObject wraps Integer
+
+@ExtendedMetaData(name="ConditionOperand_._type", kind="empty")
+class ConditionOperandType {
+	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
+	org.eclipse.emf.ecore.xml.^type.String[1] name
+	@ExtendedMetaData(kind="attribute", name="Number", namespace="##targetNamespace")
+	unsettable NumberType[1] number
+}
+
+@ExtendedMetaData(name="Conditions_._type", kind="elementOnly")
+class ConditionsType {
+	@ExtendedMetaData(kind="element", name="Condition", namespace="##targetNamespace")
+	contains ConditionType[1..3] condition
+}
+
+@ExtendedMetaData(name="Condition_._type", kind="elementOnly")
+class ConditionType {
+	@ExtendedMetaData(kind="element", name="ConditionOperand", namespace="##targetNamespace")
+	contains ConditionOperandType[1] conditionOperand
+	@ExtendedMetaData(kind="element", name="TriggeringStatus", namespace="##targetNamespace")
+	unsettable org.eclipse.emf.ecore.xml.^type.Boolean[1] triggeringStatus
+}
+
+@ExtendedMetaData(name="DelayOperand_._type", kind="empty")
+class DelayOperandType {
+	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
+	org.eclipse.emf.ecore.xml.^type.String[1] name
+}
+
+@ExtendedMetaData(name="Number_._type")
+enum NumberType {
+	_1 as "1"
+	_2 as "2" = 1
+	_3 as "3" = 2
+}
+
+@ExtendedMetaData(name="Number_._1_._type")
+enum NumberType1 {
+	_1 as "1"
+	_2 as "2" = 1
+	_3 as "3" = 2
+}
+
+@ExtendedMetaData(name="Number_._type:Object", baseType="Number_._type")
+type NumberTypeObject wraps org.eclipse.emf.common.util.Enumerator
+
+@ExtendedMetaData(name="Number_._1_._type:Object", baseType="Number_._1_._type")
+type NumberTypeObject1 wraps org.eclipse.emf.common.util.Enumerator
+
+
+@ExtendedMetaData(name="SpecificFieldText_._type", kind="elementOnly")
+class SpecificFieldTextType {
+	@ExtendedMetaData(kind="group", name="group:0")
+	EFeatureMapEntry[] group
+	@ExtendedMetaData(kind="element", name="MultiLanguageText", namespace="##targetNamespace", group="group:0")
+	contains transient volatile derived MultiLanguageTextT[+] multiLanguageText
+}
+
+@ExtendedMetaData(name="SpecificField_._type", kind="elementOnly")
+class SpecificFieldType {
+	@ExtendedMetaData(kind="element", name="AssociatedValues", namespace="##targetNamespace")
+	contains AssociatedValuesType associatedValues
+	@ExtendedMetaData(kind="element", name="SpecificFieldText", namespace="##targetNamespace")
+	contains SpecificFieldTextType specificFieldText
+}
+
+
+@ExtendedMetaData(name="SupervisedOperand_._type", kind="empty")
+class SupervisedOperandType {
+	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
+	org.eclipse.emf.ecore.xml.^type.String[1] name
+}
+
+
+@ExtendedMetaData(name="Type_._type")
+enum TypeType {
+	Action
+	Interlock = 1
+	Operand = 2
+	Position = 3
+	Reaction = 4
+	MessageText = 5
+	MessageError = 6
+}
+
+@ExtendedMetaData(name="Type_._1_._type")
+enum TypeType1 {
+	Action
+	Interlock = 1
+	Operand = 2
+	Position = 3
+	Reaction = 4
+	MessageText = 5
+	MessageError = 6
+}
+
+@ExtendedMetaData(name="Type_._type:Object", baseType="Type_._type")
+type TypeTypeObject wraps org.eclipse.emf.common.util.Enumerator
+
+@ExtendedMetaData(name="Type_._1_._type:Object", baseType="Type_._1_._type")
+type TypeTypeObject1 wraps org.eclipse.emf.common.util.Enumerator

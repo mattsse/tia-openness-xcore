@@ -1,0 +1,131 @@
+@Ecore(nsURI="http://www.tia.openness.model.org/schemas/SW/InterfaceSections/v2")
+@ExtendedMetaData(qualified="false")
+@GenModel(modelDirectory="/org.tia.openness.model/src/main/xcore-gen", modelName="Openness",
+	importerID="org.eclipse.xsd.ecore.importer")
+package org.tia.openness.model.interfacesections
+
+import org.tia.openness.model.common.AttributListT
+import org.tia.openness.model.common.CommentType
+import org.tia.openness.model.common.SimaticNameTP
+import org.tia.openness.model.common.SimaticTypeTE
+import org.eclipse.emf.ecore.EFeatureMapEntry
+import org.eclipse.emf.ecore.xml.^type.Boolean
+import org.eclipse.emf.ecore.xml.^type.String
+
+@ExtendedMetaData(name="Accessibility_TE")
+enum AccessibilityTE {
+	Public
+	Internal = 1
+	Protected = 2
+	Private = 3
+}
+@ExtendedMetaData(name="IndexPath_TP", baseType="http://www.eclipse.org/emf/2003/XMLType#string",
+	pattern="-?\\d+(,-?\\d+)*(;(-?\\d+(,-?\\d+)*))?")
+type IndexPathTP wraps String
+
+@ExtendedMetaData(name="Member_T", kind="elementOnly")
+class MemberT {
+	@ExtendedMetaData(kind="element", name="AttributeList", namespace="##targetNamespace")
+	contains AttributListT attributeList
+	@ExtendedMetaData(kind="group", name="group:1")
+	EFeatureMapEntry[] group
+	@ExtendedMetaData(kind="element", name="Member", namespace="##targetNamespace", group="group:1")
+	contains transient volatile derived MemberT[] member
+	@ExtendedMetaData(kind="element", name="Sections", namespace="##targetNamespace", group="group:1")
+	contains transient volatile derived SectionsT[] sections
+	@ExtendedMetaData(kind="element", name="StartValue", namespace="##targetNamespace", group="group:1")
+	contains transient volatile derived StartValueT[] startValue
+	@GenModel(documentation="Not allowed in STL")
+	@ExtendedMetaData(kind="element", name="Comment", namespace="##targetNamespace", group="group:1")
+	contains transient volatile derived CommentType[] comment
+	@ExtendedMetaData(kind="element", name="Subelement", namespace="##targetNamespace", group="group:1")
+	contains transient volatile derived SubelementT[] subelement
+	@ExtendedMetaData(kind="attribute", name="Accessibility", namespace="##targetNamespace")
+	unsettable AccessibilityTE accessibility = "Public"
+	@ExtendedMetaData(kind="attribute", name="Datatype", namespace="##targetNamespace")
+	SimaticTypeTE[1] datatype
+	@ExtendedMetaData(kind="attribute", name="Informative", namespace="##targetNamespace")
+	unsettable org.eclipse.emf.ecore.xml.^type.Boolean informative = "false"
+	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
+	org.eclipse.emf.ecore.xml.^type.String[1] name
+	@ExtendedMetaData(kind="attribute", name="Remanence", namespace="##targetNamespace")
+	unsettable RemanenceTE remanence = "NonRetain"
+	@GenModel(documentation="The version of the library type to use. Previous to this, the version was written inside the Datatype attribute itself, like \"dtl:v1.0\". Now, this is written in two separate attributes, to mitigate problems with weird names (\"dtl:v1.0\" could be a UDT name!).")
+	@ExtendedMetaData(kind="attribute", name="Version", namespace="##targetNamespace")
+	org.eclipse.emf.ecore.xml.^type.String version
+}
+
+
+@ExtendedMetaData(name="Remanence_TE")
+enum RemanenceTE {
+	SetInIDB
+	NonRetain = 1
+	Retain = 2
+}
+
+@ExtendedMetaData(name="Remanence_TE:Object", baseType="Remanence_TE")
+type RemanenceTEObject wraps org.eclipse.emf.common.util.Enumerator
+
+@ExtendedMetaData(name="SectionName_TE")
+enum SectionNameTE {
+	None
+	Input = 1
+	Return = 2
+	Output = 3
+	InOut = 4
+	Static = 5
+	Temp = 6
+	Constant = 7
+	Base = 8
+}
+
+@ExtendedMetaData(name="SectionName_TE:Object", baseType="SectionName_TE")
+type SectionNameTEObject wraps org.eclipse.emf.common.util.Enumerator
+
+@ExtendedMetaData(name="Sections_T", kind="elementOnly")
+class SectionsT {
+	@ExtendedMetaData(kind="element", name="AttributeList", namespace="##targetNamespace")
+	contains AttributListT attributeList
+	@ExtendedMetaData(kind="element", name="Section", namespace="##targetNamespace")
+	contains SectionT[] section
+	@ExtendedMetaData(kind="attribute", name="Datatype", namespace="##targetNamespace")
+	SimaticTypeTE datatype
+	@ExtendedMetaData(kind="attribute", name="Version", namespace="##targetNamespace")
+	org.eclipse.emf.ecore.xml.^type.String version
+}
+
+@ExtendedMetaData(name="Section_T", kind="elementOnly")
+class SectionT {
+	@GenModel(documentation="Base Class")
+	@ExtendedMetaData(kind="element", name="Sections", namespace="##targetNamespace")
+	contains SectionsT sections
+	@ExtendedMetaData(kind="element", name="Member", namespace="##targetNamespace")
+	contains MemberT[] member
+	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
+	unsettable SectionNameTE[1] name
+}
+
+@ExtendedMetaData(name="StartValue_T", kind="simple")
+class StartValueT {
+	@ExtendedMetaData(name=":0", kind="simple")
+	org.eclipse.emf.ecore.xml.^type.String value
+	@ExtendedMetaData(kind="attribute", name="ConstantName", namespace="##targetNamespace")
+	SimaticNameTP constantName
+	@ExtendedMetaData(kind="attribute", name="Informative", namespace="##targetNamespace")
+	unsettable org.eclipse.emf.ecore.xml.^type.Boolean informative = "false"
+	@ExtendedMetaData(kind="attribute", name="IsBulkValue", namespace="##targetNamespace")
+	unsettable org.eclipse.emf.ecore.xml.^type.Boolean isBulkValue = "false"
+}
+
+@ExtendedMetaData(name="Subelement_T", kind="elementOnly")
+class SubelementT {
+	@ExtendedMetaData(kind="group", name="group:0")
+	EFeatureMapEntry[] group
+	@ExtendedMetaData(kind="element", name="StartValue", namespace="##targetNamespace", group="group:0")
+	contains transient volatile derived StartValueT[] startValue
+	@GenModel(documentation="Not allowed in STL")
+	@ExtendedMetaData(kind="element", name="Comment", namespace="##targetNamespace", group="group:0")
+	contains transient volatile derived CommentType[] comment
+	@ExtendedMetaData(kind="attribute", name="Path", namespace="##targetNamespace")
+	IndexPathTP path
+}
