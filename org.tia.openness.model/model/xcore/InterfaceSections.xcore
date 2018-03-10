@@ -4,8 +4,8 @@
 	importerID="org.eclipse.xsd.ecore.importer",updateClasspath="false", complianceLevel="8.0")
 package org.tia.openness.model.interfacesections
 
-import org.tia.openness.model.common.AttributListT
-import org.tia.openness.model.common.CommentType
+import org.tia.openness.model.common.AttributList
+import org.tia.openness.model.common.Commentype
 import org.tia.openness.model.common.SimaticNameTP
 import org.tia.openness.model.common.SimaticTypeTE
 import org.eclipse.emf.ecore.EFeatureMapEntry
@@ -22,23 +22,23 @@ enum AccessibilityTE {
 	pattern="-?\\d+(,-?\\d+)*(;(-?\\d+(,-?\\d+)*))?")
 type IndexPathTP wraps String
 
-@ExtendedMetaData(name="Member_T", kind="elementOnly")
-class MemberT {
+@ExtendedMetaData(name="Member", kind="elementOnly")
+class Member {
 	@ExtendedMetaData(kind="element", name="AttributeList", namespace="##targetNamespace")
-	contains AttributListT attributeList
+	contains AttributList attributeList
 	@ExtendedMetaData(kind="group", name="group:1")
 	EFeatureMapEntry[] group
 	@ExtendedMetaData(kind="element", name="Member", namespace="##targetNamespace", group="group:1")
-	contains transient volatile derived MemberT[] member
+	contains transient volatile derived Member[] member
 	@ExtendedMetaData(kind="element", name="Sections", namespace="##targetNamespace", group="group:1")
 	contains transient volatile derived SectionsT[] sections
 	@ExtendedMetaData(kind="element", name="StartValue", namespace="##targetNamespace", group="group:1")
-	contains transient volatile derived StartValueT[] startValue
+	contains transient volatile derived StartValue[] startValue
 	@GenModel(documentation="Not allowed in STL")
 	@ExtendedMetaData(kind="element", name="Comment", namespace="##targetNamespace", group="group:1")
-	contains transient volatile derived CommentType[] comment
+	contains transient volatile derived Commentype[] comment
 	@ExtendedMetaData(kind="element", name="Subelement", namespace="##targetNamespace", group="group:1")
-	contains transient volatile derived SubelementT[] subelement
+	contains transient volatile derived Subelement[] subelement
 	@ExtendedMetaData(kind="attribute", name="Accessibility", namespace="##targetNamespace")
 	unsettable AccessibilityTE accessibility = "Public"
 	@ExtendedMetaData(kind="attribute", name="Datatype", namespace="##targetNamespace")
@@ -84,28 +84,28 @@ type SectionNameTEObject wraps org.eclipse.emf.common.util.Enumerator
 @ExtendedMetaData(name="Sections_T", kind="elementOnly")
 class SectionsT {
 	@ExtendedMetaData(kind="element", name="AttributeList", namespace="##targetNamespace")
-	contains AttributListT attributeList
+	contains AttributList attributeList
 	@ExtendedMetaData(kind="element", name="Section", namespace="##targetNamespace")
-	contains SectionT[] section
+	contains Section[] section
 	@ExtendedMetaData(kind="attribute", name="Datatype", namespace="##targetNamespace")
 	SimaticTypeTE datatype
 	@ExtendedMetaData(kind="attribute", name="Version", namespace="##targetNamespace")
 	String version
 }
 
-@ExtendedMetaData(name="Section_T", kind="elementOnly")
-class SectionT {
+@ExtendedMetaData(name="Section", kind="elementOnly")
+class Section {
 	@GenModel(documentation="Base Class")
 	@ExtendedMetaData(kind="element", name="Sections", namespace="##targetNamespace")
 	contains SectionsT sections
 	@ExtendedMetaData(kind="element", name="Member", namespace="##targetNamespace")
-	contains MemberT[] member
+	contains Member[] member
 	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
 	unsettable SectionNameTE[1] name
 }
 
-@ExtendedMetaData(name="StartValue_T", kind="simple")
-class StartValueT {
+@ExtendedMetaData(name="StartValue", kind="simple")
+class StartValue {
 	@ExtendedMetaData(name=":0", kind="simple")
 	String value
 	@ExtendedMetaData(kind="attribute", name="ConstantName", namespace="##targetNamespace")
@@ -116,15 +116,15 @@ class StartValueT {
 	unsettable boolean isBulkValue = "false"
 }
 
-@ExtendedMetaData(name="Subelement_T", kind="elementOnly")
-class SubelementT {
+@ExtendedMetaData(name="Subelement", kind="elementOnly")
+class Subelement {
 	@ExtendedMetaData(kind="group", name="group:0")
 	EFeatureMapEntry[] group
 	@ExtendedMetaData(kind="element", name="StartValue", namespace="##targetNamespace", group="group:0")
-	contains transient volatile derived StartValueT[] startValue
+	contains transient volatile derived StartValue[] startValue
 	@GenModel(documentation="Not allowed in STL")
 	@ExtendedMetaData(kind="element", name="Comment", namespace="##targetNamespace", group="group:0")
-	contains transient volatile derived CommentType[] comment
+	contains transient volatile derived Commentype[] comment
 	@ExtendedMetaData(kind="attribute", name="Path", namespace="##targetNamespace")
 	IndexPathTP path
 }

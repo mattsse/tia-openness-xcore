@@ -4,60 +4,60 @@
 	importerID="org.eclipse.xsd.ecore.importer",updateClasspath="false", complianceLevel="8.0")
 package org.tia.openness.model.ladfbd
 
-import org.tia.openness.model.compileunit.LabelDeclarationT
-import org.tia.openness.model.common.CommentType
+import org.tia.openness.model.compileunit.LabelDeclaration
+import org.tia.openness.model.common.Commentype
 import org.tia.openness.model.common.VersionStringTP
-import org.tia.openness.model.access.AccessT
-import org.tia.openness.model.access.CallInfoType
-import org.tia.openness.model.access.InstanceT
+import org.tia.openness.model.access.Access
+import org.tia.openness.model.access.CallInfoype
+import org.tia.openness.model.access.Instance
 import org.tia.openness.model.access.NameType
-import org.tia.openness.model.access.TemplateValueT
+import org.tia.openness.model.access.TemplateValue
 import org.eclipse.emf.ecore.EFeatureMapEntry
 
 
-@ExtendedMetaData(name="AutomaticTyped_T", kind="empty")
-class AutomaticTypedT {
+@ExtendedMetaData(name="AutomaticTyped", kind="empty")
+class AutomaticTyped {
 	@GenModel(documentation="The name of the automatic chosen template parameter. Not for InstructionRef")
 	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
 	String name
 }
 
-@ExtendedMetaData(name="Call_T", kind="elementOnly")
-class CallT {
+@ExtendedMetaData(name="Call", kind="elementOnly")
+class Call {
 	@ExtendedMetaData(kind="element", name="CallInfo", namespace="##targetNamespace")
-	contains CallInfoType[1] callInfo
+	contains CallInfoype[1] callInfo
 	@ExtendedMetaData(kind="element", name="TemplateValue", namespace="##targetNamespace")
-	contains TemplateValueT[] templateValue
+	contains TemplateValue[] templateValue
 	@ExtendedMetaData(kind="element", name="AutomaticTyped", namespace="##targetNamespace")
-	contains AutomaticTypedT[] automaticTyped
+	contains AutomaticTyped[] automaticTyped
 	@GenModel(documentation="The invisible pins of this part.")
 	@ExtendedMetaData(kind="element", name="Invisible", namespace="##targetNamespace")
-	contains InvisibleT[] invisible
+	contains Invisible[] invisible
 	@GenModel(documentation="The negated pins of this part.")
 	@ExtendedMetaData(kind="element", name="Negated", namespace="##targetNamespace")
-	contains NegT[] negated
+	contains Neg[] negated
 	@GenModel(documentation="Not allowed in STL")
 	@ExtendedMetaData(kind="element", name="Comment", namespace="##targetNamespace")
-	contains CommentType comment
+	contains Commentype comment
 	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
 	unsettable int uId
 }
 
 
-@ExtendedMetaData(name="Equation_T", kind="simple")
-class EquationT {
+@ExtendedMetaData(name="Equation", kind="simple")
+class Equation {
 	@ExtendedMetaData(name=":0", kind="simple")
 	String value
 }
 
-@ExtendedMetaData(name="FlgNet_T", kind="elementOnly")
-class FlgNetT {
+@ExtendedMetaData(name="FlgNet", kind="elementOnly")
+class FlgNet {
 	@ExtendedMetaData(kind="element", name="Labels", namespace="##targetNamespace")
-	contains LabelsT labels
+	contains Labels labels
 	@ExtendedMetaData(kind="element", name="Parts", namespace="##targetNamespace")
-	contains PartsT[1] parts
+	contains Parts[1] parts
 	@ExtendedMetaData(kind="element", name="Wires", namespace="##targetNamespace")
-	contains WiresT wires
+	contains Wires wires
 }
 
 @ExtendedMetaData(name="Format_TE:Object", baseType="Format_TE")
@@ -66,84 +66,84 @@ type FormatTEObject wraps org.eclipse.emf.common.util.Enumerator
 @ExtendedMetaData(name="GateName_TE", baseType="http://www.eclipse.org/emf/2003/XMLType#string")
 type GateNameTE wraps String
 
-@ExtendedMetaData(name="IdentCon_T", kind="empty")
-class IdentConT {
+@ExtendedMetaData(name="IdentCon", kind="empty")
+class IdentCon {
 	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
 	unsettable int uId
 }
 
-@ExtendedMetaData(name="Invisible_T", kind="empty")
-class InvisibleT {
+@ExtendedMetaData(name="Invisible", kind="empty")
+class Invisible {
 	@GenModel(documentation="The name of the invisible pin.")
 	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
 	String name
 }
 
-@ExtendedMetaData(name="Labels_T", kind="elementOnly")
-class LabelsT {
+@ExtendedMetaData(name="Labels", kind="elementOnly")
+class Labels {
 	@ExtendedMetaData(kind="group", name="group:0")
 	EFeatureMapEntry[] group
 	@ExtendedMetaData(kind="element", name="LabelDeclaration", namespace="##targetNamespace", group="group:0")
-	contains transient volatile derived LabelDeclarationT[] labelDeclaration
+	contains transient volatile derived LabelDeclaration[] labelDeclaration
 }
 
-@ExtendedMetaData(name="NameCon_T", kind="empty")
-class NameConT {
+@ExtendedMetaData(name="NameCon", kind="empty")
+class NameCon {
 	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
 	String name
 	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
 	unsettable int uId
 }
 
-@ExtendedMetaData(name="Neg_T", kind="empty")
-class NegT {
+@ExtendedMetaData(name="Neg", kind="empty")
+class Neg {
 	@GenModel(documentation="The name of the negated pin.")
 	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
 	String name
 }
 
-@ExtendedMetaData(name="Openbranch_T", kind="empty")
-class OpenbranchT {
+@ExtendedMetaData(name="Openbranch", kind="empty")
+class Openbranch {
 }
 
-@ExtendedMetaData(name="OpenCon_T", kind="empty")
-class OpenConT {
+@ExtendedMetaData(name="OpenCon", kind="empty")
+class OpenCon {
 	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
 	unsettable int uId
 }
 
-@ExtendedMetaData(name="Parts_T", kind="elementOnly")
-class PartsT {
+@ExtendedMetaData(name="Parts", kind="elementOnly")
+class Parts {
 	@ExtendedMetaData(kind="group", name="group:0")
 	EFeatureMapEntry[] group
 	@ExtendedMetaData(kind="element", name="Access", namespace="##targetNamespace", group="group:0")
-	contains transient volatile derived AccessT[] access
+	contains transient volatile derived Access[] access
 	@ExtendedMetaData(kind="element", name="Part", namespace="##targetNamespace", group="group:0")
-	contains transient volatile derived PartT[] part
+	contains transient volatile derived Part[] part
 	@ExtendedMetaData(kind="element", name="Call", namespace="##targetNamespace", group="group:0")
-	contains transient volatile derived CallT[] call
+	contains transient volatile derived Call[] call
 }
 
-@ExtendedMetaData(name="Part_T", kind="elementOnly")
-class PartT {
+@ExtendedMetaData(name="Part", kind="elementOnly")
+class Part {
 	@GenModel(documentation="The equation of this part. This is only used for the Calculate box.")
 	@ExtendedMetaData(kind="element", name="Equation", namespace="##targetNamespace")
-	contains EquationT equation
+	contains Equation equation
 	@ExtendedMetaData(kind="element", name="Instance", namespace="##targetNamespace")
-	contains InstanceT instance
+	contains Instance instance
 	@ExtendedMetaData(kind="element", name="TemplateValue", namespace="##targetNamespace")
-	contains TemplateValueT[] templateValue
+	contains TemplateValue[] templateValue
 	@ExtendedMetaData(kind="element", name="AutomaticTyped", namespace="##targetNamespace")
-	contains AutomaticTypedT[] automaticTyped
+	contains AutomaticTyped[] automaticTyped
 	@GenModel(documentation="The invisible pins of this part.")
 	@ExtendedMetaData(kind="element", name="Invisible", namespace="##targetNamespace")
-	contains InvisibleT[] invisible
+	contains Invisible[] invisible
 	@GenModel(documentation="The negated pins of this part.")
 	@ExtendedMetaData(kind="element", name="Negated", namespace="##targetNamespace")
-	contains NegT[] negated
+	contains Neg[] negated
 	@GenModel(documentation="Not allowed in STL")
 	@ExtendedMetaData(kind="element", name="Comment", namespace="##targetNamespace")
-	contains CommentType comment
+	contains Commentype comment
 	@ExtendedMetaData(kind="attribute", name="DisabledENO", namespace="##targetNamespace")
 	unsettable boolean disabledENO = "false"
 	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
@@ -154,45 +154,31 @@ class PartT {
 	VersionStringTP version
 }
 
-@ExtendedMetaData(name="Powerrail_T", kind="empty")
-class PowerrailT {
+@ExtendedMetaData(name="Powerrail", kind="empty")
+class Powerrail {
 }
-@ExtendedMetaData(name="Wires_T", kind="elementOnly")
-class WiresT {
+@ExtendedMetaData(name="Wires", kind="elementOnly")
+class Wires {
 	@ExtendedMetaData(kind="group", name="group:0")
 	EFeatureMapEntry[] group
 	@ExtendedMetaData(kind="element", name="Wire", namespace="##targetNamespace", group="group:0")
-	contains transient volatile derived WireT[+] wire
+	contains transient volatile derived Wire[+] wire
 }
 
-@ExtendedMetaData(name="Wire_T", kind="elementOnly")
-class WireT {
+@ExtendedMetaData(name="Wire", kind="elementOnly")
+class Wire {
 	@ExtendedMetaData(kind="group", name="group:0")
 	EFeatureMapEntry[] group
 	@ExtendedMetaData(kind="element", name="Powerrail", namespace="##targetNamespace", group="group:0")
-	contains transient volatile derived PowerrailT[] powerrail
+	contains transient volatile derived Powerrail[] powerrail
 	@ExtendedMetaData(kind="element", name="NameCon", namespace="##targetNamespace", group="group:0")
-	contains transient volatile derived NameConT[] nameCon
+	contains transient volatile derived NameCon[] nameCon
 	@ExtendedMetaData(kind="element", name="IdentCon", namespace="##targetNamespace", group="group:0")
-	contains transient volatile derived IdentConT[] identCon
+	contains transient volatile derived IdentCon[] identCon
 	@ExtendedMetaData(kind="element", name="Openbranch", namespace="##targetNamespace", group="group:0")
-	contains transient volatile derived OpenbranchT[] openbranch
+	contains transient volatile derived Openbranch[] openbranch
 	@ExtendedMetaData(kind="element", name="OpenCon", namespace="##targetNamespace", group="group:0")
-	contains transient volatile derived OpenConT[] openCon
+	contains transient volatile derived OpenCon[] openCon
 	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
 	unsettable int uId
 }
-
-/***
- * 
- * 
- * 
- * 
- * 
- * 
- *  */
- 
-
-
-
-

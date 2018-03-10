@@ -15,7 +15,7 @@ class BlockInstSupervisionGroupsType {
 @ExtendedMetaData(name="BlockInstSupervisionGroup_._type", kind="elementOnly")
 class BlockInstSupervisionGroupType {
 	@ExtendedMetaData(kind="element", name="Multiinstance", namespace="##targetNamespace")
-	contains MultiinstanceType multiinstance
+	contains MultiInstanceype multiinstance
 	@ExtendedMetaData(kind="element", name="BlockInstSupervision", namespace="##targetNamespace")
 	contains BlockInstSupervisionType[+] blockInstSupervision
 }
@@ -31,7 +31,7 @@ class BlockInstSupervisionType {
 }
 
 @ExtendedMetaData(name="Multiinstance_._type", kind="empty")
-class MultiinstanceType {
+class MultiInstanceype {
 	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
 	String[1] name
 }

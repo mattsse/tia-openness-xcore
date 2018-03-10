@@ -4,7 +4,7 @@
 	importerID="org.eclipse.xsd.ecore.importer",updateClasspath="false", complianceLevel="8.0")
 package org.tia.openness.model.typesupervisions
 
-import org.tia.openness.model.common.MultiLanguageTextT
+import org.tia.openness.model.common.MultiLanguageText
 import org.eclipse.emf.ecore.EFeatureMapEntry
 
 
@@ -28,14 +28,14 @@ class AssociatedValueType {
 	contains AssociatedValueOperandType associatedValueOperand
 }
 
-@ExtendedMetaData(name="BlockTypeSupervisionsType", kind="elementOnly")
-class BlockTypeSupervisionsType {
+@ExtendedMetaData(name="BlockTypeSupervisionsype", kind="elementOnly")
+class BlockTypeSupervisionsype {
 	@ExtendedMetaData(kind="element", name="BlockTypeSupervision", namespace="##targetNamespace")
 	contains BlockTypeSupervisionType[+] blockTypeSupervision
 }
 
 @ExtendedMetaData(name="BlockTypeSupervisions_._type", kind="elementOnly")
-class BlockTypeSupervisionsType1 extends BlockTypeSupervisionsType {
+class BlockTypeSupervisionsype1 extends BlockTypeSupervisionsype {
 }
 
 @ExtendedMetaData(name="BlockTypeSupervision_._type", kind="elementOnly")
@@ -119,11 +119,11 @@ type NumberTypeObject1 wraps org.eclipse.emf.common.util.Enumerator
 
 
 @ExtendedMetaData(name="SpecificFieldText_._type", kind="elementOnly")
-class SpecificFieldTextType {
+class SpecificFieldTextype {
 	@ExtendedMetaData(kind="group", name="group:0")
 	EFeatureMapEntry[] group
 	@ExtendedMetaData(kind="element", name="MultiLanguageText", namespace="##targetNamespace", group="group:0")
-	contains transient volatile derived MultiLanguageTextT[+] multiLanguageText
+	contains transient volatile derived MultiLanguageText[+] multiLanguageText
 }
 
 @ExtendedMetaData(name="SpecificField_._type", kind="elementOnly")
@@ -131,7 +131,7 @@ class SpecificFieldType {
 	@ExtendedMetaData(kind="element", name="AssociatedValues", namespace="##targetNamespace")
 	contains AssociatedValuesType associatedValues
 	@ExtendedMetaData(kind="element", name="SpecificFieldText", namespace="##targetNamespace")
-	contains SpecificFieldTextType specificFieldText
+	contains SpecificFieldTextype specificFieldText
 }
 
 

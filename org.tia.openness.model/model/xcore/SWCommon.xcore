@@ -1,6 +1,6 @@
 @Ecore(nsURI="http://www.tia.openness.model.org/schemas/SW/Common")
 @ExtendedMetaData(qualified="false")
-@GenModel(bundleManifest="false", forceOverwrite="true",modelDirectory="org.tia.openness.model/src/main/java-gen", 
+@GenModel(bundleManifest="false", forceOverwrite="true",modelDirectory="org.tia.openness.model/src/main/java-gen",
 	modelName="Openness", importerID="org.eclipse.xsd.ecore.importer",updateClasspath="false", complianceLevel="8.0")
 package org.tia.openness.model.common
 
@@ -9,26 +9,26 @@ import org.eclipse.emf.ecore.EStringToStringMapEntry
 import org.eclipse.emf.ecore.xml.^type.DateTime
 
 
-@ExtendedMetaData(name="AttributList_T", kind="elementOnly")
-class AttributListT {
+@ExtendedMetaData(name="AttributList", kind="elementOnly")
+class AttributList {
 	@ExtendedMetaData(kind="group", name="group:0")
 	EFeatureMapEntry[] group
 	@GenModel(documentation="A member attribute with a type restriction of boolean.")
 	@ExtendedMetaData(kind="element", name="BooleanAttribute", namespace="##targetNamespace", group="group:0")
-	contains transient volatile derived BooleanAttributeT[] booleanAttribute
+	contains transient volatile derived BooleanAttribute[] booleanAttribute
 	@GenModel(documentation="A member attribute with a type restriction of integer.")
 	@ExtendedMetaData(kind="element", name="IntegerAttribute", namespace="##targetNamespace", group="group:0")
-	contains transient volatile derived IntegerAttributeT[] integerAttribute
+	contains transient volatile derived IntegerAttribute[] integerAttribute
 	@GenModel(documentation="A member attribute with a type restriction of real.")
 	@ExtendedMetaData(kind="element", name="RealAttribute", namespace="##targetNamespace", group="group:0")
-	contains transient volatile derived RealAttributeT[] realAttribute
+	contains transient volatile derived RealAttribute[] realAttribute
 	@GenModel(documentation="A member attribute with a type restriction of string.")
 	@ExtendedMetaData(kind="element", name="StringAttribute", namespace="##targetNamespace", group="group:0")
-	contains transient volatile derived StringAttributeT[] stringAttribute
+	contains transient volatile derived StringAttribute[] stringAttribute
 }
 
-@ExtendedMetaData(name="BooleanAttribute_T", kind="simple")
-class BooleanAttributeT {
+@ExtendedMetaData(name="BooleanAttribute", kind="simple")
+class BooleanAttribute {
 	@ExtendedMetaData(name=":0", kind="simple")
 	unsettable boolean value
 	@GenModel(documentation="Exported only with ReadOnly option, ignored during import.")
@@ -41,15 +41,15 @@ class BooleanAttributeT {
 	unsettable boolean systemDefined = "true"
 }
 
-@ExtendedMetaData(name="Comment_T", kind="elementOnly")
-class CommentT {
+@ExtendedMetaData(name="Comment", kind="elementOnly")
+class Comment {
 	@GenModel(documentation="For NumBLs. NumBLs is the count of the blank spaces before the actual text in the Comment. This is informative.")
 	@ExtendedMetaData(kind="element", name="IntegerAttribute", namespace="##targetNamespace")
-	contains IntegerAttributeT integerAttribute
+	contains IntegerAttribute integerAttribute
 	@ExtendedMetaData(kind="group", name="group:1")
 	EFeatureMapEntry[] group
 	@ExtendedMetaData(kind="element", name="MultiLanguageText", namespace="##targetNamespace", group="group:1")
-	contains transient volatile derived MultiLanguageTextT[] multiLanguageText
+	contains transient volatile derived MultiLanguageText[] multiLanguageText
 	@GenModel(documentation="Exported only with ReadOnly option, ignored during import.")
 	@ExtendedMetaData(kind="attribute", name="Informative", namespace="##targetNamespace")
 	unsettable boolean informative = "false"
@@ -59,11 +59,11 @@ class CommentT {
 }
 
 @ExtendedMetaData(name="Comment_._type", kind="elementOnly")
-class CommentType extends CommentT {
+class Commentype extends Comment {
 }
 
-@ExtendedMetaData(name="DateAttribute_T", kind="simple")
-class DateAttributeT {
+@ExtendedMetaData(name="DateAttribute", kind="simple")
+class DateAttribute {
 	@ExtendedMetaData(name=":0", kind="simple")
 	DateTime value
 	@GenModel(documentation="Exported only with ReadOnly option, ignored during import.")
@@ -85,35 +85,35 @@ class DocumentRoot {
 	@ExtendedMetaData(kind="attribute", name="xsi:schemaLocation")
 	contains transient EStringToStringMapEntry[] xSISchemaLocation
 	@ExtendedMetaData(kind="element", name="AttributeList", namespace="##targetNamespace")
-	contains transient volatile derived AttributListT[0..?] attributeList
+	contains transient volatile derived AttributList[0..?] attributeList
 	@GenModel(documentation="A member attribute with a type restriction of boolean.")
 	@ExtendedMetaData(kind="element", name="BooleanAttribute", namespace="##targetNamespace")
-	contains transient volatile derived BooleanAttributeT[0..?] booleanAttribute
+	contains transient volatile derived BooleanAttribute[0..?] booleanAttribute
 	@GenModel(documentation="Not allowed in STL")
 	@ExtendedMetaData(kind="element", name="Comment", namespace="##targetNamespace")
-	contains transient volatile derived CommentType[0..?] comment
+	contains transient volatile derived Commentype[0..?] comment
 	@ExtendedMetaData(kind="element", name="DateAttribute", namespace="##targetNamespace")
-	contains transient volatile derived DateAttributeT[0..?] dateAttribute
+	contains transient volatile derived DateAttribute[0..?] dateAttribute
 	@GenModel(documentation="A member attribute with a type restriction of integer.")
 	@ExtendedMetaData(kind="element", name="IntegerAttribute", namespace="##targetNamespace")
-	contains transient volatile derived IntegerAttributeT[0..?] integerAttribute
+	contains transient volatile derived IntegerAttribute[0..?] integerAttribute
 	@GenModel(documentation="Not for LAD/FBD ")
 	@ExtendedMetaData(kind="element", name="LineComment", namespace="##targetNamespace")
-	contains transient volatile derived LineCommentT[0..?] lineComment
+	contains transient volatile derived LineComment[0..?] lineComment
 	@ExtendedMetaData(kind="element", name="MultiLanguageText", namespace="##targetNamespace")
-	contains transient volatile derived MultiLanguageTextT[0..?] multiLanguageText
+	contains transient volatile derived MultiLanguageText[0..?] multiLanguageText
 	@GenModel(documentation="A member attribute with a type restriction of real.")
 	@ExtendedMetaData(kind="element", name="RealAttribute", namespace="##targetNamespace")
-	contains transient volatile derived RealAttributeT[0..?] realAttribute
+	contains transient volatile derived RealAttribute[0..?] realAttribute
 	@GenModel(documentation="A member attribute with a type restriction of string.")
 	@ExtendedMetaData(kind="element", name="StringAttribute", namespace="##targetNamespace")
-	contains transient volatile derived StringAttributeT[0..?] stringAttribute
+	contains transient volatile derived StringAttribute[0..?] stringAttribute
 	@ExtendedMetaData(kind="element", name="Text", namespace="##targetNamespace")
-	contains transient volatile derived TextT[0..?] text
+	contains transient volatile derived Text[0..?] text
 	@ExtendedMetaData(kind="element", name="Token", namespace="##targetNamespace")
-	contains transient volatile derived TokenT[0..?] token
+	contains transient volatile derived Token[0..?] token
 	@ExtendedMetaData(kind="element", name="ViewInfo", namespace="##targetNamespace")
-	contains transient volatile derived ViewInfoT[0..?] viewInfo
+	contains transient volatile derived ViewInfo[0..?] viewInfo
 }
 
 @ExtendedMetaData(name="GUID_TP", baseType="http://www.eclipse.org/emf/2003/XMLType#string",
@@ -121,8 +121,8 @@ class DocumentRoot {
 type GUIDTP wraps String
 
 @GenModel(documentation="Not for LAD/FBD.")
-@ExtendedMetaData(name="IntegerAttribute_T", kind="simple")
-class IntegerAttributeT {
+@ExtendedMetaData(name="IntegerAttribute", kind="simple")
+class IntegerAttribute {
 	@ExtendedMetaData(name=":0", kind="simple")
 	org.eclipse.emf.ecore.xml.^type.Integer value
 	@GenModel(documentation="Exported only with ReadOnly option, ignored during import.")
@@ -139,21 +139,21 @@ class IntegerAttributeT {
 	pattern="[a-zA-Z]{2}-[a-zA-Z]{2}")
 type LangTP wraps String
 
-@ExtendedMetaData(name="LineComment_T", kind="elementOnly")
-class LineCommentT {
+@ExtendedMetaData(name="LineComment", kind="elementOnly")
+class LineComment {
 	@GenModel(documentation="For NumBLs. NumBLs is the count of the blank spaces before the actual text in the LineComment. This is informative.")
 	@ExtendedMetaData(kind="element", name="IntegerAttribute", namespace="##targetNamespace")
-	contains IntegerAttributeT integerAttribute
+	contains IntegerAttribute integerAttribute
 	@GenModel(documentation="the value of the comment")
 	@ExtendedMetaData(kind="element", name="Text", namespace="##targetNamespace")
-	contains TextT[1] text
+	contains Text[1] text
 	@GenModel(documentation="Denotes if the comment is at the end of the line (using // or inside the line (using /* *&#47;)")
 	@ExtendedMetaData(kind="attribute", name="Inserted", namespace="##targetNamespace")
 	unsettable boolean inserted = "false"
 }
 
-@ExtendedMetaData(name="MultiLanguageText_T", kind="simple")
-class MultiLanguageTextT {
+@ExtendedMetaData(name="MultiLanguageText", kind="simple")
+class MultiLanguageText {
 	@ExtendedMetaData(name=":0", kind="simple")
 	String value
 	@ExtendedMetaData(kind="attribute", name="Lang", namespace="##targetNamespace")
@@ -180,8 +180,8 @@ enum ProgrammingLanguageTE {
 @ExtendedMetaData(name="ProgrammingLanguage_TE:Object", baseType="ProgrammingLanguage_TE")
 type ProgrammingLanguageTEObject wraps org.eclipse.emf.common.util.Enumerator
 
-@ExtendedMetaData(name="RealAttribute_T", kind="simple")
-class RealAttributeT {
+@ExtendedMetaData(name="RealAttribute", kind="simple")
+class RealAttribute {
 	@ExtendedMetaData(name=":0", kind="simple")
 	unsettable org.eclipse.emf.ecore.xml.^type.Double value
 	@GenModel(documentation="Exported only with ReadOnly option, ignored during import.")
@@ -216,8 +216,8 @@ type SimaticNameTP wraps String
 @ExtendedMetaData(name="SimaticType_TE", baseType="http://www.eclipse.org/emf/2003/XMLType#string")
 type SimaticTypeTE wraps String
 
-@ExtendedMetaData(name="StringAttribute_T", kind="simple")
-class StringAttributeT {
+@ExtendedMetaData(name="StringAttribute", kind="simple")
+class StringAttribute {
 	@ExtendedMetaData(name=":0", kind="simple")
 	String value
 	@GenModel(documentation="Exported only with ReadOnly option, ignored during import.")
@@ -230,33 +230,33 @@ class StringAttributeT {
 	unsettable boolean systemDefined = "true"
 }
 
-@ExtendedMetaData(name="Text_T", kind="simple")
-class TextT {
+@ExtendedMetaData(name="Text", kind="simple")
+class Text {
 	@ExtendedMetaData(name=":0", kind="simple")
 	String value
 }
 
-@ExtendedMetaData(name="Token_T", kind="elementOnly")
-class TokenT {
+@ExtendedMetaData(name="Token", kind="elementOnly")
+class Token {
 	@GenModel(documentation="For NumBLs. NumBLs is the count of the blank spaces at the start.This is informative.")
 	@ExtendedMetaData(kind="element", name="IntegerAttribute", namespace="##targetNamespace")
-	contains IntegerAttributeT integerAttribute
+	contains IntegerAttribute integerAttribute
 	@ExtendedMetaData(kind="attribute", name="Text", namespace="##targetNamespace")
-	TokenTE[1] text
+	TokenE[1] text
 	@GenModel(documentation="Not allowed in STL")
 	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
 	unsettable int uId
 }
 
 @ExtendedMetaData(name="Token_TE", baseType="http://www.eclipse.org/emf/2003/XMLType#string")
-type TokenTE wraps String
+type TokenE wraps String
 
 @ExtendedMetaData(name="VersionString_TP", baseType="http://www.eclipse.org/emf/2003/XMLType#string",
 	pattern="[0-9]+(.[0-9]+){0,3}")
 type VersionStringTP wraps String
 
-@ExtendedMetaData(name="ViewInfo_T", kind="empty")
-class ViewInfoT {
+@ExtendedMetaData(name="ViewInfo", kind="empty")
+class ViewInfo {
 	@ExtendedMetaData(kind="attribute", name="Height", namespace="##targetNamespace")
 	unsettable int height
 	@ExtendedMetaData(kind="attribute", name="Start", namespace="##targetNamespace")
@@ -268,6 +268,3 @@ class ViewInfoT {
 	@ExtendedMetaData(kind="attribute", name="YPos", namespace="##targetNamespace")
 	unsettable int yPos
 }
-
-
-

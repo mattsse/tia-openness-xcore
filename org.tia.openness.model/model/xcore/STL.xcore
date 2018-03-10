@@ -4,46 +4,46 @@
 	importerID="org.eclipse.xsd.ecore.importer",updateClasspath="false", complianceLevel="8.0")
 package org.tia.openness.model.stl
 
-import org.tia.openness.model.compileunit.LabelDeclarationT
-import org.tia.openness.model.common.CommentType
-import org.tia.openness.model.common.IntegerAttributeT
-import org.tia.openness.model.common.LineCommentT
-import org.tia.openness.model.common.TokenT
-import org.tia.openness.model.access.AccessT
+import org.tia.openness.model.compileunit.LabelDeclaration
+import org.tia.openness.model.common.Commentype
+import org.tia.openness.model.common.IntegerAttribute
+import org.tia.openness.model.common.LineComment
+import org.tia.openness.model.common.Token
+import org.tia.openness.model.access.Access
 import org.eclipse.emf.ecore.EFeatureMapEntry
 
 
-@ExtendedMetaData(name="StatementList_T", kind="elementOnly")
-class StatementListT {
+@ExtendedMetaData(name="StatementList", kind="elementOnly")
+class StatementList {
 	@ExtendedMetaData(kind="element", name="StlStatement", namespace="##targetNamespace")
-	contains StlStatementT[] stlStatement
+	contains StlStatement[] stlStatement
 }
 
-@ExtendedMetaData(name="StlStatement_T", kind="elementOnly")
-class StlStatementT {
+@ExtendedMetaData(name="StlStatement", kind="elementOnly")
+class StlStatement {
 	@ExtendedMetaData(kind="group", name="group:0")
 	EFeatureMapEntry[] group
 	@GenModel(documentation="Not allowed in STL")
 	@ExtendedMetaData(kind="element", name="Comment", namespace="##targetNamespace", group="group:0")
-	contains transient volatile derived CommentType[] comment
+	contains transient volatile derived Commentype[] comment
 	@GenModel(documentation="Not for LAD/FBD ")
 	@ExtendedMetaData(kind="element", name="LineComment", namespace="##targetNamespace", group="group:0")
-	contains transient volatile derived LineCommentT[] lineComment
+	contains transient volatile derived LineComment[] lineComment
 	@ExtendedMetaData(kind="element", name="LabelDeclaration", namespace="##targetNamespace")
-	contains LabelDeclarationT labelDeclaration
+	contains LabelDeclaration labelDeclaration
 	@GenModel(documentation="missing for empty lines")
 	@ExtendedMetaData(kind="element", name="StlToken", namespace="##targetNamespace")
-	contains StlTokenT[1] stlToken
+	contains StlToken[1] stlToken
 	@ExtendedMetaData(kind="group", name="group:5")
 	EFeatureMapEntry[] group1
 	@GenModel(documentation="Not allowed in STL")
 	@ExtendedMetaData(kind="element", name="Comment", namespace="##targetNamespace", group="group:5")
-	contains transient volatile derived CommentType[] comment1
+	contains transient volatile derived Commentype[] comment1
 	@GenModel(documentation="Not for LAD/FBD ")
 	@ExtendedMetaData(kind="element", name="LineComment", namespace="##targetNamespace", group="group:5")
-	contains transient volatile derived LineCommentT[] lineComment1
+	contains transient volatile derived LineComment[] lineComment1
 	@ExtendedMetaData(kind="element", name="Access", namespace="##targetNamespace")
-	contains AccessT access
+	contains Access access
 	@GenModel(documentation="Not allowed in STL")
 	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
 	unsettable int uId
@@ -290,22 +290,22 @@ enum STLTE {
 @ExtendedMetaData(name="STL_TE:Object", baseType="STL_TE")
 type STLTEObject wraps org.eclipse.emf.common.util.Enumerator
 
-@ExtendedMetaData(name="StlToken_T", kind="elementOnly")
-class StlTokenT {
+@ExtendedMetaData(name="StlToken", kind="elementOnly")
+class StlToken {
 	@GenModel(documentation="for NumBLs. NumBLs is informative")
 	@ExtendedMetaData(kind="element", name="IntegerAttribute", namespace="##targetNamespace")
-	contains IntegerAttributeT integerAttribute
+	contains IntegerAttribute integerAttribute
 	@ExtendedMetaData(kind="group", name="group:1")
 	EFeatureMapEntry[] group
 	@GenModel(documentation="Not allowed in STL")
 	@ExtendedMetaData(kind="element", name="Comment", namespace="##targetNamespace", group="group:1")
-	contains transient volatile derived CommentType[] comment
+	contains transient volatile derived Commentype[] comment
 	@GenModel(documentation="Not for LAD/FBD ")
 	@ExtendedMetaData(kind="element", name="LineComment", namespace="##targetNamespace", group="group:1")
-	contains transient volatile derived LineCommentT[] lineComment
+	contains transient volatile derived LineComment[] lineComment
 	@GenModel(documentation="e.g 0 1 for NOP 0, NOP 1; STW for L STW or DILG for L DILG; only if separated by comment")
 	@ExtendedMetaData(kind="element", name="Token", namespace="##targetNamespace")
-	contains TokenT token
+	contains Token token
 	@ExtendedMetaData(kind="attribute", name="Text", namespace="##targetNamespace")
 	unsettable STLTE[1] text
 	@GenModel(documentation="Not allowed in STL")
