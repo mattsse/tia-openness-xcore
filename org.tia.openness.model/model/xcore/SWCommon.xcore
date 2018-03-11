@@ -1,7 +1,7 @@
 @Ecore(nsURI="http://www.tia.openness.model.org/schemas/SW/Common")
 @ExtendedMetaData(qualified="false")
 @GenModel(bundleManifest="false", forceOverwrite="true",modelDirectory="org.tia.openness.model/src/main/java-gen",
-	modelName="Openness", importerID="org.eclipse.xsd.ecore.importer",updateClasspath="false", complianceLevel="8.0")
+	prefix="TiaCommon", modelName="Openness", importerID="org.eclipse.xsd.ecore.importer",updateClasspath="false", complianceLevel="8.0")
 package org.tia.openness.model.common
 
 import org.eclipse.emf.ecore.EFeatureMapEntry
@@ -58,10 +58,6 @@ class Comment {
 	unsettable boolean inserted = "false"
 }
 
-@ExtendedMetaData(name="Comment_._type", kind="elementOnly")
-class Commentype extends Comment {
-}
-
 @ExtendedMetaData(name="DateAttribute", kind="simple")
 class DateAttribute {
 	@ExtendedMetaData(name=":0", kind="simple")
@@ -91,7 +87,7 @@ class DocumentRoot {
 	contains transient volatile derived BooleanAttribute[0..?] booleanAttribute
 	@GenModel(documentation="Not allowed in STL")
 	@ExtendedMetaData(kind="element", name="Comment", namespace="##targetNamespace")
-	contains transient volatile derived Commentype[0..?] comment
+	contains transient volatile derived Comment[0..?] comment
 	@ExtendedMetaData(kind="element", name="DateAttribute", namespace="##targetNamespace")
 	contains transient volatile derived DateAttribute[0..?] dateAttribute
 	@GenModel(documentation="A member attribute with a type restriction of integer.")
@@ -119,6 +115,12 @@ class DocumentRoot {
 @ExtendedMetaData(name="GUID_TP", baseType="http://www.eclipse.org/emf/2003/XMLType#string",
 	pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}")
 type GUIDTP wraps String
+
+@ExtendedMetaData(name="IdentCon", kind="empty")
+class IdentCon {
+	@ExtendedMetaData(kind="attribute", name="UId", namespace="##targetNamespace")
+	unsettable int uId
+}
 
 @GenModel(documentation="Not for LAD/FBD.")
 @ExtendedMetaData(name="IntegerAttribute", kind="simple")

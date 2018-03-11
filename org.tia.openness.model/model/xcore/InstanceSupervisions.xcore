@@ -1,7 +1,7 @@
 @Ecore(nsURI="http://www.tia.openness.model.org/schemas/SW/PlcBlocks/InstanceSupervisions")
 @ExtendedMetaData(qualified="false")
 @GenModel(bundleManifest="false", forceOverwrite="true",modelDirectory="org.tia.openness.model/src/main/java-gen", modelName="Openness",
-	importerID="org.eclipse.xsd.ecore.importer",updateClasspath="false", complianceLevel="8.0")
+	prefix="InstanceSupervisions",importerID="org.eclipse.xsd.ecore.importer",updateClasspath="false", complianceLevel="8.0")
 package org.tia.openness.model.instancesupervisions
 
 
@@ -15,7 +15,7 @@ class BlockInstSupervisionGroupsType {
 @ExtendedMetaData(name="BlockInstSupervisionGroup_._type", kind="elementOnly")
 class BlockInstSupervisionGroupType {
 	@ExtendedMetaData(kind="element", name="Multiinstance", namespace="##targetNamespace")
-	contains MultiInstanceype multiinstance
+	contains MultiInstancetype multiinstance
 	@ExtendedMetaData(kind="element", name="BlockInstSupervision", namespace="##targetNamespace")
 	contains BlockInstSupervisionType[+] blockInstSupervision
 }
@@ -31,7 +31,7 @@ class BlockInstSupervisionType {
 }
 
 @ExtendedMetaData(name="Multiinstance_._type", kind="empty")
-class MultiInstanceype {
+class MultiInstancetype {
 	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
 	String[1] name
 }

@@ -1,0 +1,362 @@
+@Ecore(nsPrefix="tiaCore", nsURI="http://www.tia.openness.model.org/schemas/SW/core")
+@ExtendedMetaData(qualified="false")
+@GenModel(bundleManifest="false", forceOverwrite="true", modelDirectory="org.tia.openness.model/src/main/java-gen", prefix="TiaCore",
+	modelName="Openness", importerID="org.eclipse.xsd.ecore.importer", updateClasspath="false", complianceLevel="8.0")
+package org.tia.openness.model.core
+
+import org.eclipse.emf.ecore.EFeatureMapEntry
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.EStringToStringMapEntry
+import org.eclipse.emf.ecore.xml.^type.Boolean
+import org.tia.openness.model.access.AbsoluteOffset
+import org.tia.openness.model.access.Access
+import org.tia.openness.model.access.Address
+import org.tia.openness.model.access.CallInfoype
+import org.tia.openness.model.access.Component
+import org.tia.openness.model.access.Constant
+import org.tia.openness.model.access.ConstantValuetype
+import org.tia.openness.model.access.ConstantypeType
+import org.tia.openness.model.access.Expression
+import org.tia.openness.model.access.Indirect
+import org.tia.openness.model.access.Instance
+import org.tia.openness.model.access.Instruction
+import org.tia.openness.model.access.Label
+import org.tia.openness.model.access.Parameter
+import org.tia.openness.model.access.Statusword
+import org.tia.openness.model.access.Symbol
+import org.tia.openness.model.access.TemplateValue
+import org.tia.openness.model.common.AttributList
+import org.tia.openness.model.common.BooleanAttribute
+import org.tia.openness.model.common.Comment
+import org.tia.openness.model.common.DateAttribute
+import org.tia.openness.model.common.IdentCon
+import org.tia.openness.model.common.IntegerAttribute
+import org.tia.openness.model.common.LineComment
+import org.tia.openness.model.common.MultiLanguageText
+import org.tia.openness.model.common.RealAttribute
+import org.tia.openness.model.common.StringAttribute
+import org.tia.openness.model.common.Text
+import org.tia.openness.model.common.Token
+import org.tia.openness.model.common.ViewInfo
+import org.tia.openness.model.compileunit.LabelDeclaration
+import org.tia.openness.model.graph.Action
+import org.tia.openness.model.graph.Actions
+import org.tia.openness.model.graph.AlarmCategory
+import org.tia.openness.model.graph.AlarmSupervisionCategories
+import org.tia.openness.model.graph.AlarmSupervisionCategory
+import org.tia.openness.model.graph.AlarmSupportingLanguageModule
+import org.tia.openness.model.graph.AlarmText
+import org.tia.openness.model.graph.AlarmsSettings
+import org.tia.openness.model.graph.Branch
+import org.tia.openness.model.graph.BranchRef
+import org.tia.openness.model.graph.Branches
+import org.tia.openness.model.graph.Connection
+import org.tia.openness.model.graph.Connections
+import org.tia.openness.model.graph.Graph
+import org.tia.openness.model.graph.IdentRef
+import org.tia.openness.model.graph.Interlocks
+import org.tia.openness.model.graph.LinkTE
+import org.tia.openness.model.graph.Node
+import org.tia.openness.model.graph.PermanentOperation
+import org.tia.openness.model.graph.PermanentOperations
+import org.tia.openness.model.graph.Sequence
+import org.tia.openness.model.graph.Step
+import org.tia.openness.model.graph.StepRef
+import org.tia.openness.model.graph.Steps
+import org.tia.openness.model.graph.Supervisions
+import org.tia.openness.model.graph.Transition
+import org.tia.openness.model.graph.TransitionRef
+import org.tia.openness.model.graph.Transitions
+import org.tia.openness.model.instancesupervisions.BlockInstSupervisionGroupType
+import org.tia.openness.model.instancesupervisions.BlockInstSupervisionGroupsType
+import org.tia.openness.model.instancesupervisions.BlockInstSupervisionType
+import org.tia.openness.model.instancesupervisions.MultiInstancetype
+import org.tia.openness.model.instancesupervisions.StateStructType
+import org.tia.openness.model.instancesupervisions.SupervisionFBType
+import org.tia.openness.model.interfacesections.Member
+import org.tia.openness.model.interfacesections.Section
+import org.tia.openness.model.interfacesections.Sections
+import org.tia.openness.model.interfacesections.StartValue
+import org.tia.openness.model.interfacesections.Subelement
+import org.tia.openness.model.ladfbd.AutomaticTyped
+import org.tia.openness.model.ladfbd.Call
+import org.tia.openness.model.ladfbd.Equation
+import org.tia.openness.model.ladfbd.FlgNet
+import org.tia.openness.model.ladfbd.Invisible
+import org.tia.openness.model.ladfbd.Labels
+import org.tia.openness.model.ladfbd.NameCon
+import org.tia.openness.model.ladfbd.Neg
+import org.tia.openness.model.ladfbd.OpenCon
+import org.tia.openness.model.ladfbd.Openbranch
+import org.tia.openness.model.ladfbd.Part
+import org.tia.openness.model.ladfbd.Parts
+import org.tia.openness.model.ladfbd.Powerrail
+import org.tia.openness.model.ladfbd.Wire
+import org.tia.openness.model.ladfbd.Wires
+import org.tia.openness.model.stl.StatementList
+import org.tia.openness.model.stl.StlStatement
+import org.tia.openness.model.stl.StlToken
+import org.tia.openness.model.typesupervisions.AssociatedValueOperand
+import org.tia.openness.model.typesupervisions.AssociatedValueType
+import org.tia.openness.model.typesupervisions.AssociatedValues
+import org.tia.openness.model.typesupervisions.BlockTypeSupervision
+import org.tia.openness.model.typesupervisions.CategoryNumber
+import org.tia.openness.model.typesupervisions.ConditionOperand
+import org.tia.openness.model.typesupervisions.Condition
+import org.tia.openness.model.typesupervisions.Conditions
+import org.tia.openness.model.typesupervisions.DelayOperand
+import org.tia.openness.model.typesupervisions.SpecificFieldTextype
+import org.tia.openness.model.typesupervisions.SpecificFieldType
+import org.tia.openness.model.typesupervisions.SupervisedOperandType
+import org.tia.openness.model.typesupervisions.TypeType
+
+class Dummy{}
+
+
+@ExtendedMetaData(name="", kind="mixed")
+class DocumentRoot {
+	@ExtendedMetaData(kind="elementWildcard", name=":mixed")
+	EFeatureMapEntry[] mixed
+	@ExtendedMetaData(kind="attribute", name="xmlns:prefix")
+	contains transient EStringToStringMapEntry[] xMLNSPrefixMap
+	@ExtendedMetaData(kind="attribute", name="xsi:schemaLocation")
+	contains transient EStringToStringMapEntry[] xSISchemaLocation
+	@ExtendedMetaData(kind="element", name="AttributeList", namespace="##targetNamespace")
+	contains transient volatile derived AttributList[0..?] attributeList
+	@GenModel(documentation="A member attribute with a type restriction of boolean.")
+	@ExtendedMetaData(kind="element", name="BooleanAttribute", namespace="##targetNamespace")
+	contains transient volatile derived BooleanAttribute[0..?] booleanAttribute
+	@GenModel(documentation="Not allowed in STL")
+	@ExtendedMetaData(kind="element", name="Comment", namespace="##targetNamespace")
+	contains transient volatile derived Comment[0..?] comment
+	@ExtendedMetaData(kind="element", name="DateAttribute", namespace="##targetNamespace")
+	contains transient volatile derived DateAttribute[0..?] dateAttribute
+	@GenModel(documentation="A member attribute with a type restriction of integer.")
+	@ExtendedMetaData(kind="element", name="IntegerAttribute", namespace="##targetNamespace")
+	contains transient volatile derived IntegerAttribute[0..?] integerAttribute
+	@GenModel(documentation="Not for LAD/FBD ")
+	@ExtendedMetaData(kind="element", name="LineComment", namespace="##targetNamespace")
+	contains transient volatile derived LineComment[0..?] lineComment
+	@ExtendedMetaData(kind="element", name="MultiLanguageText", namespace="##targetNamespace")
+	contains transient volatile derived MultiLanguageText[0..?] multiLanguageText
+	@GenModel(documentation="A member attribute with a type restriction of real.")
+	@ExtendedMetaData(kind="element", name="RealAttribute", namespace="##targetNamespace")
+	contains transient volatile derived RealAttribute[0..?] realAttribute
+	@GenModel(documentation="A member attribute with a type restriction of string.")
+	@ExtendedMetaData(kind="element", name="StringAttribute", namespace="##targetNamespace")
+	contains transient volatile derived StringAttribute[0..?] stringAttribute
+	@ExtendedMetaData(kind="element", name="Text", namespace="##targetNamespace")
+	contains transient volatile derived Text[0..?] text
+	@ExtendedMetaData(kind="element", name="Token", namespace="##targetNamespace")
+	contains transient volatile derived Token[0..?] token
+	@ExtendedMetaData(kind="element", name="ViewInfo", namespace="##targetNamespace")
+	contains transient volatile derived ViewInfo[0..?] viewInfo
+	@ExtendedMetaData(kind="element", name="Member", namespace="##targetNamespace")
+	contains transient volatile derived Member[0..?] member
+	@ExtendedMetaData(kind="element", name="Section", namespace="##targetNamespace")
+	contains transient volatile derived Section[0..?] section
+	@ExtendedMetaData(kind="element", name="Sections", namespace="##targetNamespace")
+	contains transient volatile derived Sections[0..?] sections
+	@ExtendedMetaData(kind="element", name="StartValue", namespace="##targetNamespace")
+	contains transient volatile derived StartValue[0..?] startValue
+	@ExtendedMetaData(kind="element", name="Subelement", namespace="##targetNamespace")
+	contains transient volatile derived Subelement[0..?] subelement
+	@ExtendedMetaData(kind="element", name="AbsoluteOffset", namespace="##targetNamespace")
+	contains transient volatile derived AbsoluteOffset[0..?] absoluteOffset
+	@ExtendedMetaData(kind="element", name="Access", namespace="##targetNamespace")
+	contains transient volatile derived Access[0..?] access
+	@ExtendedMetaData(kind="element", name="Address", namespace="##targetNamespace")
+	contains transient volatile derived Address[0..?] address
+	@ExtendedMetaData(kind="element", name="CallInfo", namespace="##targetNamespace")
+	contains transient volatile derived CallInfoype[0..?] callInfo
+	@ExtendedMetaData(kind="element", name="Component", namespace="##targetNamespace")
+	contains transient volatile derived Component[0..?] component
+	@ExtendedMetaData(kind="element", name="Constant", namespace="##targetNamespace")
+	contains transient volatile derived Constant[0..?] constant
+	@ExtendedMetaData(kind="element", name="ConstantType", namespace="##targetNamespace")
+	contains transient volatile derived ConstantypeType[0..?] constantType
+	@ExtendedMetaData(kind="element", name="ConstantValue", namespace="##targetNamespace")
+	contains transient volatile derived ConstantValuetype[0..?] constantValue
+	@ExtendedMetaData(kind="element", name="Expression", namespace="##targetNamespace")
+	contains transient volatile derived Expression[0..?] expression
+	@ExtendedMetaData(kind="element", name="Indirect", namespace="##targetNamespace")
+	contains transient volatile derived Indirect[0..?] indirect
+	@ExtendedMetaData(kind="element", name="Instance", namespace="##targetNamespace")
+	contains transient volatile derived Instance[0..?] instance
+	@ExtendedMetaData(kind="element", name="Instruction", namespace="##targetNamespace")
+	contains transient volatile derived Instruction[0..?] instruction
+	@ExtendedMetaData(kind="element", name="Label", namespace="##targetNamespace")
+	contains transient volatile derived Label[0..?] label
+	@ExtendedMetaData(kind="element", name="Parameter", namespace="##targetNamespace")
+	contains transient volatile derived Parameter[0..?] parameter
+	@GenModel(documentation="Only for S7-300/400/WinAC")
+	@ExtendedMetaData(kind="element", name="Statusword", namespace="##targetNamespace")
+	contains transient volatile derived Statusword[0..?] statusword
+	@ExtendedMetaData(kind="element", name="Symbol", namespace="##targetNamespace")
+	contains transient volatile derived Symbol[0..?] symbol
+	@ExtendedMetaData(kind="element", name="TemplateValue", namespace="##targetNamespace")
+	contains transient volatile derived TemplateValue[0..?] templateValue
+	@ExtendedMetaData(kind="element", name="LabelDeclaration", namespace="##targetNamespace")
+	contains transient volatile derived LabelDeclaration[0..?] labelDeclaration
+	@ExtendedMetaData(kind="element", name="Action", namespace="##targetNamespace")
+	contains transient volatile derived Action[0..?] action
+	@ExtendedMetaData(kind="element", name="Actions", namespace="##targetNamespace")
+	contains transient volatile derived Actions[0..?] actions
+	@ExtendedMetaData(kind="element", name="AlarmInterlockCategory", namespace="##targetNamespace")
+	contains transient volatile derived AlarmCategory[0..?] alarmInterlockCategory
+	@ExtendedMetaData(kind="element", name="AlarmsSettings", namespace="##targetNamespace")
+	contains transient volatile derived AlarmsSettings[0..?] alarmsSettings
+	@ExtendedMetaData(kind="element", name="AlarmSupervisionCategories", namespace="##targetNamespace")
+	contains transient volatile derived AlarmSupervisionCategories[0..?] alarmSupervisionCategories
+	@ExtendedMetaData(kind="element", name="AlarmSupervisionCategory", namespace="##targetNamespace")
+	contains transient volatile derived AlarmSupervisionCategory[0..?] alarmSupervisionCategory
+	@ExtendedMetaData(kind="element", name="AlarmText", namespace="##targetNamespace")
+	contains transient volatile derived AlarmText[0..?] alarmText
+	@ExtendedMetaData(kind="element", name="AlarmWarningCategory", namespace="##targetNamespace")
+	contains transient volatile derived AlarmCategory[0..?] alarmWarningCategory
+	@ExtendedMetaData(kind="element", name="AutomaticTyped", namespace="##targetNamespace")
+	contains transient volatile derived AutomaticTyped[0..?] automaticTyped
+	@ExtendedMetaData(kind="element", name="Branch", namespace="##targetNamespace")
+	contains transient volatile derived Branch[0..?] branch
+	@ExtendedMetaData(kind="element", name="Branches", namespace="##targetNamespace")
+	contains transient volatile derived Branches[0..?] branches
+	@ExtendedMetaData(kind="element", name="BranchRef", namespace="##targetNamespace")
+	contains transient volatile derived BranchRef[0..?] branchRef
+	@ExtendedMetaData(kind="element", name="Call", namespace="##targetNamespace")
+	contains transient volatile derived Call[0..?] call
+	@ExtendedMetaData(kind="element", name="Connection", namespace="##targetNamespace")
+	contains transient volatile derived Connection[0..?] connection
+	@ExtendedMetaData(kind="element", name="Connections", namespace="##targetNamespace")
+	contains transient volatile derived Connections[0..?] connections
+	@ExtendedMetaData(kind="element", name="EndConnection", namespace="##targetNamespace")
+	contains transient volatile derived EObject[0..?] endConnection
+	@ExtendedMetaData(kind="element", name="Equation", namespace="##targetNamespace")
+	contains transient volatile derived Equation[0..?] equation
+	@ExtendedMetaData(kind="element", name="FlgNet", namespace="##targetNamespace")
+	contains transient volatile derived FlgNet[0..?] flgNet
+	@ExtendedMetaData(kind="element", name="Graph", namespace="##targetNamespace")
+	contains transient volatile derived Graph[0..?] graph
+	@ExtendedMetaData(kind="element", name="IdentCon", namespace="##targetNamespace")
+	contains transient volatile derived IdentCon[0..?] identCon
+	@ExtendedMetaData(kind="element", name="IdentRef", namespace="##targetNamespace")
+	contains transient volatile derived IdentRef[0..?] identRef
+	@ExtendedMetaData(kind="element", name="Interlock", namespace="##targetNamespace")
+	contains transient volatile derived AlarmSupportingLanguageModule[0..?] interlock
+	@ExtendedMetaData(kind="element", name="Interlocks", namespace="##targetNamespace")
+	contains transient volatile derived Interlocks[0..?] interlocks
+	@GenModel(documentation="The invisible pins of this part.")
+	@ExtendedMetaData(kind="element", name="Invisible", namespace="##targetNamespace")
+	contains transient volatile derived Invisible[0..?] invisible
+	@ExtendedMetaData(kind="element", name="Labels", namespace="##targetNamespace")
+	contains transient volatile derived Labels[0..?] labels
+	@ExtendedMetaData(kind="element", name="LinkType", namespace="##targetNamespace")
+	transient volatile derived LinkTE[0..?] linkType
+	@ExtendedMetaData(kind="element", name="NameCon", namespace="##targetNamespace")
+	contains transient volatile derived NameCon[0..?] nameCon
+	@GenModel(documentation="The negated pins of this part.")
+	@ExtendedMetaData(kind="element", name="Negated", namespace="##targetNamespace")
+	contains transient volatile derived Neg[0..?] negated
+	@ExtendedMetaData(kind="element", name="NodeFrom", namespace="##targetNamespace")
+	contains transient volatile derived Node[0..?] nodeFrom
+	@ExtendedMetaData(kind="element", name="NodeTo", namespace="##targetNamespace")
+	contains transient volatile derived Node[0..?] nodeTo
+	@ExtendedMetaData(kind="element", name="Openbranch", namespace="##targetNamespace")
+	contains transient volatile derived Openbranch[0..?] openbranch
+	@ExtendedMetaData(kind="element", name="OpenCon", namespace="##targetNamespace")
+	contains transient volatile derived OpenCon[0..?] openCon
+	@ExtendedMetaData(kind="element", name="Part", namespace="##targetNamespace")
+	contains transient volatile derived Part[0..?] part
+	@ExtendedMetaData(kind="element", name="Parts", namespace="##targetNamespace")
+	contains transient volatile derived Parts[0..?] parts
+	@ExtendedMetaData(kind="element", name="PermanentOperation", namespace="##targetNamespace")
+	contains transient volatile derived PermanentOperation[0..?] permanentOperation
+	@ExtendedMetaData(kind="element", name="PostOperations", namespace="##targetNamespace")
+	contains transient volatile derived PermanentOperations[0..?] postOperations
+	@ExtendedMetaData(kind="element", name="Powerrail", namespace="##targetNamespace")
+	contains transient volatile derived Powerrail[0..?] powerrail
+	@ExtendedMetaData(kind="element", name="PreOperations", namespace="##targetNamespace")
+	contains transient volatile derived PermanentOperations[0..?] preOperations
+	@ExtendedMetaData(kind="element", name="Sequence", namespace="##targetNamespace")
+	contains transient volatile derived Sequence[0..?] sequence
+	@ExtendedMetaData(kind="element", name="Step", namespace="##targetNamespace")
+	contains transient volatile derived Step[0..?] step
+	@ExtendedMetaData(kind="element", name="StepRef", namespace="##targetNamespace")
+	contains transient volatile derived StepRef[0..?] stepRef
+	@ExtendedMetaData(kind="element", name="Steps", namespace="##targetNamespace")
+	contains transient volatile derived Steps[0..?] steps
+	@ExtendedMetaData(kind="element", name="Supervision", namespace="##targetNamespace")
+	contains transient volatile derived AlarmSupportingLanguageModule[0..?] supervision
+	@ExtendedMetaData(kind="element", name="Supervisions", namespace="##targetNamespace")
+	contains transient volatile derived Supervisions[0..?] supervisions
+	@ExtendedMetaData(kind="element", name="Title", namespace="##targetNamespace")
+	contains transient volatile derived Comment[0..?] title
+	@ExtendedMetaData(kind="element", name="Transition", namespace="##targetNamespace")
+	contains transient volatile derived Transition[0..?] transition
+	@ExtendedMetaData(kind="element", name="TransitionRef", namespace="##targetNamespace")
+	contains transient volatile derived TransitionRef[0..?] transitionRef
+	@ExtendedMetaData(kind="element", name="Transitions", namespace="##targetNamespace")
+	contains transient volatile derived Transitions[0..?] transitions
+	@ExtendedMetaData(kind="element", name="Wire", namespace="##targetNamespace")
+	contains transient volatile derived Wire[0..?] wire
+	@ExtendedMetaData(kind="element", name="Wires", namespace="##targetNamespace")
+	contains transient volatile derived Wires[0..?] wires
+	@ExtendedMetaData(kind="element", name="BlockInstSupervision", namespace="##targetNamespace")
+	contains transient volatile derived BlockInstSupervisionType[0..?] blockInstSupervision
+	@ExtendedMetaData(kind="element", name="BlockInstSupervisionGroup", namespace="##targetNamespace")
+	contains transient volatile derived BlockInstSupervisionGroupType[0..?] blockInstSupervisionGroup
+	@ExtendedMetaData(kind="element", name="BlockInstSupervisionGroups", namespace="##targetNamespace")
+	contains transient volatile derived BlockInstSupervisionGroupsType[0..?] blockInstSupervisionGroups
+	@ExtendedMetaData(kind="element", name="BlockTypeSupervisionNumber", namespace="##targetNamespace")
+	transient volatile derived int[0..?] blockTypeSupervisionNumber
+	@ExtendedMetaData(kind="element", name="Multiinstance", namespace="##targetNamespace")
+	contains transient volatile derived MultiInstancetype[0..?] multiinstance
+	@ExtendedMetaData(kind="element", name="Number", namespace="##targetNamespace")
+	transient volatile derived int[0..?] number
+	@ExtendedMetaData(kind="element", name="StateStruct", namespace="##targetNamespace")
+	contains transient volatile derived StateStructType[0..?] stateStruct
+	@ExtendedMetaData(kind="element", name="SupervisionFB", namespace="##targetNamespace")
+	contains transient volatile derived SupervisionFBType[0..?] supervisionFB
+	@ExtendedMetaData(kind="element", name="StatementList", namespace="##targetNamespace")
+	contains transient volatile derived StatementList[0..?] statementList
+	@ExtendedMetaData(kind="element", name="StlStatement", namespace="##targetNamespace")
+	contains transient volatile derived StlStatement[0..?] stlStatement
+	@ExtendedMetaData(kind="element", name="StlToken", namespace="##targetNamespace")
+	contains transient volatile derived StlToken[0..?] stlToken
+	@ExtendedMetaData(kind="element", name="AssociatedValue", namespace="##targetNamespace")
+	contains transient volatile derived AssociatedValueType[0..?] associatedValue
+	@ExtendedMetaData(kind="element", name="AssociatedValueOperand", namespace="##targetNamespace")
+	contains transient volatile derived AssociatedValueOperand[0..?] associatedValueOperand
+	@ExtendedMetaData(kind="element", name="AssociatedValues", namespace="##targetNamespace")
+	contains transient volatile derived AssociatedValues[0..?] associatedValues
+	@ExtendedMetaData(kind="element", name="BlockTypeSupervision", namespace="##targetNamespace")
+	contains transient volatile derived BlockTypeSupervision[0..?] blockTypeSupervision
+	@ExtendedMetaData(kind="element", name="CategoryNumber", namespace="##targetNamespace")
+	transient volatile derived CategoryNumber[0..?] categoryNumber
+	@ExtendedMetaData(kind="element", name="Condition", namespace="##targetNamespace")
+	contains transient volatile derived Condition[0..?] condition
+	@ExtendedMetaData(kind="element", name="ConditionOperand", namespace="##targetNamespace")
+	contains transient volatile derived ConditionOperand[0..?] conditionOperand
+	@ExtendedMetaData(kind="element", name="Conditions", namespace="##targetNamespace")
+	contains transient volatile derived Conditions[0..?] conditions
+	@ExtendedMetaData(kind="element", name="DelayOperand", namespace="##targetNamespace")
+	contains transient volatile derived DelayOperand[0..?] delayOperand
+	@ExtendedMetaData(kind="element", name="Number", namespace="##targetNamespace")
+	transient volatile derived int[0..?] number1
+	@ExtendedMetaData(kind="element", name="SpecificField", namespace="##targetNamespace")
+	contains transient volatile derived SpecificFieldType[0..?] specificField
+	@ExtendedMetaData(kind="element", name="SpecificFieldText", namespace="##targetNamespace")
+	contains transient volatile derived SpecificFieldTextype[0..?] specificFieldText
+	@ExtendedMetaData(kind="element", name="SubCategory1Number", namespace="##targetNamespace")
+	transient volatile derived int[0..?] subCategory1Number
+	@ExtendedMetaData(kind="element", name="SubCategory2Number", namespace="##targetNamespace")
+	transient volatile derived int[0..?] subCategory2Number
+	@ExtendedMetaData(kind="element", name="SupervisedOperand", namespace="##targetNamespace")
+	contains transient volatile derived SupervisedOperandType[0..?] supervisedOperand
+	@ExtendedMetaData(kind="element", name="SupervisedStatus", namespace="##targetNamespace")
+	transient volatile derived org.eclipse.emf.ecore.xml.^type.Boolean[0..?] supervisedStatus
+	@ExtendedMetaData(kind="element", name="TriggeringStatus", namespace="##targetNamespace")
+	transient volatile derived org.eclipse.emf.ecore.xml.^type.Boolean[0..?] triggeringStatus
+	@ExtendedMetaData(kind="element", name="Type", namespace="##targetNamespace")
+	transient volatile derived TypeType[0..?] ^type
+}
+

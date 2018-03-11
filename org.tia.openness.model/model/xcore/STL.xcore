@@ -1,11 +1,11 @@
 @Ecore(nsURI="http://www.tia.openness.model.org/schemas/SW/PlcBlocks/STL")
 @ExtendedMetaData(qualified="false")
 @GenModel(bundleManifest="false", forceOverwrite="true",modelDirectory="org.tia.openness.model/src/main/java-gen", modelName="Openness",
-	importerID="org.eclipse.xsd.ecore.importer",updateClasspath="false", complianceLevel="8.0")
+	prefix="Stl",importerID="org.eclipse.xsd.ecore.importer",updateClasspath="false", complianceLevel="8.0")
 package org.tia.openness.model.stl
 
 import org.tia.openness.model.compileunit.LabelDeclaration
-import org.tia.openness.model.common.Commentype
+import org.tia.openness.model.common.Comment
 import org.tia.openness.model.common.IntegerAttribute
 import org.tia.openness.model.common.LineComment
 import org.tia.openness.model.common.Token
@@ -25,7 +25,7 @@ class StlStatement {
 	EFeatureMapEntry[] group
 	@GenModel(documentation="Not allowed in STL")
 	@ExtendedMetaData(kind="element", name="Comment", namespace="##targetNamespace", group="group:0")
-	contains transient volatile derived Commentype[] comment
+	contains transient volatile derived Comment[] comment
 	@GenModel(documentation="Not for LAD/FBD ")
 	@ExtendedMetaData(kind="element", name="LineComment", namespace="##targetNamespace", group="group:0")
 	contains transient volatile derived LineComment[] lineComment
@@ -38,7 +38,7 @@ class StlStatement {
 	EFeatureMapEntry[] group1
 	@GenModel(documentation="Not allowed in STL")
 	@ExtendedMetaData(kind="element", name="Comment", namespace="##targetNamespace", group="group:5")
-	contains transient volatile derived Commentype[] comment1
+	contains transient volatile derived Comment[] comment1
 	@GenModel(documentation="Not for LAD/FBD ")
 	@ExtendedMetaData(kind="element", name="LineComment", namespace="##targetNamespace", group="group:5")
 	contains transient volatile derived LineComment[] lineComment1
@@ -299,7 +299,7 @@ class StlToken {
 	EFeatureMapEntry[] group
 	@GenModel(documentation="Not allowed in STL")
 	@ExtendedMetaData(kind="element", name="Comment", namespace="##targetNamespace", group="group:1")
-	contains transient volatile derived Commentype[] comment
+	contains transient volatile derived Comment[] comment
 	@GenModel(documentation="Not for LAD/FBD ")
 	@ExtendedMetaData(kind="element", name="LineComment", namespace="##targetNamespace", group="group:1")
 	contains transient volatile derived LineComment[] lineComment

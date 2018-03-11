@@ -1,11 +1,11 @@
 @Ecore(nsURI="http://www.tia.openness.model.org/schemas/SW/InterfaceSections/v2")
 @ExtendedMetaData(qualified="false")
 @GenModel(bundleManifest="false", forceOverwrite="true",modelDirectory="org.tia.openness.model/src/main/java-gen", modelName="Openness",
-	importerID="org.eclipse.xsd.ecore.importer",updateClasspath="false", complianceLevel="8.0")
+	prefix="InterfaceSections", importerID="org.eclipse.xsd.ecore.importer",updateClasspath="false", complianceLevel="8.0")
 package org.tia.openness.model.interfacesections
 
 import org.tia.openness.model.common.AttributList
-import org.tia.openness.model.common.Commentype
+import org.tia.openness.model.common.Comment
 import org.tia.openness.model.common.SimaticNameTP
 import org.tia.openness.model.common.SimaticTypeTE
 import org.eclipse.emf.ecore.EFeatureMapEntry
@@ -31,12 +31,12 @@ class Member {
 	@ExtendedMetaData(kind="element", name="Member", namespace="##targetNamespace", group="group:1")
 	contains transient volatile derived Member[] member
 	@ExtendedMetaData(kind="element", name="Sections", namespace="##targetNamespace", group="group:1")
-	contains transient volatile derived SectionsT[] sections
+	contains transient volatile derived Sections[] sections
 	@ExtendedMetaData(kind="element", name="StartValue", namespace="##targetNamespace", group="group:1")
 	contains transient volatile derived StartValue[] startValue
 	@GenModel(documentation="Not allowed in STL")
 	@ExtendedMetaData(kind="element", name="Comment", namespace="##targetNamespace", group="group:1")
-	contains transient volatile derived Commentype[] comment
+	contains transient volatile derived Comment[] comment
 	@ExtendedMetaData(kind="element", name="Subelement", namespace="##targetNamespace", group="group:1")
 	contains transient volatile derived Subelement[] subelement
 	@ExtendedMetaData(kind="attribute", name="Accessibility", namespace="##targetNamespace")
@@ -81,8 +81,8 @@ enum SectionNameTE {
 @ExtendedMetaData(name="SectionName_TE:Object", baseType="SectionName_TE")
 type SectionNameTEObject wraps org.eclipse.emf.common.util.Enumerator
 
-@ExtendedMetaData(name="Sections_T", kind="elementOnly")
-class SectionsT {
+@ExtendedMetaData(name="Sections", kind="elementOnly")
+class Sections {
 	@ExtendedMetaData(kind="element", name="AttributeList", namespace="##targetNamespace")
 	contains AttributList attributeList
 	@ExtendedMetaData(kind="element", name="Section", namespace="##targetNamespace")
@@ -97,7 +97,7 @@ class SectionsT {
 class Section {
 	@GenModel(documentation="Base Class")
 	@ExtendedMetaData(kind="element", name="Sections", namespace="##targetNamespace")
-	contains SectionsT sections
+	contains Sections sections
 	@ExtendedMetaData(kind="element", name="Member", namespace="##targetNamespace")
 	contains Member[] member
 	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
@@ -124,7 +124,7 @@ class Subelement {
 	contains transient volatile derived StartValue[] startValue
 	@GenModel(documentation="Not allowed in STL")
 	@ExtendedMetaData(kind="element", name="Comment", namespace="##targetNamespace", group="group:0")
-	contains transient volatile derived Commentype[] comment
+	contains transient volatile derived Comment[] comment
 	@ExtendedMetaData(kind="attribute", name="Path", namespace="##targetNamespace")
 	IndexPathTP path
 }

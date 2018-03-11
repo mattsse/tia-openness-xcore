@@ -1,23 +1,23 @@
 @Ecore(nsURI="http://www.tia.openness.model.org/schemas/SW/PlcBlocks/TypeSupervisions")
 @ExtendedMetaData(qualified="false")
 @GenModel(bundleManifest="false", forceOverwrite="true",modelDirectory="org.tia.openness.model/src/main/java-gen", modelName="Openness",
-	importerID="org.eclipse.xsd.ecore.importer",updateClasspath="false", complianceLevel="8.0")
+	prefix="TypeSupervisions", importerID="org.eclipse.xsd.ecore.importer",updateClasspath="false", complianceLevel="8.0")
 package org.tia.openness.model.typesupervisions
 
 import org.tia.openness.model.common.MultiLanguageText
 import org.eclipse.emf.ecore.EFeatureMapEntry
 
 
-@ExtendedMetaData(name="AssociatedValueOperand_._type", kind="empty")
-class AssociatedValueOperandType {
+@ExtendedMetaData(name="AssociatedValueOperand", kind="empty")
+class AssociatedValueOperand {
 	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
 	String[1] name
 	@ExtendedMetaData(kind="attribute", name="Number", namespace="##targetNamespace")
-	unsettable NumberType1[1] number
+	unsettable NumberType[1] number
 }
 
-@ExtendedMetaData(name="AssociatedValues_._type", kind="elementOnly")
-class AssociatedValuesType {
+@ExtendedMetaData(name="AssociatedValues", kind="elementOnly")
+class AssociatedValues {
 	@ExtendedMetaData(kind="element", name="AssociatedValue", namespace="##targetNamespace")
 	contains AssociatedValueType[1..3] associatedValue
 }
@@ -25,31 +25,27 @@ class AssociatedValuesType {
 @ExtendedMetaData(name="AssociatedValue_._type", kind="elementOnly")
 class AssociatedValueType {
 	@ExtendedMetaData(kind="element", name="AssociatedValueOperand", namespace="##targetNamespace")
-	contains AssociatedValueOperandType associatedValueOperand
+	contains AssociatedValueOperand associatedValueOperand
 }
 
-@ExtendedMetaData(name="BlockTypeSupervisionsype", kind="elementOnly")
-class BlockTypeSupervisionsype {
+@ExtendedMetaData(name="BlockTypeSupervisions", kind="elementOnly")
+class BlockTypeSupervisions {
 	@ExtendedMetaData(kind="element", name="BlockTypeSupervision", namespace="##targetNamespace")
-	contains BlockTypeSupervisionType[+] blockTypeSupervision
+	contains BlockTypeSupervision[+] blockTypeSupervision
 }
 
-@ExtendedMetaData(name="BlockTypeSupervisions_._type", kind="elementOnly")
-class BlockTypeSupervisionsype1 extends BlockTypeSupervisionsype {
-}
-
-@ExtendedMetaData(name="BlockTypeSupervision_._type", kind="elementOnly")
-class BlockTypeSupervisionType {
+@ExtendedMetaData(name="BlockTypeSupervision", kind="elementOnly")
+class BlockTypeSupervision {
 	@ExtendedMetaData(kind="element", name="SupervisedOperand", namespace="##targetNamespace")
 	contains SupervisedOperandType[1] supervisedOperand
 	@ExtendedMetaData(kind="element", name="SupervisedStatus", namespace="##targetNamespace")
 	unsettable boolean supervisedStatus
 	@ExtendedMetaData(kind="element", name="DelayOperand", namespace="##targetNamespace")
-	contains DelayOperandType delayOperand
+	contains DelayOperand delayOperand
 	@ExtendedMetaData(kind="element", name="Conditions", namespace="##targetNamespace")
-	contains ConditionsType conditions
+	contains Conditions conditions
 	@ExtendedMetaData(kind="element", name="CategoryNumber", namespace="##targetNamespace")
-	unsettable CategoryNumberType[1] categoryNumber
+	unsettable CategoryNumber[1] categoryNumber
 	@ExtendedMetaData(kind="element", name="SubCategory1Number", namespace="##targetNamespace")
 	unsettable int subCategory1Number
 	@ExtendedMetaData(kind="element", name="SubCategory2Number", namespace="##targetNamespace")
@@ -59,53 +55,46 @@ class BlockTypeSupervisionType {
 	@ExtendedMetaData(kind="attribute", name="Number", namespace="##targetNamespace")
 	unsettable int number
 	@ExtendedMetaData(kind="attribute", name="Type", namespace="##targetNamespace")
-	unsettable TypeType1[1] ^type
+	unsettable TypeType[1] ^type
 }
 
-@ExtendedMetaData(name="CategoryNumber_._type", baseType="http://www.eclipse.org/emf/2003/XMLType#int",
+@ExtendedMetaData(name="CategoryNumber", baseType="http://www.eclipse.org/emf/2003/XMLType#int",
 	minInclusive="1", maxInclusive="8")
-type CategoryNumberType wraps int
+type CategoryNumber wraps int
 
 @ExtendedMetaData(name="CategoryNumber_._type:Object", baseType="CategoryNumber_._type")
-type CategoryNumberTypeObject wraps Integer
+type CategoryNumberObject wraps Integer
 
-@ExtendedMetaData(name="ConditionOperand_._type", kind="empty")
-class ConditionOperandType {
+@ExtendedMetaData(name="ConditionOperand", kind="empty")
+class ConditionOperand {
 	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
 	String[1] name
 	@ExtendedMetaData(kind="attribute", name="Number", namespace="##targetNamespace")
 	unsettable NumberType[1] number
 }
 
-@ExtendedMetaData(name="Conditions_._type", kind="elementOnly")
-class ConditionsType {
+@ExtendedMetaData(name="Conditions", kind="elementOnly")
+class Conditions {
 	@ExtendedMetaData(kind="element", name="Condition", namespace="##targetNamespace")
-	contains ConditionType[1..3] condition
+	contains Condition[1..3] condition
 }
 
-@ExtendedMetaData(name="Condition_._type", kind="elementOnly")
-class ConditionType {
+@ExtendedMetaData(name="Condition", kind="elementOnly")
+class Condition {
 	@ExtendedMetaData(kind="element", name="ConditionOperand", namespace="##targetNamespace")
-	contains ConditionOperandType[1] conditionOperand
+	contains ConditionOperand[1] conditionOperand
 	@ExtendedMetaData(kind="element", name="TriggeringStatus", namespace="##targetNamespace")
 	unsettable boolean triggeringStatus
 }
 
-@ExtendedMetaData(name="DelayOperand_._type", kind="empty")
-class DelayOperandType {
+@ExtendedMetaData(name="DelayOperand", kind="empty")
+class DelayOperand {
 	@ExtendedMetaData(kind="attribute", name="Name", namespace="##targetNamespace")
 	String[1] name
 }
 
 @ExtendedMetaData(name="Number_._type")
 enum NumberType {
-	_1 as "1"
-	_2 as "2" = 1
-	_3 as "3" = 2
-}
-
-@ExtendedMetaData(name="Number_._1_._type")
-enum NumberType1 {
 	_1 as "1"
 	_2 as "2" = 1
 	_3 as "3" = 2
@@ -129,7 +118,7 @@ class SpecificFieldTextype {
 @ExtendedMetaData(name="SpecificField_._type", kind="elementOnly")
 class SpecificFieldType {
 	@ExtendedMetaData(kind="element", name="AssociatedValues", namespace="##targetNamespace")
-	contains AssociatedValuesType associatedValues
+	contains AssociatedValues associatedValues
 	@ExtendedMetaData(kind="element", name="SpecificFieldText", namespace="##targetNamespace")
 	contains SpecificFieldTextype specificFieldText
 }
@@ -144,17 +133,6 @@ class SupervisedOperandType {
 
 @ExtendedMetaData(name="Type_._type")
 enum TypeType {
-	Action
-	Interlock = 1
-	Operand = 2
-	Position = 3
-	Reaction = 4
-	MessageText = 5
-	MessageError = 6
-}
-
-@ExtendedMetaData(name="Type_._1_._type")
-enum TypeType1 {
 	Action
 	Interlock = 1
 	Operand = 2
