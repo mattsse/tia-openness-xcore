@@ -6,8 +6,9 @@ dependencies {
     compile 'org.eclipse.emf:org.eclipse.emf.ecore:+'
     compile 'org.eclipse.emf:org.eclipse.emf.ecore.xcore.lib:+'
     compile "org.eclipse.xtext:org.eclipse.xtext.xbase.lib:$versions.xtext"
-//	xtextLanguages "org.eclipse.emf:org.eclipse.emf.codegen:2.12+"
-//
+    	xtextLanguages "org.eclipse.emf:org.eclipse.emf.ecore.xmi:$versions.emf"
+    	xtextLanguages "org.eclipse.xtend:org.eclipse.xtend.lib:$versions.xtext"
+    	
 	xtextLanguages "org.eclipse.emf:org.eclipse.emf.mwe2.runtime:2.9.1+"
 	xtextLanguages "org.eclipse.emf:org.eclipse.emf.mwe2.launch:2.9.1+"
 
@@ -43,10 +44,7 @@ xtext {
     version = "$versions.xtext"
     sourceSets {
         main {
-            srcDir 'model'
-            output {
-                dir(xtext.languages.xcore.generator.outlet, 'src/main/java-gen')
-            }
+            srcDir 'model/xcore'
         }
     }
     languages {
@@ -61,4 +59,15 @@ xtext {
             generator.outlet.producesJava = true
         }
     }
+}
+
+xtend {
+
+}
+/*
+*output { 'src/main/xcore-gen'}
+*/
+
+clean.doLast {
+    file('src/main/java-gen').deleteDir()
 }

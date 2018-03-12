@@ -1,7 +1,8 @@
 @Ecore(nsURI="http://www.tia.openness.model.org/tia/openness")
 @ExtendedMetaData(qualified="false")
-@GenModel(bundleManifest="false", forceOverwrite="true",modelDirectory="org.tia.openness.model/src/main/java-gen",
-	prefix="TiaOpenness", modelName="Openness", importerID="org.eclipse.xsd.ecore.importer",updateClasspath="false", complianceLevel="8.0")
+@GenModel(bundleManifest="false", forceOverwrite="true", modelDirectory="org.tia.openness.model/build/xcore/main",
+	prefix="TiaOpenness", modelName="Openness", importerID="org.eclipse.xsd.ecore.importer", updateClasspath="false",
+	complianceLevel="8.0")
 @GenModel(loadInitialization="false")
 package org.tia.openness.model.openness
 
@@ -11,6 +12,295 @@ import org.eclipse.emf.ecore.EStringToStringMapEntry
 import org.eclipse.emf.ecore.xml.^type.AnySimpleType
 import org.eclipse.emf.ecore.xml.^type.DateTime
 import org.eclipse.emf.ecore.xml.^type.UnsignedShort
+
+@ExtendedMetaData(name="NetworkSource", kind="elementOnly")
+class NetworkSource {
+	@ExtendedMetaData(kind="element", name="FlgNet",
+		namespace="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v1")
+	contains FlgNet[] flgNet
+}
+
+@ExtendedMetaData(name="AttributeList", kind="elementOnly")
+class CompileUnitAttributeList {
+	@ExtendedMetaData(kind="element", name="ProgrammingLanguage", namespace="##targetNamespace")
+	String programmingLanguage
+	@ExtendedMetaData(kind="element", name="NetworkSource", namespace="##targetNamespace")
+	contains NetworkSource networkSource
+}
+
+@ExtendedMetaData(name="SW.Blocks.CompileUnit", kind="elementOnly")
+class SWBlocksCompileUnit {
+	@ExtendedMetaData(kind="element", name="AttributeList", namespace="##targetNamespace")
+	contains CompileUnitAttributeList[] attributeList
+	@ExtendedMetaData(kind="attribute", name="CompositionName", namespace="##targetNamespace")
+	String compositionName
+	@ExtendedMetaData(kind="attribute", name="ID", namespace="##targetNamespace")
+	String iD
+}
+
+@ExtendedMetaData(name="AttributeList", kind="elementOnly")
+class LingualAttributeList {
+	@ExtendedMetaData(kind="element", name="Culture", namespace="##targetNamespace")
+	String culture
+	@ExtendedMetaData(kind="element", name="Text", namespace="##targetNamespace")
+	String text
+}
+
+@ExtendedMetaData(name="MultilingualTextItem", kind="elementOnly")
+class MultilingualTextItem {
+	@ExtendedMetaData(kind="element", name="AttributeList", namespace="##targetNamespace")
+	contains LingualAttributeList[] attributeList
+	@ExtendedMetaData(kind="attribute", name="CompositionName", namespace="##targetNamespace")
+	String compositionName
+	@ExtendedMetaData(kind="attribute", name="ID", namespace="##targetNamespace")
+	String iD
+}
+
+@ExtendedMetaData(name="MultilingualText", kind="elementOnly")
+class MultilingualText {
+	@ExtendedMetaData(kind="element", name="ObjectList", namespace="##targetNamespace")
+	contains ObjectList[] objectList
+	@ExtendedMetaData(kind="attribute", name="CompositionName", namespace="##targetNamespace")
+	String compositionName
+	@ExtendedMetaData(kind="attribute", name="ID", namespace="##targetNamespace")
+	String iD
+}
+
+@ExtendedMetaData(name="ObjectList", kind="elementOnly")
+class RootObjectList {
+	@ExtendedMetaData(kind="group", name="group:0")
+	EFeatureMapEntry[] group
+	@ExtendedMetaData(kind="element", name="MultilingualText", namespace="##targetNamespace", group="group:0")
+	contains transient volatile derived MultilingualText[0..?] multilingualText
+	@ExtendedMetaData(kind="element", name="SW.Blocks.CompileUnit", namespace="##targetNamespace", group="group:0")
+	contains transient volatile derived SWBlocksCompileUnit[0..?] sWBlocksCompileUnit
+}
+
+@ExtendedMetaData(name="ObjectList", kind="elementOnly")
+class ObjectList {
+	@ExtendedMetaData(kind="element", name="MultilingualTextItem", namespace="##targetNamespace")
+	contains MultilingualTextItem[] multilingualTextItem
+}
+
+@ExtendedMetaData(name="AttributeList", kind="elementOnly")
+class AttributeList {
+	@ExtendedMetaData(kind="element", name="AutoNumber", namespace="##targetNamespace")
+	String autoNumber
+	@ExtendedMetaData(kind="element", name="HeaderAuthor", namespace="##targetNamespace")
+	String headerAuthor
+	@ExtendedMetaData(kind="element", name="HeaderFamily", namespace="##targetNamespace")
+	String headerFamily
+	@ExtendedMetaData(kind="element", name="HeaderName", namespace="##targetNamespace")
+	String headerName
+	@ExtendedMetaData(kind="element", name="HeaderVersion", namespace="##targetNamespace")
+	String headerVersion
+	@ExtendedMetaData(kind="element", name="IsIECCheckEnabled", namespace="##targetNamespace")
+	String isIECCheckEnabled
+	@ExtendedMetaData(kind="element", name="MemoryLayout", namespace="##targetNamespace")
+	String memoryLayout
+	@ExtendedMetaData(kind="element", name="Name", namespace="##targetNamespace")
+	String name
+	@ExtendedMetaData(kind="element", name="Number", namespace="##targetNamespace")
+	String number
+	@ExtendedMetaData(kind="element", name="ProgrammingLanguage", namespace="##targetNamespace")
+	String programmingLanguage
+	@ExtendedMetaData(kind="element", name="SecondaryType", namespace="##targetNamespace")
+	String secondaryType
+	@ExtendedMetaData(kind="element", name="CodeModifiedDate", namespace="##targetNamespace")
+	contains CodeModifiedDate[] codeModifiedDate
+	@ExtendedMetaData(kind="element", name="CompileDate", namespace="##targetNamespace")
+	contains CompileDate[] compileDate
+	@ExtendedMetaData(kind="element", name="CreationDate", namespace="##targetNamespace")
+	contains CreationDate[] creationDate
+	@ExtendedMetaData(kind="element", name="HandleErrorsWithinBlock", namespace="##targetNamespace")
+	contains HandleErrorsWithinBlock[] handleErrorsWithinBlock
+	@ExtendedMetaData(kind="element", name="Interface", namespace="##targetNamespace")
+	contains Interface[] ^interface
+	@ExtendedMetaData(kind="element", name="InterfaceModifiedDate", namespace="##targetNamespace")
+	contains InterfaceModifiedDate[] interfaceModifiedDate
+	@ExtendedMetaData(kind="element", name="IsConsistent", namespace="##targetNamespace")
+	contains IsConsistent[] isConsistent
+	@ExtendedMetaData(kind="element", name="IsKnowHowProtected", namespace="##targetNamespace")
+	contains IsKnowHowProtected[] isKnowHowProtected
+	@ExtendedMetaData(kind="element", name="IsWriteProtected", namespace="##targetNamespace")
+	contains IsWriteProtected[] isWriteProtected
+	@ExtendedMetaData(kind="element", name="ModifiedDate", namespace="##targetNamespace")
+	contains ModifiedDate[] modifiedDate
+	@ExtendedMetaData(kind="element", name="ParameterModified", namespace="##targetNamespace")
+	contains ParameterModified[] parameterModified
+	@ExtendedMetaData(kind="element", name="PLCSimAdvancedSupport", namespace="##targetNamespace")
+	contains PLCSimAdvancedSupport[] pLCSimAdvancedSupport
+	@ExtendedMetaData(kind="element", name="StructureModified", namespace="##targetNamespace")
+	contains StructureModified[] structureModified
+}
+
+@ExtendedMetaData(name="CodeModifiedDate", kind="simple")
+class CodeModifiedDate {
+	@ExtendedMetaData(name=":0", kind="simple")
+	String value
+	@ExtendedMetaData(kind="attribute", name="ReadOnly", namespace="##targetNamespace")
+	String readOnly
+}
+
+@ExtendedMetaData(name="CompileDate", kind="simple")
+class CompileDate {
+	@ExtendedMetaData(name=":0", kind="simple")
+	String value
+	@ExtendedMetaData(kind="attribute", name="ReadOnly", namespace="##targetNamespace")
+	String readOnly
+}
+
+@ExtendedMetaData(name="CreationDate", kind="simple")
+class CreationDate {
+	@ExtendedMetaData(name=":0", kind="simple")
+	String value
+	@ExtendedMetaData(kind="attribute", name="ReadOnly", namespace="##targetNamespace")
+	String readOnly
+}
+
+@ExtendedMetaData(name="HandleErrorsWithinBlock", kind="simple")
+class HandleErrorsWithinBlock {
+	@ExtendedMetaData(name=":0", kind="simple")
+	String value
+	@ExtendedMetaData(kind="attribute", name="ReadOnly", namespace="##targetNamespace")
+	String readOnly
+}
+
+@ExtendedMetaData(name="InterfaceModifiedDate", kind="simple")
+class InterfaceModifiedDate {
+	@ExtendedMetaData(name=":0", kind="simple")
+	String value
+	@ExtendedMetaData(kind="attribute", name="ReadOnly", namespace="##targetNamespace")
+	String readOnly
+}
+
+@ExtendedMetaData(name="Interface", kind="elementOnly")
+class Interface {
+	@ExtendedMetaData(kind="element", name="Sections",
+		namespace="http://www.siemens.com/automation/Openness/SW/Interface/v2") // namespace="##targetNamespace")
+	contains Sections sections
+}
+
+@ExtendedMetaData(name="IsConsistent", kind="simple")
+class IsConsistent {
+	@ExtendedMetaData(name=":0", kind="simple")
+	String value
+	@ExtendedMetaData(kind="attribute", name="ReadOnly", namespace="##targetNamespace")
+	String readOnly
+}
+
+@ExtendedMetaData(name="IsKnowHowProtected", kind="simple")
+class IsKnowHowProtected {
+	@ExtendedMetaData(name=":0", kind="simple")
+	String value
+	@ExtendedMetaData(kind="attribute", name="ReadOnly", namespace="##targetNamespace")
+	String readOnly
+}
+
+@ExtendedMetaData(name="IsWriteProtected", kind="simple")
+class IsWriteProtected {
+	@ExtendedMetaData(name=":0", kind="simple")
+	String value
+	@ExtendedMetaData(kind="attribute", name="ReadOnly", namespace="##targetNamespace")
+	String readOnly
+}
+
+@ExtendedMetaData(name="ModifiedDate", kind="simple")
+class ModifiedDate {
+	@ExtendedMetaData(name=":0", kind="simple")
+	String value
+	@ExtendedMetaData(kind="attribute", name="ReadOnly", namespace="##targetNamespace")
+	String readOnly
+}
+
+@ExtendedMetaData(name="ParameterModified", kind="simple")
+class ParameterModified {
+	@ExtendedMetaData(name=":0", kind="simple")
+	String value
+	@ExtendedMetaData(kind="attribute", name="ReadOnly", namespace="##targetNamespace")
+	String readOnly
+}
+
+@ExtendedMetaData(name="PLCSimAdvancedSupport", kind="simple")
+class PLCSimAdvancedSupport {
+	@ExtendedMetaData(name=":0", kind="simple")
+	String value
+	@ExtendedMetaData(kind="attribute", name="ReadOnly", namespace="##targetNamespace")
+	String readOnly
+}
+
+@ExtendedMetaData(name="StructureModified", kind="simple")
+class StructureModified {
+	@ExtendedMetaData(name=":0", kind="simple")
+	String value
+	@ExtendedMetaData(kind="attribute", name="ReadOnly", namespace="##targetNamespace")
+	String readOnly
+}
+
+@ExtendedMetaData(name="SW.Blocks.OB", kind="elementOnly")
+class SWBlocksOB {
+	@ExtendedMetaData(kind="attribute", name="ID", namespace="##targetNamespace")
+	String iD
+	@ExtendedMetaData(kind="element", name="AttributeList", namespace="##targetNamespace")
+	contains  AttributeList attributeList
+	@ExtendedMetaData(kind="element", name="ObjectList", namespace="##targetNamespace")
+	contains RootObjectList objectList
+}
+
+/**
+ * 
+ */
+@ExtendedMetaData(name="DocumentInfo", kind="elementOnly")
+class DocumentInfo {
+	@ExtendedMetaData(kind="element", name="Created", namespace="##targetNamespace")
+	String created
+	@ExtendedMetaData(kind="element", name="ExportSetting", namespace="##targetNamespace")
+	String exportSetting
+	@ExtendedMetaData(kind="element", name="InstalledProducts", namespace="##targetNamespace")
+	contains InstalledProducts[] installedProducts
+}
+
+@ExtendedMetaData(name="Document", kind="elementOnly")
+class Document {
+	@ExtendedMetaData(kind="group", name="group:0")
+	EFeatureMapEntry[] group
+	@ExtendedMetaData(kind="element", name="Engineering", namespace="##targetNamespace", group="group:0")
+	contains transient volatile derived Engineering[] engineering
+	@ExtendedMetaData(kind="element", name="DocumentInfo", namespace="##targetNamespace", group="group:0")
+	contains transient volatile derived DocumentInfo[] documentInfo
+	@ExtendedMetaData(kind="element", name="SW.Blocks.OB", namespace="##targetNamespace", group="group:0")
+	contains transient volatile derived SWBlocksOB[] sWBlocksOB
+}
+
+@ExtendedMetaData(name="Engineering", kind="empty")
+class Engineering {
+	@ExtendedMetaData(kind="attribute", name="version", namespace="##targetNamespace")
+	String version
+}
+
+@ExtendedMetaData(name="InstalledProducts", kind="elementOnly")
+class InstalledProducts {
+	@ExtendedMetaData(kind="element", name="Product", namespace="##targetNamespace")
+	contains Product[] product
+	@ExtendedMetaData(kind="element", name="OptionPackage", namespace="##targetNamespace")
+	contains OptionPackage[] optionPackage
+}
+
+@ExtendedMetaData(name="OptionPackage", kind="elementOnly")
+class OptionPackage {
+	@ExtendedMetaData(kind="element", name="DisplayName", namespace="##targetNamespace")
+	String displayName
+	@ExtendedMetaData(kind="element", name="DisplayVersion", namespace="##targetNamespace")
+	String displayVersion
+}
+
+@ExtendedMetaData(name="Product", kind="elementOnly")
+class Product {
+	@ExtendedMetaData(kind="element", name="DisplayName", namespace="##targetNamespace")
+	String displayName
+	@ExtendedMetaData(kind="element", name="DisplayVersion", namespace="##targetNamespace")
+	String displayVersion
+}
 
 @ExtendedMetaData(name="AbsoluteOffset", kind="empty")
 class AbsoluteOffset {
@@ -225,7 +515,7 @@ class AssociatedValue {
 }
 
 @ExtendedMetaData(name="AttributList", kind="elementOnly")
-class AttributList {
+class AttributeTypeList {
 	@ExtendedMetaData(kind="group", name="group:0")
 	EFeatureMapEntry[] group
 	@GenModel(documentation="A member attribute with a type restriction of boolean.")
@@ -429,8 +719,8 @@ class Call {
 	unsettable int[1] uId
 }
 
-@ExtendedMetaData(name="CategoryNumber", baseType="http://www.eclipse.org/emf/2003/XMLType#int",
-	minInclusive="1", maxInclusive="8")
+@ExtendedMetaData(name="CategoryNumber", baseType="http://www.eclipse.org/emf/2003/XMLType#int", minInclusive="1",
+	maxInclusive="8")
 type CategoryNumber wraps int
 
 @ExtendedMetaData(name="CategoryNumber:Object", baseType="CategoryNumber_._type")
@@ -569,245 +859,9 @@ class DocumentRoot {
 	contains transient EStringToStringMapEntry[] xMLNSPrefixMap
 	@ExtendedMetaData(kind="attribute", name="xsi:schemaLocation")
 	contains transient EStringToStringMapEntry[] xSISchemaLocation
-	@ExtendedMetaData(kind="element", name="AttributeList", namespace="##targetNamespace")
-	contains transient volatile derived AttributList[0..?] attributeList
-	@GenModel(documentation="A member attribute with a type restriction of boolean.")
-	@ExtendedMetaData(kind="element", name="BooleanAttribute", namespace="##targetNamespace")
-	contains transient volatile derived BooleanAttribute[0..?] booleanAttribute
-	@GenModel(documentation="Not allowed in STL")
-	@ExtendedMetaData(kind="element", name="Comment", namespace="##targetNamespace")
-	contains transient volatile derived Comment[0..?] comment
-	@ExtendedMetaData(kind="element", name="DateAttribute", namespace="##targetNamespace")
-	contains transient volatile derived DateAttribute[0..?] dateAttribute
-	@GenModel(documentation="A member attribute with a type restriction of integer.")
-	@ExtendedMetaData(kind="element", name="IntegerAttribute", namespace="##targetNamespace")
-	contains transient volatile derived IntegerAttribute[0..?] integerAttribute
-	@GenModel(documentation="Not for LAD/FBD ")
-	@ExtendedMetaData(kind="element", name="LineComment", namespace="##targetNamespace")
-	contains transient volatile derived LineComment[0..?] lineComment
-	@ExtendedMetaData(kind="element", name="MultiLanguageText", namespace="##targetNamespace")
-	contains transient volatile derived MultiLanguageText[0..?] multiLanguageText
-	@GenModel(documentation="A member attribute with a type restriction of real.")
-	@ExtendedMetaData(kind="element", name="RealAttribute", namespace="##targetNamespace")
-	contains transient volatile derived RealAttribute[0..?] realAttribute
-	@GenModel(documentation="A member attribute with a type restriction of string.")
-	@ExtendedMetaData(kind="element", name="StringAttribute", namespace="##targetNamespace")
-	contains transient volatile derived StringAttribute[0..?] stringAttribute
-	@ExtendedMetaData(kind="element", name="Text", namespace="##targetNamespace")
-	contains transient volatile derived Text[0..?] text
-	@ExtendedMetaData(kind="element", name="Token", namespace="##targetNamespace")
-	contains transient volatile derived Token[0..?] token
-	@ExtendedMetaData(kind="element", name="ViewInfo", namespace="##targetNamespace")
-	contains transient volatile derived ViewInfo[0..?] viewInfo
-	@ExtendedMetaData(kind="element", name="Member", namespace="##targetNamespace")
-	contains transient volatile derived Member[0..?] member
-	@ExtendedMetaData(kind="element", name="Section", namespace="##targetNamespace")
-	contains transient volatile derived Section[0..?] section
-	@ExtendedMetaData(kind="element", name="Sections", namespace="##targetNamespace")
-	contains transient volatile derived Sections[0..?] sections
-	@ExtendedMetaData(kind="element", name="StartValue", namespace="##targetNamespace")
-	contains transient volatile derived StartValue[0..?] startValue
-	@ExtendedMetaData(kind="element", name="Subelement", namespace="##targetNamespace")
-	contains transient volatile derived Subelement[0..?] subelement
-	@ExtendedMetaData(kind="element", name="AbsoluteOffset", namespace="##targetNamespace")
-	contains transient volatile derived AbsoluteOffset[0..?] absoluteOffset
-	@ExtendedMetaData(kind="element", name="Access", namespace="##targetNamespace")
-	contains transient volatile derived Access[0..?] access
-	@ExtendedMetaData(kind="element", name="Address", namespace="##targetNamespace")
-	contains transient volatile derived Address[0..?] address
-	@ExtendedMetaData(kind="element", name="CallInfo", namespace="##targetNamespace")
-	contains transient volatile derived CallInfo[0..?] callInfo
-	@ExtendedMetaData(kind="element", name="Component", namespace="##targetNamespace")
-	contains transient volatile derived Component[0..?] component
-	@ExtendedMetaData(kind="element", name="Constant", namespace="##targetNamespace")
-	contains transient volatile derived Constant[0..?] constant
-	@ExtendedMetaData(kind="element", name="ConstantType", namespace="##targetNamespace")
-	contains transient volatile derived ConstantType[0..?] constantType
-	@ExtendedMetaData(kind="element", name="ConstantValue", namespace="##targetNamespace")
-	contains transient volatile derived ConstantValue[0..?] constantValue
-	@ExtendedMetaData(kind="element", name="Expression", namespace="##targetNamespace")
-	contains transient volatile derived Expression[0..?] expression
-	@ExtendedMetaData(kind="element", name="Indirect", namespace="##targetNamespace")
-	contains transient volatile derived Indirect[0..?] indirect
-	@ExtendedMetaData(kind="element", name="Instance", namespace="##targetNamespace")
-	contains transient volatile derived Instance[0..?] instance
-	@ExtendedMetaData(kind="element", name="Instruction", namespace="##targetNamespace")
-	contains transient volatile derived Instruction[0..?] instruction
-	@ExtendedMetaData(kind="element", name="Label", namespace="##targetNamespace")
-	contains transient volatile derived Label[0..?] label
-	@ExtendedMetaData(kind="element", name="Parameter", namespace="##targetNamespace")
-	contains transient volatile derived Parameter[0..?] parameter
-	@GenModel(documentation="Only for S7-300/400/WinAC")
-	@ExtendedMetaData(kind="element", name="Statusword", namespace="##targetNamespace")
-	contains transient volatile derived Statusword[0..?] statusword
-	@ExtendedMetaData(kind="element", name="Symbol", namespace="##targetNamespace")
-	contains transient volatile derived Symbol[0..?] symbol
-	@ExtendedMetaData(kind="element", name="TemplateValue", namespace="##targetNamespace")
-	contains transient volatile derived TemplateValue[0..?] templateValue
-	@ExtendedMetaData(kind="element", name="LabelDeclaration", namespace="##targetNamespace")
-	contains transient volatile derived LabelDeclaration[0..?] labelDeclaration
-	@ExtendedMetaData(kind="element", name="Action", namespace="##targetNamespace")
-	contains transient volatile derived Action[0..?] action
-	@ExtendedMetaData(kind="element", name="Actions", namespace="##targetNamespace")
-	contains transient volatile derived Actions[0..?] actions
-	@ExtendedMetaData(kind="element", name="AlarmInterlockCategory", namespace="##targetNamespace")
-	contains transient volatile derived AlarmCategory[0..?] alarmInterlockCategory
-	@ExtendedMetaData(kind="element", name="AlarmsSettings", namespace="##targetNamespace")
-	contains transient volatile derived AlarmsSettings[0..?] alarmsSettings
-	@ExtendedMetaData(kind="element", name="AlarmSupervisionCategories", namespace="##targetNamespace")
-	contains transient volatile derived AlarmSupervisionCategories[0..?] alarmSupervisionCategories
-	@ExtendedMetaData(kind="element", name="AlarmSupervisionCategory", namespace="##targetNamespace")
-	contains transient volatile derived AlarmSupervisionCategory[0..?] alarmSupervisionCategory
-	@ExtendedMetaData(kind="element", name="AlarmText", namespace="##targetNamespace")
-	contains transient volatile derived AlarmText[0..?] alarmText
-	@ExtendedMetaData(kind="element", name="AlarmWarningCategory", namespace="##targetNamespace")
-	contains transient volatile derived AlarmCategory[0..?] alarmWarningCategory
-	@ExtendedMetaData(kind="element", name="AutomaticTyped", namespace="##targetNamespace")
-	contains transient volatile derived AutomaticTyped[0..?] automaticTyped
-	@ExtendedMetaData(kind="element", name="Branch", namespace="##targetNamespace")
-	contains transient volatile derived Branch[0..?] branch
-	@ExtendedMetaData(kind="element", name="Branches", namespace="##targetNamespace")
-	contains transient volatile derived Branches[0..?] branches
-	@ExtendedMetaData(kind="element", name="BranchRef", namespace="##targetNamespace")
-	contains transient volatile derived BranchRef[0..?] branchRef
-	@ExtendedMetaData(kind="element", name="Call", namespace="##targetNamespace")
-	contains transient volatile derived Call[0..?] call
-	@ExtendedMetaData(kind="element", name="Connection", namespace="##targetNamespace")
-	contains transient volatile derived Connection[0..?] connection
-	@ExtendedMetaData(kind="element", name="Connections", namespace="##targetNamespace")
-	contains transient volatile derived Connections[0..?] connections
-	@ExtendedMetaData(kind="element", name="EndConnection", namespace="##targetNamespace")
-	contains transient volatile derived EObject[0..?] endConnection
-	@ExtendedMetaData(kind="element", name="Equation", namespace="##targetNamespace")
-	contains transient volatile derived Equation[0..?] equation
-	@ExtendedMetaData(kind="element", name="FlgNet", namespace="##targetNamespace")
-	contains transient volatile derived FlgNet[0..?] flgNet
-	@ExtendedMetaData(kind="element", name="Graph", namespace="##targetNamespace")
-	contains transient volatile derived Graph[0..?] graph
-	@ExtendedMetaData(kind="element", name="IdentCon", namespace="##targetNamespace")
-	contains transient volatile derived IdentCon[0..?] identCon
-	@ExtendedMetaData(kind="element", name="IdentRef", namespace="##targetNamespace")
-	contains transient volatile derived IdentRef[0..?] identRef
-	@ExtendedMetaData(kind="element", name="Interlock", namespace="##targetNamespace")
-	contains transient volatile derived AlarmSupportingLanguageModule[0..?] interlock
-	@ExtendedMetaData(kind="element", name="Interlocks", namespace="##targetNamespace")
-	contains transient volatile derived interlocks[0..?] interlocks
-	@GenModel(documentation="The invisible pins of this part.")
-	@ExtendedMetaData(kind="element", name="Invisible", namespace="##targetNamespace")
-	contains transient volatile derived Invisible[0..?] invisible
-	@ExtendedMetaData(kind="element", name="Labels", namespace="##targetNamespace")
-	contains transient volatile derived Labels[0..?] labels
-	@ExtendedMetaData(kind="element", name="LinkType", namespace="##targetNamespace")
-	transient volatile derived Link[0..?] linkType
-	@ExtendedMetaData(kind="element", name="NameCon", namespace="##targetNamespace")
-	contains transient volatile derived NameCon[0..?] nameCon
-	@GenModel(documentation="The negated pins of this part.")
-	@ExtendedMetaData(kind="element", name="Negated", namespace="##targetNamespace")
-	contains transient volatile derived Neg[0..?] negated
-	@ExtendedMetaData(kind="element", name="NodeFrom", namespace="##targetNamespace")
-	contains transient volatile derived Node[0..?] nodeFrom
-	@ExtendedMetaData(kind="element", name="NodeTo", namespace="##targetNamespace")
-	contains transient volatile derived Node[0..?] nodeTo
-	@ExtendedMetaData(kind="element", name="Openbranch", namespace="##targetNamespace")
-	contains transient volatile derived Openbranch[0..?] openbranch
-	@ExtendedMetaData(kind="element", name="OpenCon", namespace="##targetNamespace")
-	contains transient volatile derived OpenCon[0..?] openCon
-	@ExtendedMetaData(kind="element", name="Part", namespace="##targetNamespace")
-	contains transient volatile derived Part[0..?] part
-	@ExtendedMetaData(kind="element", name="Parts", namespace="##targetNamespace")
-	contains transient volatile derived Parts[0..?] parts
-	@ExtendedMetaData(kind="element", name="PermanentOperation", namespace="##targetNamespace")
-	contains transient volatile derived PermanentOperation[0..?] permanentOperation
-	@ExtendedMetaData(kind="element", name="PostOperations", namespace="##targetNamespace")
-	contains transient volatile derived PermanentOperations[0..?] postOperations
-	@ExtendedMetaData(kind="element", name="Powerrail", namespace="##targetNamespace")
-	contains transient volatile derived Powerrail[0..?] powerrail
-	@ExtendedMetaData(kind="element", name="PreOperations", namespace="##targetNamespace")
-	contains transient volatile derived PermanentOperations[0..?] preOperations
-	@ExtendedMetaData(kind="element", name="Sequence", namespace="##targetNamespace")
-	contains transient volatile derived Sequence[0..?] sequence
-	@ExtendedMetaData(kind="element", name="Step", namespace="##targetNamespace")
-	contains transient volatile derived Step[0..?] step
-	@ExtendedMetaData(kind="element", name="StepRef", namespace="##targetNamespace")
-	contains transient volatile derived StepRef[0..?] stepRef
-	@ExtendedMetaData(kind="element", name="Steps", namespace="##targetNamespace")
-	contains transient volatile derived Steps[0..?] steps
-	@ExtendedMetaData(kind="element", name="Supervision", namespace="##targetNamespace")
-	contains transient volatile derived AlarmSupportingLanguageModule[0..?] supervision
-	@ExtendedMetaData(kind="element", name="Supervisions", namespace="##targetNamespace")
-	contains transient volatile derived Supervisions[0..?] supervisions
-	@ExtendedMetaData(kind="element", name="Title", namespace="##targetNamespace")
-	contains transient volatile derived Comment[0..?] title
-	@ExtendedMetaData(kind="element", name="Transition", namespace="##targetNamespace")
-	contains transient volatile derived Transition[0..?] transition
-	@ExtendedMetaData(kind="element", name="TransitionRef", namespace="##targetNamespace")
-	contains transient volatile derived TransitionRef[0..?] transitionRef
-	@ExtendedMetaData(kind="element", name="Transitions", namespace="##targetNamespace")
-	contains transient volatile derived Transitions[0..?] transitions
-	@ExtendedMetaData(kind="element", name="Wire", namespace="##targetNamespace")
-	contains transient volatile derived Wire[0..?] wire
-	@ExtendedMetaData(kind="element", name="Wires", namespace="##targetNamespace")
-	contains transient volatile derived Wires[0..?] wires
-	@ExtendedMetaData(kind="element", name="BlockInstSupervision", namespace="##targetNamespace")
-	contains transient volatile derived BlockInstSupervision[0..?] blockInstSupervision
-	@ExtendedMetaData(kind="element", name="BlockInstSupervisionGroup", namespace="##targetNamespace")
-	contains transient volatile derived BlockInstSupervisionGroup[0..?] blockInstSupervisionGroup
-	@ExtendedMetaData(kind="element", name="BlockInstSupervisionGroups", namespace="##targetNamespace")
-	contains transient volatile derived BlockInstSupervisionGroupsType[0..?] blockInstSupervisionGroups
-	@ExtendedMetaData(kind="element", name="BlockTypeSupervisionNumber", namespace="##targetNamespace")
-	transient volatile derived int[0..?] blockTypeSupervisionNumber
-	@ExtendedMetaData(kind="element", name="Multiinstance", namespace="##targetNamespace")
-	contains transient volatile derived Multiinstance[0..?] multiinstance
-	@ExtendedMetaData(kind="element", name="Number", namespace="##targetNamespace")
-	transient volatile derived int[0..?] number
-	@ExtendedMetaData(kind="element", name="StateStruct", namespace="##targetNamespace")
-	contains transient volatile derived StateStruct[0..?] stateStruct
-	@ExtendedMetaData(kind="element", name="SupervisionFB", namespace="##targetNamespace")
-	contains transient volatile derived SupervisionFB[0..?] supervisionFB
-	@ExtendedMetaData(kind="element", name="StatementList", namespace="##targetNamespace")
-	contains transient volatile derived StatementList[0..?] statementList
-	@ExtendedMetaData(kind="element", name="StlStatement", namespace="##targetNamespace")
-	contains transient volatile derived StlStatement[0..?] stlStatement
-	@ExtendedMetaData(kind="element", name="StlToken", namespace="##targetNamespace")
-	contains transient volatile derived StlToken[0..?] stlToken
-	@ExtendedMetaData(kind="element", name="AssociatedValue", namespace="##targetNamespace")
-	contains transient volatile derived AssociatedValue[0..?] associatedValue
-	@ExtendedMetaData(kind="element", name="AssociatedValueOperand", namespace="##targetNamespace")
-	contains transient volatile derived AssociatedValueOperand[0..?] associatedValueOperand
-	@ExtendedMetaData(kind="element", name="AssociatedValues", namespace="##targetNamespace")
-	contains transient volatile derived AssociatedValues[0..?] associatedValues
-	@ExtendedMetaData(kind="element", name="BlockTypeSupervision", namespace="##targetNamespace")
-	contains transient volatile derived BlockTypeSupervision[0..?] blockTypeSupervision
-	@ExtendedMetaData(kind="element", name="BlockTypeSupervisions", namespace="##targetNamespace")
-	contains transient volatile derived BlockTypeSupervisionsType[0..?] blockTypeSupervisions
-	@ExtendedMetaData(kind="element", name="CategoryNumber", namespace="##targetNamespace")
-	transient volatile derived CategoryNumber[0..?] categoryNumber
-	@ExtendedMetaData(kind="element", name="Condition", namespace="##targetNamespace")
-	contains transient volatile derived Condition[0..?] condition
-	@ExtendedMetaData(kind="element", name="ConditionOperand", namespace="##targetNamespace")
-	contains transient volatile derived ConditionOperand[0..?] conditionOperand
-	@ExtendedMetaData(kind="element", name="Conditions", namespace="##targetNamespace")
-	contains transient volatile derived Conditions[0..?] conditions
-	@ExtendedMetaData(kind="element", name="DelayOperand", namespace="##targetNamespace")
-	contains transient volatile derived DelayOperand[0..?] delayOperand
-	@ExtendedMetaData(kind="element", name="Number", namespace="##targetNamespace")
-	transient volatile derived int[0..?] number1
-	@ExtendedMetaData(kind="element", name="SpecificField", namespace="##targetNamespace")
-	contains transient volatile derived SpecificField[0..?] specificField
-	@ExtendedMetaData(kind="element", name="SpecificFieldText", namespace="##targetNamespace")
-	contains transient volatile derived SpecificFieldText[0..?] specificFieldText
-	@ExtendedMetaData(kind="element", name="SubCategory1Number", namespace="##targetNamespace")
-	transient volatile derived int[0..?] subCategory1Number
-	@ExtendedMetaData(kind="element", name="SubCategory2Number", namespace="##targetNamespace")
-	transient volatile derived int[0..?] subCategory2Number
-	@ExtendedMetaData(kind="element", name="SupervisedOperand", namespace="##targetNamespace")
-	contains transient volatile derived SupervisedOperandType[0..?] supervisedOperand
-	@ExtendedMetaData(kind="element", name="SupervisedStatus", namespace="##targetNamespace")
-	transient volatile derived boolean[0..?] supervisedStatus
-	@ExtendedMetaData(kind="element", name="TriggeringStatus", namespace="##targetNamespace")
-	transient volatile derived boolean[0..?] triggeringStatus
-	@ExtendedMetaData(kind="element", name="Type", namespace="##targetNamespace")
-	transient volatile derived TypeType[0..?] ^type
+	@GenModel(documentation="The complete project")
+	@ExtendedMetaData(kind="element", name="Document", namespace="##targetNamespace")
+	contains transient volatile derived Document[0..?] document
 }
 
 @ExtendedMetaData(name="Equation", kind="simple")
@@ -1157,7 +1211,7 @@ type MemberAttributesObject wraps org.eclipse.emf.common.util.Enumerator
 @ExtendedMetaData(name="Member", kind="elementOnly")
 class Member {
 	@ExtendedMetaData(kind="element", name="AttributeList", namespace="##targetNamespace")
-	contains AttributList attributeList
+	contains AttributeTypeList attributeList
 	@ExtendedMetaData(kind="group", name="group:1")
 	EFeatureMapEntry[] group
 	@ExtendedMetaData(kind="element", name="Member", namespace="##targetNamespace", group="group:1")
@@ -1504,8 +1558,8 @@ type SectionNameObject wraps org.eclipse.emf.common.util.Enumerator
 @ExtendedMetaData(name="Sections", kind="elementOnly")
 class Sections {
 	@ExtendedMetaData(kind="element", name="AttributeList", namespace="##targetNamespace")
-	contains AttributList attributeList
-	@ExtendedMetaData(kind="element", name="Section", namespace="##targetNamespace")
+	contains AttributeTypeList attributeList
+	@ExtendedMetaData(kind="element", name="Section", namespace="##targetNamespace") // uninitialized
 	contains Section[] section
 	@ExtendedMetaData(kind="attribute", name="Datatype", namespace="##targetNamespace")
 	SimaticType datatype
