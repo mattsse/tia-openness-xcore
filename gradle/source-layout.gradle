@@ -1,6 +1,6 @@
 sourceSets {
 	main {
-		java.srcDirs = ['src/main/java', 'src/main/xtext-gen', 'src/main/java-gen', 'build/xcore/main']
+		java.srcDirs = ['build/xcore/main', 'src/main/java', 'src/main/xtext-gen', 'src/main/xtend-gen', 'src/main/xcore-gen']
 		resources.srcDirs = ['src/main/resources', 'src/main/xtext-gen']
 		xtendOutputDir = 'src/main/xtend-gen'
 	}

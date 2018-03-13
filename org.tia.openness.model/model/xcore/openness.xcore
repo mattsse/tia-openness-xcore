@@ -101,7 +101,7 @@ class RootObjectList {
 	@ExtendedMetaData(kind="element", name="MultilingualText", namespace="##targetNamespace", group="group:0")
 	contains transient volatile derived MultilingualText[0..?] multilingualText
 	@ExtendedMetaData(kind="element", name="SW.Blocks.CompileUnit", namespace="##targetNamespace", group="group:0")
-	contains transient volatile derived SoftwareBlockCompileUnit[0..?] sWBlocksCompileUnit
+	contains transient volatile derived SoftwareBlockCompileUnit[] compileUnits
 }
 
 @ExtendedMetaData(name="ObjectList", kind="elementOnly")
@@ -131,7 +131,7 @@ class SoftwareBlockAttributeList {
 	@ExtendedMetaData(kind="element", name="Number", namespace="##targetNamespace")
 	String number
 	@ExtendedMetaData(kind="element", name="ProgrammingLanguage", namespace="##targetNamespace")
-	String programmingLanguage
+	ProgrammingLanguage programmingLanguage
 	@ExtendedMetaData(kind="element", name="SecondaryType", namespace="##targetNamespace")
 	String secondaryType
 	@ExtendedMetaData(kind="element", name="CodeModifiedDate", namespace="##targetNamespace")
@@ -298,6 +298,12 @@ interface SoftwareBlock extends MemberProvider {
 	op String getID()
 	op SoftwareBlockAttributeList getAttributeList()
 	op RootObjectList getObjectList()
+	op String getName(){
+		attributeList?.name
+	}
+	op ProgrammingLanguage getProgrammingLanguage(){
+		 attributeList?.programmingLanguage ?: ProgrammingLanguage.INVALID
+	}
 	op  Member[] getAllMembers() {
 		attributeList?.interface?.map[x|x.sections].flatMap[x|x.section].flatMap[x|x.member].toEList
 	}
@@ -307,6 +313,9 @@ interface PouSoftwareBlock extends SoftwareBlock, PouMemberProvider {
 	op Member[] getMembers(SectionName name) {
 		attributeList?.interface?.map[x|x.sections].flatMap[x|x.section].filter[p|p.name === name].flatMap[x|x.member].
 			toEList
+	}
+	op SoftwareBlockCompileUnit[] getCompileUnits(){
+		objectList?.compileUnits
 	}
 }
 
@@ -318,8 +327,6 @@ abstract class AbstractSoftwareBlock  extends SoftwareBlock  {
 	@ExtendedMetaData(kind="element", name="ObjectList", namespace="##targetNamespace")
 	contains RootObjectList objectList
 }
-
-
 
 @ExtendedMetaData(name="SW.Blocks.OB", kind="elementOnly")
 class SoftwareOrganizationBlock extends AbstractSoftwareBlock, PouSoftwareBlock {
@@ -1551,6 +1558,7 @@ enum ProgrammingLanguage {
 	SFBIDB as "SFB_IDB" = 10
 	DTDB as "DT_DB" = 11
 	SCL = 12
+	INVALID = 13
 }
 
 @ExtendedMetaData(name="ProgrammingLanguage:Object", baseType="ProgrammingLanguage")

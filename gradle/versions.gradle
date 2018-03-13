@@ -9,5 +9,6 @@ ext.versions = [
         websocket: '1.0',
         slf4j    : '1.7.24',
         log4j    : '1.2.16',
-        junit    : '4.12'
+        junit    : '4.12',
+        emf    : '2.12.0'
 ]
