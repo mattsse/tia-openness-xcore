@@ -13,6 +13,32 @@ import org.eclipse.emf.ecore.xml.^type.AnySimpleType
 import org.eclipse.emf.ecore.xml.^type.DateTime
 import org.eclipse.emf.ecore.xml.^type.UnsignedShort
 
+@ExtendedMetaData(name="Document", kind="elementOnly")
+class Document {
+	@ExtendedMetaData(kind="group", name="group:0")
+	EFeatureMapEntry[] group
+	@ExtendedMetaData(kind="element", name="Engineering", namespace="##targetNamespace", group="group:0")
+	contains transient volatile derived Engineering[] engineering
+	@ExtendedMetaData(kind="element", name="DocumentInfo", namespace="##targetNamespace", group="group:0")
+	contains transient volatile derived DocumentInfo[] documentInfo
+	@ExtendedMetaData(kind="element", name="SW.Blocks.OB", namespace="##targetNamespace", group="group:0")
+	contains transient volatile derived SoftwareOrganizationBlock organizationBlock
+	@ExtendedMetaData(kind="element", name="SW.Types.PlcStruct", namespace="##targetNamespace", group="group:0")
+	contains transient volatile derived SoftwarePlcStruct plcStruct
+	@ExtendedMetaData(kind="element", name="SW.Blocks.FB", namespace="##targetNamespace", group="group:0")
+	contains transient volatile derived SoftwareFunctionBlock functionBlock
+	@ExtendedMetaData(kind="element", name="SW.Blocks.FC", namespace="##targetNamespace", group="group:0")
+	contains transient volatile derived SoftwareFunction function
+	@ExtendedMetaData(kind="element", name="SW.Blocks.ArrayDB", namespace="##targetNamespace", group="group:0")
+	contains transient volatile derived SoftwareArrayDataBlock arrayDataBlock
+	@ExtendedMetaData(kind="element", name="SW.Blocks.GlobalDB", namespace="##targetNamespace", group="group:0")
+	contains transient volatile derived SoftwareGlobalDataBlock globalDataBlock
+	@ExtendedMetaData(kind="element", name="SW.Blocks.InstanceDB", namespace="##targetNamespace", group="group:0")
+	contains transient volatile derived SoftwareInstanceDataBlock instanceDataBlock
+	@ExtendedMetaData(kind="element", name="SW.Tags.PlcTagTable", namespace="##targetNamespace", group="group:0")
+	contains transient volatile derived SoftwarePlcTagTable plcTagTable
+}
+
 @ExtendedMetaData(name="NetworkSource", kind="elementOnly")
 class NetworkSource {
 	@ExtendedMetaData(kind="element", name="FlgNet",
@@ -29,13 +55,15 @@ class CompileUnitAttributeList {
 }
 
 @ExtendedMetaData(name="SW.Blocks.CompileUnit", kind="elementOnly")
-class SWBlocksCompileUnit {
+class SoftwareBlockCompileUnit {
 	@ExtendedMetaData(kind="element", name="AttributeList", namespace="##targetNamespace")
 	contains CompileUnitAttributeList[] attributeList
 	@ExtendedMetaData(kind="attribute", name="CompositionName", namespace="##targetNamespace")
 	String compositionName
 	@ExtendedMetaData(kind="attribute", name="ID", namespace="##targetNamespace")
 	String iD
+	@ExtendedMetaData(kind="element", name="ObjectList", namespace="##targetNamespace")
+	contains RootObjectList objectList
 }
 
 @ExtendedMetaData(name="AttributeList", kind="elementOnly")
@@ -73,7 +101,7 @@ class RootObjectList {
 	@ExtendedMetaData(kind="element", name="MultilingualText", namespace="##targetNamespace", group="group:0")
 	contains transient volatile derived MultilingualText[0..?] multilingualText
 	@ExtendedMetaData(kind="element", name="SW.Blocks.CompileUnit", namespace="##targetNamespace", group="group:0")
-	contains transient volatile derived SWBlocksCompileUnit[0..?] sWBlocksCompileUnit
+	contains transient volatile derived SoftwareBlockCompileUnit[0..?] sWBlocksCompileUnit
 }
 
 @ExtendedMetaData(name="ObjectList", kind="elementOnly")
@@ -83,7 +111,7 @@ class ObjectList {
 }
 
 @ExtendedMetaData(name="AttributeList", kind="elementOnly")
-class AttributeList {
+class SoftwareBlockAttributeList {
 	@ExtendedMetaData(kind="element", name="AutoNumber", namespace="##targetNamespace")
 	String autoNumber
 	@ExtendedMetaData(kind="element", name="HeaderAuthor", namespace="##targetNamespace")
@@ -237,14 +265,92 @@ class StructureModified {
 	String readOnly
 }
 
-@ExtendedMetaData(name="SW.Blocks.OB", kind="elementOnly")
-class SWBlocksOB {
+interface MemberProvider {
+	op  Member[] getAllMembers()
+}
+
+interface PouMemberProvider extends MemberProvider {
+	op Member[] getInputMembers() {
+		getMembers(SectionName.INPUT)
+	}
+	op Member[] getOutputMembers() {
+		getMembers(SectionName.OUTPUT)
+	}
+	op Member[] getInOutMembers() {
+		getMembers(SectionName.IN_OUT)
+	}
+	op Member[] getStaticMembers() {
+		getMembers(SectionName.STATIC)
+	}
+	op Member[] getTempMembers() {
+		getMembers(SectionName.TEMP)
+	}
+	op Member[] getConstantMembers() {
+		getMembers(SectionName.INPUT)
+	}
+	op Member[] getMembers(String name) {
+		getMembers(SectionName.valueOf(name))
+	}
+	op Member[] getMembers(SectionName name)
+}
+
+interface SoftwareBlock extends MemberProvider {
+	op String getID()
+	op SoftwareBlockAttributeList getAttributeList()
+	op RootObjectList getObjectList()
+	op  Member[] getAllMembers() {
+		attributeList?.interface?.map[x|x.sections].flatMap[x|x.section].flatMap[x|x.member].toEList
+	}
+}
+
+interface PouSoftwareBlock extends SoftwareBlock, PouMemberProvider {
+	op Member[] getMembers(SectionName name) {
+		attributeList?.interface?.map[x|x.sections].flatMap[x|x.section].filter[p|p.name === name].flatMap[x|x.member].
+			toEList
+	}
+}
+
+abstract class AbstractSoftwareBlock  extends SoftwareBlock  {
 	@ExtendedMetaData(kind="attribute", name="ID", namespace="##targetNamespace")
-	String iD
+	String ID
 	@ExtendedMetaData(kind="element", name="AttributeList", namespace="##targetNamespace")
-	contains  AttributeList attributeList
+	contains  SoftwareBlockAttributeList attributeList
 	@ExtendedMetaData(kind="element", name="ObjectList", namespace="##targetNamespace")
 	contains RootObjectList objectList
+}
+
+
+
+@ExtendedMetaData(name="SW.Blocks.OB", kind="elementOnly")
+class SoftwareOrganizationBlock extends AbstractSoftwareBlock, PouSoftwareBlock {
+}
+
+@ExtendedMetaData(name="SW.Types.PlcStruct", kind="elementOnly")
+class SoftwarePlcStruct extends AbstractSoftwareBlock {
+}
+
+@ExtendedMetaData(name="SW.Blocks.FB", kind="elementOnly")
+class SoftwareFunctionBlock extends AbstractSoftwareBlock, PouSoftwareBlock {
+}
+
+@ExtendedMetaData(name="SW.Blocks.FC", kind="elementOnly")
+class SoftwareFunction extends AbstractSoftwareBlock, PouSoftwareBlock {
+}
+
+@ExtendedMetaData(name="SW.Blocks.ArrayDB", kind="elementOnly")
+class SoftwareArrayDataBlock extends AbstractSoftwareBlock {
+}
+
+@ExtendedMetaData(name="SW.Blocks.InstanceDB", kind="elementOnly")
+class SoftwareInstanceDataBlock extends AbstractSoftwareBlock {
+}
+
+@ExtendedMetaData(name="SW.Blocks.GlobalDB", kind="elementOnly")
+class SoftwareGlobalDataBlock extends AbstractSoftwareBlock {
+}
+
+@ExtendedMetaData(name="SW.Tags.PlcTagTable", kind="elementOnly")
+class SoftwarePlcTagTable extends AbstractSoftwareBlock{
 }
 
 /**
@@ -258,18 +364,6 @@ class DocumentInfo {
 	String exportSetting
 	@ExtendedMetaData(kind="element", name="InstalledProducts", namespace="##targetNamespace")
 	contains InstalledProducts[] installedProducts
-}
-
-@ExtendedMetaData(name="Document", kind="elementOnly")
-class Document {
-	@ExtendedMetaData(kind="group", name="group:0")
-	EFeatureMapEntry[] group
-	@ExtendedMetaData(kind="element", name="Engineering", namespace="##targetNamespace", group="group:0")
-	contains transient volatile derived Engineering[] engineering
-	@ExtendedMetaData(kind="element", name="DocumentInfo", namespace="##targetNamespace", group="group:0")
-	contains transient volatile derived DocumentInfo[] documentInfo
-	@ExtendedMetaData(kind="element", name="SW.Blocks.OB", namespace="##targetNamespace", group="group:0")
-	contains transient volatile derived SWBlocksOB[] sWBlocksOB
 }
 
 @ExtendedMetaData(name="Engineering", kind="empty")
@@ -1075,8 +1169,9 @@ class Instruction {
 @GenModel(documentation="Not for LAD/FBD.")
 @ExtendedMetaData(name="IntegerAttribute", kind="simple")
 class IntegerAttribute {
+	// switched to String, linebreaks in tag causes parsing errors...
 	@ExtendedMetaData(name=":0", kind="simple")
-	int value
+	String value
 	@GenModel(documentation="Exported only with ReadOnly option, ignored during import.")
 	@ExtendedMetaData(kind="attribute", name="Informative", namespace="##targetNamespace")
 	unsettable boolean informative = "false"
@@ -1085,6 +1180,13 @@ class IntegerAttribute {
 	@GenModel(documentation="An attribute of attribute, denotes if it is defined by a user or the system itself. In V14, if exists it is always true.")
 	@ExtendedMetaData(kind="attribute", name="SystemDefined", namespace="##targetNamespace")
 	unsettable boolean systemDefined = "true"
+	op int intValue() {
+		if (value.nullOrEmpty) {
+			0
+		} else {
+			Integer.parseInt(value.trim)
+		}
+	}
 }
 
 @ExtendedMetaData(name="InterfaceFlags_TP", baseType="http://www.eclipse.org/emf/2003/XMLType#string",
