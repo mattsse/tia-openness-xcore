@@ -1,0 +1,138 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema targetNamespace="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v1" xmlns:mstns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v1" xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified" xmlns:app1="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v1">
+  <xs:element name="Component">
+    <xs:complexType>
+      <xs:attribute name="Name" form="unqualified" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Address">
+    <xs:complexType>
+      <xs:attribute name="Area" form="unqualified" type="xs:string" />
+      <xs:attribute name="Type" form="unqualified" type="xs:string" />
+      <xs:attribute name="BlockNumber" form="unqualified" type="xs:string" />
+      <xs:attribute name="BitOffset" form="unqualified" type="xs:string" />
+      <xs:attribute name="Informative" form="unqualified" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FlgNet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Parts" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Access" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Symbol" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element ref="Component" minOccurs="0" maxOccurs="unbounded" />
+                          <xs:element ref="Address" minOccurs="0" maxOccurs="unbounded" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Scope" form="unqualified" type="xs:string" />
+                  <xs:attribute name="UId" form="unqualified" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Call" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="CallInfo" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="IntegerAttribute" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:simpleContent msdata:ColumnName="IntegerAttribute_Text" msdata:Ordinal="2">
+                                <xs:extension base="xs:string">
+                                  <xs:attribute name="Name" form="unqualified" type="xs:string" />
+                                  <xs:attribute name="Informative" form="unqualified" type="xs:string" />
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="DateAttribute" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:simpleContent msdata:ColumnName="DateAttribute_Text" msdata:Ordinal="2">
+                                <xs:extension base="xs:string">
+                                  <xs:attribute name="Name" form="unqualified" type="xs:string" />
+                                  <xs:attribute name="Informative" form="unqualified" type="xs:string" />
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Instance" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element ref="Component" minOccurs="0" maxOccurs="unbounded" />
+                                <xs:element ref="Address" minOccurs="0" maxOccurs="unbounded" />
+                              </xs:sequence>
+                              <xs:attribute name="UId" form="unqualified" type="xs:string" />
+                              <xs:attribute name="Scope" form="unqualified" type="xs:string" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Parameter" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="StringAttribute" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:simpleContent msdata:ColumnName="StringAttribute_Text" msdata:Ordinal="2">
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute name="Name" form="unqualified" type="xs:string" />
+                                        <xs:attribute name="Informative" form="unqualified" type="xs:string" />
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="Name" form="unqualified" type="xs:string" />
+                              <xs:attribute name="Section" form="unqualified" type="xs:string" />
+                              <xs:attribute name="Type" form="unqualified" type="xs:string" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="Name" form="unqualified" type="xs:string" />
+                        <xs:attribute name="BlockType" form="unqualified" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="UId" form="unqualified" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Wires" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Wire" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="IdentCon" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="UId" form="unqualified" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="OpenCon" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="UId" form="unqualified" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="NameCon" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="UId" form="unqualified" type="xs:string" />
+                        <xs:attribute name="Name" form="unqualified" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="UId" form="unqualified" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

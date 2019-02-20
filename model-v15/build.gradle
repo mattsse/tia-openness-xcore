@@ -1,0 +1,5 @@
+apply from: "${rootDir}/gradle/xcore-model-config.gradle"
+
+clean.doLast {
+    file('src/main/java-gen').deleteDir()
+}

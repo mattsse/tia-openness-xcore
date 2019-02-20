@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.tia.openness.model/src" modelPluginID="org.tia.openness.model"
+    modelName="Openness" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.xsd.ecore.importer" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>../samples/demo.xsd</foreignModel>
+  <genPackages prefix="Demo" resource="XML" disposableProviderFactory="true" ecorePackage="Demo.ecore#/">
+    <genClasses ecoreClass="Demo.ecore#//AccessType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//AccessType/symbol"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//AccessType/scope"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//AccessType/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="Demo.ecore#//AddressType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//AddressType/area"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//AddressType/bitOffset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//AddressType/blockNumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//AddressType/informative"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//AddressType/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Demo.ecore#//AttributeListType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//AttributeListType/programmingLanguage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//AttributeListType/networkSource"/>
+    </genClasses>
+    <genClasses ecoreClass="Demo.ecore#//CallInfoType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//CallInfoType/integerAttribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//CallInfoType/dateAttribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//CallInfoType/instance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//CallInfoType/parameter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//CallInfoType/blockType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//CallInfoType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Demo.ecore#//CallType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//CallType/callInfo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//CallType/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="Demo.ecore#//ComponentType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//ComponentType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Demo.ecore#//DateAttributeType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//DateAttributeType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//DateAttributeType/informative"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//DateAttributeType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Demo.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Demo.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Demo.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//DocumentRoot/address"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//DocumentRoot/component"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//DocumentRoot/newDataSet"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//DocumentRoot/sWBlocksCompileUnit"/>
+    </genClasses>
+    <genClasses ecoreClass="Demo.ecore#//FlgNetType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//FlgNetType/parts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//FlgNetType/wires"/>
+    </genClasses>
+    <genClasses ecoreClass="Demo.ecore#//IdentConType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//IdentConType/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="Demo.ecore#//InstanceType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//InstanceType/component"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//InstanceType/address"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//InstanceType/scope"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//InstanceType/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="Demo.ecore#//IntegerAttributeType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//IntegerAttributeType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//IntegerAttributeType/informative"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//IntegerAttributeType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Demo.ecore#//NameConType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//NameConType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//NameConType/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="Demo.ecore#//NetworkSourceType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//NetworkSourceType/flgNet"/>
+    </genClasses>
+    <genClasses ecoreClass="Demo.ecore#//NewDataSetType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute Demo.ecore#//NewDataSetType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Demo.ecore#//NewDataSetType/component"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Demo.ecore#//NewDataSetType/address"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Demo.ecore#//NewDataSetType/sWBlocksCompileUnit"/>
+    </genClasses>
+    <genClasses ecoreClass="Demo.ecore#//OpenConType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//OpenConType/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="Demo.ecore#//ParameterType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//ParameterType/stringAttribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//ParameterType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//ParameterType/section"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//ParameterType/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Demo.ecore#//PartsType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//PartsType/access"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//PartsType/call"/>
+    </genClasses>
+    <genClasses ecoreClass="Demo.ecore#//StringAttributeType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//StringAttributeType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//StringAttributeType/informative"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//StringAttributeType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Demo.ecore#//SWBlocksCompileUnitType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//SWBlocksCompileUnitType/attributeList"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//SWBlocksCompileUnitType/compositionName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//SWBlocksCompileUnitType/iD"/>
+    </genClasses>
+    <genClasses ecoreClass="Demo.ecore#//SymbolType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//SymbolType/component"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//SymbolType/address"/>
+    </genClasses>
+    <genClasses ecoreClass="Demo.ecore#//WiresType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//WiresType/wire"/>
+    </genClasses>
+    <genClasses ecoreClass="Demo.ecore#//WireType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//WireType/identCon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//WireType/openCon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//WireType/nameCon"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//WireType/uId"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
