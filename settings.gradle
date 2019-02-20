@@ -1,1 +1,2 @@
 include 'org.tia.openness.model'
+include 'model-v15'

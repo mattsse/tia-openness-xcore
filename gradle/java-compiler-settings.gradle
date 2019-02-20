@@ -1,0 +1,31 @@
+sourceCompatibility = '1.8'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Javadoc) {
+    options.encoding = 'UTF-8'
+    options.addStringOption('Xdoclint:none', '-quiet')
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    group 'Build'
+    description 'Assembles a jar archive containing the sources'
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    group 'Build'
+    description 'Assembles a jar archive containing the JavaDoc output'
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+
+if (findProperty('ignoreTestFailures') == 'true') {
+    tasks.withType(Test) {
+        ignoreFailures = true
+    }
+}

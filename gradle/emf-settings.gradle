@@ -1,0 +1,43 @@
+
+ext.mwe2Version = '2.9.1.201705291010'
+
+
+
+dependencies {
+    api "org.eclipse.xtext:org.eclipse.xtext.xbase:${versions.xtext}"
+    api 'org.eclipse.emf:org.eclipse.emf.ecore.xcore.lib:1.1+'
+    api group: 'org.eclipse.emf', name: 'org.eclipse.emf.ecore', version: '2.12.0'
+    api group: 'org.eclipse.emf', name: 'org.eclipse.emf.common', version: '2.12.0'
+    api group: 'org.eclipse.emf', name: 'org.eclipse.emf.ecore.xmi', version: '2.12.0'
+
+
+    xtextLanguages "org.eclipse.emf:org.eclipse.emf.mwe2.runtime:$mwe2Version"
+    xtextLanguages 'org.eclipse.emf:org.eclipse.emf.ecore.xcore:1.3.1'
+    xtextLanguages 'org.eclipse.emf:org.eclipse.emf.ecore.xcore.lib:1.1+'
+    xtextLanguages 'org.eclipse.emf:org.eclipse.emf.codegen:2.11.0'
+    xtextLanguages 'org.eclipse.emf:org.eclipse.emf.codegen.ecore:2.12.0'
+    xtextLanguages 'org.eclipse.emf:org.eclipse.emf.codegen.ecore.xtext:+'
+    xtextLanguages "org.eclipse.xtext:org.eclipse.xtext.ecore:${versions.xtext}"
+
+    testImplementation "org.eclipse.xtext:org.eclipse.xtext.testing:${versions.xtext}"
+    testImplementation "org.eclipse.xtext:org.eclipse.xtext.xbase.testing:${versions.xtext}"
+}
+
+if (new File(project.projectDir, "model").exists()) {
+    jar {
+        from('model') {
+            into('model')
+        }
+    }
+}
+
+configurations.all {
+    exclude group: 'asm'
+}
+
+sourceSets {
+    main {
+        java.srcDirs = ['src', 'src-gen']
+        resources.srcDirs = ['resources']
+    }
+}

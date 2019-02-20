@@ -10,9 +10,10 @@ buildscript {
 apply from: "${rootDir}/gradle/versions.gradle"
 
 subprojects {
-	ext.xtextVersion = '2.13.0-SNAPSHOT'
+	ext.xtextVersion = "${versions.xtext}"
 	repositories {
-		jcenter()
+		mavenCentral()
+        jcenter()
 		maven {
 			url 'https://oss.sonatype.org/content/repositories/snapshots'
 		}
@@ -20,8 +21,7 @@ subprojects {
 	
 	apply plugin: 'java'
 	apply plugin: 'org.xtext.xtend'
-	apply from: "${rootDir}/gradle/source-layout.gradle"
-	apply from: "${rootDir}/gradle/maven-deployment.gradle"
+	apply from: "${rootDir}/gradle/java-compiler-settings.gradle"
 	apply plugin: 'eclipse'
 	apply plugin: 'idea'
 	
