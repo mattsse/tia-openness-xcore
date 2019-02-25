@@ -1,122 +1,1282 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.tia.openness.model/src" modelPluginID="org.tia.openness.model"
-    modelName="Openness" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    importerID="org.eclipse.xsd.ecore.importer" complianceLevel="8.0" copyrightFields="false"
-    operationReflection="true" importOrganizing="true">
-  <foreignModel>../samples/demo.xsd</foreignModel>
-  <genPackages prefix="Demo" resource="XML" disposableProviderFactory="true" ecorePackage="Demo.ecore#/">
-    <genClasses ecoreClass="Demo.ecore#//AccessType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//AccessType/symbol"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//AccessType/scope"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//AccessType/uId"/>
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/model-v15/src" modelPluginID="model-v15" modelName="Openness"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>SWComm.ecore</foreignModel>
+  <genPackages prefix="SWCommonV2" resource="XML" disposableProviderFactory="true"
+      loadInitialization="true" literalsInterface="false" ecorePackage="SWComm.ecore#/">
+    <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.emf.ecore.xcore.exporter">
+      <genAnnotations source="SWCommonV2.xcore"/>
+    </genAnnotations>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SWComm.ecore#//AccessModifierTE">
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//AccessModifierTE/None"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//AccessModifierTE/Array"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//AccessModifierTE/Reference"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//AccessModifierTE/ReferenceToArray"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SWComm.ecore#//SimpleTypeTE">
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SimpleTypeTE/undef"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SimpleTypeTE/Bool"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SimpleTypeTE/Byte"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SimpleTypeTE/Char"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SimpleTypeTE/Word"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SimpleTypeTE/Int"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SimpleTypeTE/DWord"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SimpleTypeTE/DInt"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SimpleTypeTE/Real"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SimpleTypeTE/LReal"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SimpleTypeTE/Timer"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SimpleTypeTE/S5Time"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SimpleTypeTE/ARef"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SimpleTypeTE/Any"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SimpleTypeTE/Time"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SimpleTypeTE/S5Count"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SimpleTypeTE/Counter"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SimpleTypeTE/BlockDB"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SimpleTypeTE/BlockFB"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SimpleTypeTE/BlockFC"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SimpleTypeTE/BlockSFB"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SimpleTypeTE/BlockUDT"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SimpleTypeTE/MultiFB"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SimpleTypeTE/MultiSFB"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SWComm.ecore#//WidthTE">
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//WidthTE/None"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//WidthTE/Bit"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//WidthTE/Byte"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//WidthTE/Word"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//WidthTE/Offset"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//WidthTE/Double"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//WidthTE/Pointer"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//WidthTE/Long"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//WidthTE/Any"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//WidthTE/Block"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SWComm.ecore#//BranchTE">
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//BranchTE/SimBegin"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//BranchTE/SimEnd"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//BranchTE/AltBegin"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//BranchTE/AltEnd"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SWComm.ecore#//EventTE">
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//EventTE/_"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//EventTE/A1"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//EventTE/L0"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//EventTE/L1"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//EventTE/R1"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//EventTE/S0"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//EventTE/S1"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//EventTE/V0"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//EventTE/V1"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SWComm.ecore#//LinkTE">
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//LinkTE/Direct"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//LinkTE/Jump"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SWComm.ecore#//PredefinedVariableTE">
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//PredefinedVariableTE/ENO"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SWComm.ecore#//ProgrammingContextTE">
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ProgrammingContextTE/Plain"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ProgrammingContextTE/GraphTransition"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ProgrammingContextTE/GraphSupervision"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ProgrammingContextTE/GraphInterlock"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ProgrammingContextTE/GraphActions"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ProgrammingContextTE/PreOperation"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ProgrammingContextTE/PostOperation"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SWComm.ecore#//ProgrammingLanguageTE">
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ProgrammingLanguageTE/STL"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ProgrammingLanguageTE/FBD"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ProgrammingLanguageTE/LAD"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ProgrammingLanguageTE/FBDIEC"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ProgrammingLanguageTE/LADIEC"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ProgrammingLanguageTE/GRAPH"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ProgrammingLanguageTE/DB"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ProgrammingLanguageTE/SDB"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ProgrammingLanguageTE/DBCPU"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ProgrammingLanguageTE/FBIDB"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ProgrammingLanguageTE/SFBIDB"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ProgrammingLanguageTE/DTDB"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ProgrammingLanguageTE/SCL"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SWComm.ecore#//QualifierTE">
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//QualifierTE/_"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//QualifierTE/CD"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//QualifierTE/CR"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//QualifierTE/CS"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//QualifierTE/CU"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//QualifierTE/D"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//QualifierTE/L"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//QualifierTE/N"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//QualifierTE/ON"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//QualifierTE/OFF"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//QualifierTE/R"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//QualifierTE/S"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//QualifierTE/TD"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//QualifierTE/TF"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//QualifierTE/TL"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//QualifierTE/TR"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SWComm.ecore#//ScopeTE">
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ScopeTE/Undef"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ScopeTE/GlobalConstant"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ScopeTE/LocalConstant"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ScopeTE/GlobalVariable"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ScopeTE/LocalVariable"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ScopeTE/Instruction"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ScopeTE/Label"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ScopeTE/TypedConstant"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ScopeTE/AddressConstant"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ScopeTE/LiteralConstant"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ScopeTE/AlarmConstant"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ScopeTE/Address"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ScopeTE/Statusword"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ScopeTE/Expression"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ScopeTE/Unnamed"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ScopeTE/Call"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ScopeTE/CallWithType"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ScopeTE/UserType"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ScopeTE/SystemType"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ScopeTE/Reference"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//ScopeTE/PredefinedVariable"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SWComm.ecore#//AccessibilityTE">
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//AccessibilityTE/Public"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//AccessibilityTE/Internal"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//AccessibilityTE/Protected"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//AccessibilityTE/Private"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SWComm.ecore#//MemberAttributesTE">
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//MemberAttributesTE/CodeReadOnly"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//MemberAttributesTE/At"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//MemberAttributesTE/SetPoint"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//MemberAttributesTE/UserVisible"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//MemberAttributesTE/UserReadOnly"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//MemberAttributesTE/UserDeletable"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//MemberAttributesTE/HmiAccessible"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//MemberAttributesTE/HmiVisible"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//MemberAttributesTE/Offset"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//MemberAttributesTE/PaddedSize"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//MemberAttributesTE/HiddenAssignment"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//MemberAttributesTE/PredefinedAssignment"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//MemberAttributesTE/ReadOnlyAssignment"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SWComm.ecore#//RemanenceTE">
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//RemanenceTE/SetInIDB"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//RemanenceTE/NonRetain"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//RemanenceTE/Retain"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SWComm.ecore#//SectionNameTE">
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SectionNameTE/None"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SectionNameTE/Input"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SectionNameTE/Return"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SectionNameTE/Output"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SectionNameTE/InOut"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SectionNameTE/Static"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SectionNameTE/Temp"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SectionNameTE/Constant"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//SectionNameTE/Base"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SWComm.ecore#//BlockTypeTE">
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//BlockTypeTE/DB"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//BlockTypeTE/FB"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//BlockTypeTE/FC"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//BlockTypeTE/OB"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//BlockTypeTE/UDT"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//BlockTypeTE/FBT"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//BlockTypeTE/FCT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SWComm.ecore#//TemplateTypeTE">
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//TemplateTypeTE/Cardinality"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//TemplateTypeTE/Type"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//TemplateTypeTE/Operation"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SWComm.ecore#//FormatTE">
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//FormatTE/Real"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//FormatTE/Bin"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//FormatTE/DecSigned"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//FormatTE/DecUnsigned"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//FormatTE/Pointer"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//FormatTE/CharSequence"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//FormatTE/DecSequence"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//FormatTE/Hex"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//FormatTE/S5Count"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//FormatTE/Time"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//FormatTE/Date"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//FormatTE/TimeOfDay"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//FormatTE/S5Time"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//FormatTE/Bool"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//FormatTE/Oct"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//FormatTE/Bcd"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//FormatTE/DateAndTime"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//FormatTE/String"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//FormatTE/Any"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//FormatTE/Number"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//FormatTE/Char"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//FormatTE/HexSequence"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SWComm.ecore#//StatuswordTE">
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//StatuswordTE/BR"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//StatuswordTE/OV"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//StatuswordTE/OS"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//StatuswordTE/EQ"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//StatuswordTE/NE"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//StatuswordTE/GT"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//StatuswordTE/LT"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//StatuswordTE/GE"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//StatuswordTE/LE"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//StatuswordTE/UO"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//StatuswordTE/NU"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//StatuswordTE/STW"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SWComm.ecore#//STLTE">
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/A"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/AN"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/O"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/ON"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/X"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/XN"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/S"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/R"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/Assign"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/Rise"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/Fall"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/L"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/T"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/LAR1"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/LAR2"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/TAR1"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/TAR2"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/Extend"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/Free"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/LC"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/OffDelay"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/Retentive"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/OnDelay"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/Pulse"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/CD"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/CU"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/CALL"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/CC"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/UC"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/OPENDB"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/OPENDI"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/LTI"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/LTR"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/LTD"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/LEI"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/LER"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/LED"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/EQI"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/EQR"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/EQD"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/GEI"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/GER"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/GED"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/GTI"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/GTR"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/GTD"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/NEI"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/NER"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/NED"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/JU"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/JC"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/JO"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/JZ"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/JP"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/JM"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/JN"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/JCN"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/JCB"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/JNB"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/JBI"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/JNBI"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/JOS"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/JUN"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/JMZ"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/JPZ"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/LOOP"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/JL"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/ADD"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/SLD"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/SLW"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/SRD"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/SRW"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/SRSD"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/SRSW"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/RLD"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/RRD"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/BLD"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/ADDAR1"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/ADDAR2"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/INC"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/DEC"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/AW"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/OW"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/XW"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/AD"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/OD"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/XD"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/ABRACK"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/ANBRACK"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/OBRACK"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/ONBRACK"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/XBRACK"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/XNBRACK"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/INVI"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/NEGI"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/INVD"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/NEGD"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/NEGR"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/ABSR"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/SQRT"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/SQR"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/LN"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/EXP"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/SIN"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/ASIN"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/COS"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/ACOS"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/TAN"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/ATAN"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/RLDA"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/RRDA"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/BTI"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/ITB"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/BTD"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/DTB"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/DTR"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/RND"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/RNDM"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/RNDP"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/TRUNC"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/ITD"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/CAW"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/CAD"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/TAR1ACCU1"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/TAR2ACCU1"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/ADDI"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/SUBI"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/MULI"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/DIVI"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/ADDD"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/SUBD"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/MULD"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/DIVD"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/MODD"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/LDBLG"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/LDILG"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/LDBNO"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/LDINO"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/ADDR"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/SUBR"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/MULR"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/DIVR"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/CAC"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/LEAVE"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/PUSH"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/POP"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/SET"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/NEG"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/CLR"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/BEC"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/BRACKET"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/SAVE"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/NOP0"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/NOP1"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/MCRBRACK"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/BRACKMCR"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/MCRA"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/MCRD"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/ENT"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/LAR1ACCU1"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/LAR1AR2"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/LAR2ACCU1"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/TAR1AR2"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/CAR"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/CDB"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/COMMENT"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/EMPTYLINE"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/PSEUDO"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/MOVE"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/MOVEBLOCK"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/BE"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//STLTE/BEU"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SWComm.ecore#//AreaTE">
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//AreaTE/None"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//AreaTE/PeripheryInput"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//AreaTE/PeripheryOutput"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//AreaTE/Input"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//AreaTE/Output"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//AreaTE/Memory"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//AreaTE/FB"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//AreaTE/FC"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//AreaTE/DB"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//AreaTE/DI"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//AreaTE/Timer"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//AreaTE/Counter"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//AreaTE/Local"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SWComm.ecore#//RegisterTE">
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//RegisterTE/AR1"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//RegisterTE/AR2"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SWComm.ecore#//NumberType">
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//NumberType/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//NumberType/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//NumberType/_3"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SWComm.ecore#//NumberType1">
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//NumberType1/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//NumberType1/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//NumberType1/_3"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SWComm.ecore#//TypeType">
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//TypeType/Action"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//TypeType/Interlock"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//TypeType/Operand"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//TypeType/Position"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//TypeType/Reaction"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//TypeType/MessageText"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//TypeType/MessageError"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SWComm.ecore#//TypeType1">
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//TypeType1/Action"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//TypeType1/Interlock"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//TypeType1/Operand"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//TypeType1/Position"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//TypeType1/Reaction"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//TypeType1/MessageText"/>
+      <genEnumLiterals ecoreEnumLiteral="SWComm.ecore#//TypeType1/MessageError"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="SWComm.ecore#//ScopeType"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//AccessModifierTEObject"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//BranchTEObject"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//DisplayClassType"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//DisplayClassTypeObject"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//EventTEObject"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//GUIDTP"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//LinkTEObject"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//NameType1"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//PinNameTE"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//ProgrammingContextTEObject"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//ProgrammingLanguageTEObject"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//QualifierTEObject"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//SimaticNameTP"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//SimpleTypeTEObject"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//AccessibilityTEObject"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//IndexPathTP"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//MemberAttributesTEObject"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//RemanenceTEObject"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//AreaTEObject"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//GateNameTE"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//LangTP"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//ScopeTEObject"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//FormatFlagsTE"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//SliceAccessModifierTP"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//TemplateTypeTEObject"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//BlockTypeTEObject"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//NameType"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//RegisterTEObject"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//StatuswordTEObject"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//STLTEObject"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//SectionNameTEObject"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//FormatTEObject"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//InterfaceFlagsTP"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//PredefinedVariableTEObject"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//SimaticTypeTE"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//SimpleAccessModifierTP"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//WidthTEObject"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//CategoryNumberType"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//CategoryNumberTypeObject"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//NumberTypeObject"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//NumberTypeObject1"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//TokenTE"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//TypeTypeObject"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//TypeTypeObject1"/>
+    <genDataTypes ecoreDataType="SWComm.ecore#//VersionStringTP"/>
+    <genClasses ecoreClass="SWComm.ecore#//IntegerAttributeT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//IntegerAttributeT/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//IntegerAttributeT/informative"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//IntegerAttributeT/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//IntegerAttributeT/systemDefined"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//IntegerAttributeT/uId"/>
     </genClasses>
-    <genClasses ecoreClass="Demo.ecore#//AddressType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//AddressType/area"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//AddressType/bitOffset"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//AddressType/blockNumber"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//AddressType/informative"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//AddressType/type"/>
+    <genClasses ecoreClass="SWComm.ecore#//BlankT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//BlankT/num"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//BlankT/uId"/>
     </genClasses>
-    <genClasses ecoreClass="Demo.ecore#//AttributeListType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//AttributeListType/programmingLanguage"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//AttributeListType/networkSource"/>
+    <genClasses ecoreClass="SWComm.ecore#//CommentT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//CommentT/integerAttribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//CommentT/multiLanguageText"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//CommentT/informative"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//CommentT/inserted"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//CommentT/uId"/>
     </genClasses>
-    <genClasses ecoreClass="Demo.ecore#//CallInfoType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//CallInfoType/integerAttribute"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//CallInfoType/dateAttribute"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//CallInfoType/instance"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//CallInfoType/parameter"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//CallInfoType/blockType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//CallInfoType/name"/>
+    <genClasses ecoreClass="SWComm.ecore#//ConstantT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//ConstantT/constantType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//ConstantT/constantValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//ConstantT/stringAttribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//ConstantT/booleanAttribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ConstantT/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ConstantT/uId"/>
     </genClasses>
-    <genClasses ecoreClass="Demo.ecore#//CallType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//CallType/callInfo"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//CallType/uId"/>
+    <genClasses ecoreClass="SWComm.ecore#//DataTypeT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//DataTypeT/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//DataTypeT/informative"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//DataTypeT/uId"/>
     </genClasses>
-    <genClasses ecoreClass="Demo.ecore#//ComponentType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//ComponentType/name"/>
+    <genClasses ecoreClass="SWComm.ecore#//ExpressionT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//ExpressionT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ExpressionT/access"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ExpressionT/token"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ExpressionT/comment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ExpressionT/lineComment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ExpressionT/blank"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ExpressionT/newLine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ExpressionT/uId"/>
     </genClasses>
-    <genClasses ecoreClass="Demo.ecore#//DateAttributeType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//DateAttributeType/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//DateAttributeType/informative"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//DateAttributeType/name"/>
+    <genClasses ecoreClass="SWComm.ecore#//MultiLanguageTextT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//MultiLanguageTextT/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//MultiLanguageTextT/lang"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//MultiLanguageTextT/uId"/>
     </genClasses>
-    <genClasses ecoreClass="Demo.ecore#//DocumentRoot">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//DocumentRoot/mixed"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Demo.ecore#//DocumentRoot/xMLNSPrefixMap"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Demo.ecore#//DocumentRoot/xSISchemaLocation"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//DocumentRoot/address"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//DocumentRoot/component"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//DocumentRoot/newDataSet"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//DocumentRoot/sWBlocksCompileUnit"/>
+    <genClasses ecoreClass="SWComm.ecore#//NamelessParameterT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//NamelessParameterT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//NamelessParameterT/stringAttribute"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//NamelessParameterT/access"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//NamelessParameterT/token"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//NamelessParameterT/comment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//NamelessParameterT/lineComment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//NamelessParameterT/blank"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//NamelessParameterT/newLine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//NamelessParameterT/uId"/>
     </genClasses>
-    <genClasses ecoreClass="Demo.ecore#//FlgNetType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//FlgNetType/parts"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//FlgNetType/wires"/>
+    <genClasses ecoreClass="SWComm.ecore#//PredefinedVariableT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//PredefinedVariableT/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//PredefinedVariableT/uId"/>
     </genClasses>
-    <genClasses ecoreClass="Demo.ecore#//IdentConType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//IdentConType/uId"/>
+    <genClasses ecoreClass="SWComm.ecore#//ReferenceT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//ReferenceT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ReferenceT/comment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ReferenceT/lineComment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ReferenceT/blank"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ReferenceT/newLine"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//ReferenceT/token"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//ReferenceT/group1"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ReferenceT/comment1"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ReferenceT/lineComment1"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ReferenceT/blank1"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ReferenceT/newLine1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//ReferenceT/access"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//ReferenceT/group2"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ReferenceT/comment2"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ReferenceT/lineComment2"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ReferenceT/blank2"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ReferenceT/newLine2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//ReferenceT/token1"/>
     </genClasses>
-    <genClasses ecoreClass="Demo.ecore#//InstanceType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//InstanceType/component"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//InstanceType/address"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//InstanceType/scope"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//InstanceType/uId"/>
+    <genClasses ecoreClass="SWComm.ecore#//TokenT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//TokenT/integerAttribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//TokenT/text"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//TokenT/uId"/>
     </genClasses>
-    <genClasses ecoreClass="Demo.ecore#//IntegerAttributeType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//IntegerAttributeType/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//IntegerAttributeType/informative"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//IntegerAttributeType/name"/>
+    <genClasses ecoreClass="SWComm.ecore#//ViewInfoT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ViewInfoT/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ViewInfoT/start"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ViewInfoT/uId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ViewInfoT/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ViewInfoT/xPos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ViewInfoT/yPos"/>
     </genClasses>
-    <genClasses ecoreClass="Demo.ecore#//NameConType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//NameConType/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//NameConType/uId"/>
+    <genClasses ecoreClass="SWComm.ecore#//ActionsT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//ActionsT/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//ActionsT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ActionsT/action"/>
     </genClasses>
-    <genClasses ecoreClass="Demo.ecore#//NetworkSourceType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//NetworkSourceType/flgNet"/>
+    <genClasses ecoreClass="SWComm.ecore#//ActionT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//ActionT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ActionT/access"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ActionT/token"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ActionT/comment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ActionT/lineComment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ActionT/blank"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ActionT/newLine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ActionT/event"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ActionT/interlock"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ActionT/qualifier"/>
     </genClasses>
-    <genClasses ecoreClass="Demo.ecore#//NewDataSetType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute Demo.ecore#//NewDataSetType/group"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Demo.ecore#//NewDataSetType/component"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Demo.ecore#//NewDataSetType/address"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Demo.ecore#//NewDataSetType/sWBlocksCompileUnit"/>
+    <genClasses ecoreClass="SWComm.ecore#//AlarmCategoryT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//AlarmCategoryT/id"/>
     </genClasses>
-    <genClasses ecoreClass="Demo.ecore#//OpenConType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//OpenConType/uId"/>
+    <genClasses ecoreClass="SWComm.ecore#//AlarmsSettingsT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//AlarmsSettingsT/alarmSupervisionCategories"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//AlarmsSettingsT/alarmInterlockCategory"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//AlarmsSettingsT/alarmWarningCategory"/>
     </genClasses>
-    <genClasses ecoreClass="Demo.ecore#//ParameterType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//ParameterType/stringAttribute"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//ParameterType/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//ParameterType/section"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//ParameterType/type"/>
+    <genClasses ecoreClass="SWComm.ecore#//AlarmSupervisionCategoriesT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//AlarmSupervisionCategoriesT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//AlarmSupervisionCategoriesT/alarmSupervisionCategory"/>
     </genClasses>
-    <genClasses ecoreClass="Demo.ecore#//PartsType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//PartsType/access"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//PartsType/call"/>
+    <genClasses ecoreClass="SWComm.ecore#//AlarmSupervisionCategoryT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//AlarmSupervisionCategoryT/token"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//AlarmSupervisionCategoryT/displayClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//AlarmSupervisionCategoryT/id"/>
     </genClasses>
-    <genClasses ecoreClass="Demo.ecore#//StringAttributeType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//StringAttributeType/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//StringAttributeType/informative"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//StringAttributeType/name"/>
+    <genClasses ecoreClass="SWComm.ecore#//AlarmSupportingLanguageModuleT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//AlarmSupportingLanguageModuleT/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//AlarmSupportingLanguageModuleT/alarmText"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//AlarmSupportingLanguageModuleT/flgNet"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//AlarmSupportingLanguageModuleT/programmingLanguage"/>
     </genClasses>
-    <genClasses ecoreClass="Demo.ecore#//SWBlocksCompileUnitType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//SWBlocksCompileUnitType/attributeList"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//SWBlocksCompileUnitType/compositionName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//SWBlocksCompileUnitType/iD"/>
+    <genClasses ecoreClass="SWComm.ecore#//AlarmTextT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//AlarmTextT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//AlarmTextT/multiLanguageText"/>
     </genClasses>
-    <genClasses ecoreClass="Demo.ecore#//SymbolType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//SymbolType/component"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//SymbolType/address"/>
+    <genClasses ecoreClass="SWComm.ecore#//AttributeListT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//AttributeListT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//AttributeListT/booleanAttribute"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//AttributeListT/integerAttribute"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//AttributeListT/realAttribute"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//AttributeListT/stringAttribute"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//AttributeListT/dateAttribute"/>
     </genClasses>
-    <genClasses ecoreClass="Demo.ecore#//WiresType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//WiresType/wire"/>
+    <genClasses ecoreClass="SWComm.ecore#//AutomaticTypedT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//AutomaticTypedT/name"/>
     </genClasses>
-    <genClasses ecoreClass="Demo.ecore#//WireType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//WireType/identCon"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//WireType/openCon"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Demo.ecore#//WireType/nameCon"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Demo.ecore#//WireType/uId"/>
+    <genClasses ecoreClass="SWComm.ecore#//BranchesT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//BranchesT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//BranchesT/branch"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//BranchRefT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//BranchRefT/in"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//BranchRefT/number"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//BranchRefT/out"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//BranchT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//BranchT/cardinality"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//BranchT/number"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//BranchT/type"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//ComponentT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//ComponentT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ComponentT/comment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ComponentT/lineComment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ComponentT/blank"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ComponentT/newLine"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ComponentT/token"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ComponentT/access"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ComponentT/booleanAttribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ComponentT/accessModifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ComponentT/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ComponentT/simpleAccessModifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ComponentT/sliceAccessModifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ComponentT/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//ConnectionsT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//ConnectionsT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ConnectionsT/connection"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//ConnectionT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//ConnectionT/nodeFrom"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//ConnectionT/nodeTo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ConnectionT/linkType"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//GraphT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//GraphT/preOperations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//GraphT/sequence"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//GraphT/postOperations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//GraphT/alarmsSettings"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//IdentConT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//IdentConT/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//IdentRefT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//IdentRefT/comment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//IdentRefT/viewInfo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//IdentRefT/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//IndirectT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//IndirectT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//IndirectT/token"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//IndirectT/comment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//IndirectT/lineComment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//IndirectT/blank"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//IndirectT/newLine"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//IndirectT/access"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//IndirectT/area"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//IndirectT/bitOffset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//IndirectT/register"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//IndirectT/width"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//InstanceT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//InstanceT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstanceT/component"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstanceT/absoluteOffset"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstanceT/token"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstanceT/address"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstanceT/comment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstanceT/lineComment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstanceT/blank"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstanceT/newLine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//InstanceT/scope"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//InstanceT/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//InterlocksT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//InterlocksT/interlock"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//LineCommentT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//LineCommentT/integerAttribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//LineCommentT/text"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//LineCommentT/inserted"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//LineCommentT/noClosingBracket"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//LineCommentT/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//NewLineT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//NewLineT/num"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//NewLineT/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//NodeT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//NodeT/stepRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//NodeT/transitionRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//NodeT/branchRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//NodeT/endConnection"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//OpenConT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//OpenConT/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//PartsT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//PartsT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//PartsT/access"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//PartsT/part"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//PartsT/call"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//PermanentOperationsT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//PermanentOperationsT/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//PermanentOperationsT/comment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//PermanentOperationsT/permanentOperation"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//PermanentOperationT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//PermanentOperationT/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//PermanentOperationT/flgNet"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//PermanentOperationT/programmingLanguage"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//SequenceT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//SequenceT/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//SequenceT/comment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//SequenceT/steps"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//SequenceT/transitions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//SequenceT/branches"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//SequenceT/connections"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//StatuswordT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//StatuswordT/combination"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//StepNameT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//StepNameT/multiLanguageText"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//StepRefT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//StepRefT/number"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//StepsT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//StepsT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//StepsT/step"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//StepT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//StepT/stepName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//StepT/comment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//StepT/actions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//StepT/supervisions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//StepT/interlocks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//StepT/init"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//StepT/isMissing"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//StepT/maximumStepTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//StepT/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//StepT/number"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//StepT/warningTime"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//StepType"/>
+    <genClasses ecoreClass="SWComm.ecore#//SupervisionsT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//SupervisionsT/supervision"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//TransitionNameT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//TransitionNameT/multiLanguageText"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//TransitionRefT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//TransitionRefT/number"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//TransitionsT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//TransitionsT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//TransitionsT/transition"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//TransitionT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//TransitionT/transitionName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//TransitionT/comment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//TransitionT/flgNet"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//TransitionT/isMissing"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//TransitionT/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//TransitionT/number"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//TransitionT/programmingLanguage"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//BlockInstSupervisionGroupsType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//BlockInstSupervisionGroupsType/blockInstSupervisionGroup"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//BlockInstSupervisionGroupType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//BlockInstSupervisionGroupType/multiinstance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//BlockInstSupervisionGroupType/blockInstSupervision"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//BlockInstSupervisionType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//BlockInstSupervisionType/number"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//BlockInstSupervisionType/stateStruct"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//BlockInstSupervisionType/blockTypeSupervisionNumber"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//MultiinstanceType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//MultiinstanceType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//StateStructType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//StateStructType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//SupervisionFBType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//SupervisionFBType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//MemberT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//MemberT/attributeList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//MemberT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//MemberT/member"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//MemberT/sections"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//MemberT/startValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//MemberT/comment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//MemberT/subelement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//MemberT/accessibility"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//MemberT/datatype"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//MemberT/informative"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//MemberT/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//MemberT/remanence"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//MemberT/version"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//SectionsT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//SectionsT/attributeList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//SectionsT/section"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//SectionsT/datatype"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//SectionsT/version"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//SectionT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//SectionT/sections"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//SectionT/member"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//SectionT/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//StartValueT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//StartValueT/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//StartValueT/constantName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//StartValueT/informative"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//StartValueT/isBulkValue"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//SubelementT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//SubelementT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//SubelementT/startValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//SubelementT/comment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//SubelementT/path"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//AbsoluteOffsetT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//AbsoluteOffsetT/bitOffset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//AbsoluteOffsetT/type"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//AccessT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//AccessT/integerAttribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//AccessT/label"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//AccessT/constant"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//AccessT/callInfo"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//AccessT/instruction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//AccessT/indirect"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//AccessT/statusword"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//AccessT/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//AccessT/symbol"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//AccessT/address"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//AccessT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//AccessT/comment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//AccessT/lineComment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//AccessT/scope"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//AccessT/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//AttributListT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//AttributListT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//AttributListT/booleanAttribute"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//AttributListT/integerAttribute"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//AttributListT/realAttribute"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//AttributListT/stringAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//BooleanAttributeT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//BooleanAttributeT/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//BooleanAttributeT/informative"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//BooleanAttributeT/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//BooleanAttributeT/systemDefined"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//CallInfoT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//CallInfoT/integerAttribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//CallInfoT/dateAttribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//CallInfoT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//CallInfoT/comment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//CallInfoT/lineComment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//CallInfoT/token"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//CallInfoT/group1"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//CallInfoT/comment1"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//CallInfoT/lineComment1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//CallInfoT/instance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//CallInfoT/parameter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//CallInfoT/blockType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//CallInfoT/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//CallInfoType"/>
+    <genClasses ecoreClass="SWComm.ecore#//CallT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//CallT/callInfo"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//CallT/templateValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//CallT/automaticTyped"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//CallT/invisible"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//CallT/negated"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//CallT/comment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//CallT/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//CommentType"/>
+    <genClasses ecoreClass="SWComm.ecore#//ConstantTypeType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ConstantTypeType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ConstantTypeType/informative"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//ConstantValueType"/>
+    <genClasses ecoreClass="SWComm.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/absoluteOffset"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/access"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/address"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/attributeList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/automaticTyped"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/booleanAttribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/call"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/callInfo"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/comment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/component"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/constant"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/constantType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/constantValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/dateAttribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/equation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/flgNet"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/identCon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/indirect"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/instance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/instruction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/integerAttribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/invisible"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/label"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/labelDeclaration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/labels"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/lineComment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/multiLanguageText"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/nameCon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/negated"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/openbranch"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/openCon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/parameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/part"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/parts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/powerrail"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/realAttribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/statusword"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/stringAttribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/symbol"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/templateValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/text"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/token"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/viewInfo"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/wire"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//DocumentRoot/wires"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//EquationT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//EquationT/value"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//FlgNetT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//FlgNetT/labels"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//FlgNetT/parts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//FlgNetT/wires"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//InvisibleT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//InvisibleT/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//LabelDeclarationT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//LabelDeclarationT/integerAttribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//LabelDeclarationT/label"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//LabelDeclarationT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//LabelDeclarationT/comment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//LabelDeclarationT/lineComment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//LabelDeclarationT/token"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//LabelDeclarationT/group1"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//LabelDeclarationT/comment1"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//LabelDeclarationT/lineComment1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//LabelDeclarationT/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//LabelsT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//LabelsT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//LabelsT/labelDeclaration"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//NameConT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//NameConT/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//NameConT/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//NegT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//NegT/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//OpenbranchT"/>
+    <genClasses ecoreClass="SWComm.ecore#//PartT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//PartT/equation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//PartT/instance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//PartT/templateValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//PartT/automaticTyped"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//PartT/invisible"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//PartT/negated"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//PartT/comment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//PartT/disabledENO"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//PartT/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//PartT/uId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//PartT/version"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//PowerrailT"/>
+    <genClasses ecoreClass="SWComm.ecore#//TemplateValueT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//TemplateValueT/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//TemplateValueT/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//TemplateValueT/type"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//WiresT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//WiresT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//WiresT/wire"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//WireT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//WireT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//WireT/powerrail"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//WireT/nameCon"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//WireT/identCon"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//WireT/openbranch"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//WireT/openCon"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//WireT/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//StructuredTextT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//StructuredTextT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//StructuredTextT/access"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//StructuredTextT/token"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//StructuredTextT/parameter"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//StructuredTextT/text"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//StructuredTextT/comment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//StructuredTextT/lineComment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//StructuredTextT/blank"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//StructuredTextT/newLine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//StructuredTextT/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//ConstantTypeT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ConstantTypeT/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ConstantTypeT/informative"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ConstantTypeT/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//InstructionT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//InstructionT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstructionT/token"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstructionT/comment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstructionT/lineComment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstructionT/blank"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstructionT/newLine"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstructionT/templateValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//InstructionT/instance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//InstructionT/tokenG"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstructionT/token1"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstructionT/comment1"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstructionT/lineComment1"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstructionT/blank1"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstructionT/newLine1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//InstructionT/group1"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstructionT/namelessParameter"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstructionT/token2"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstructionT/comment2"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstructionT/lineComment2"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstructionT/blank2"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstructionT/newLine2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//InstructionT/group2"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstructionT/parameter"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstructionT/token3"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstructionT/comment3"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstructionT/lineComment3"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstructionT/blank3"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//InstructionT/newLine3"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//InstructionT/informative"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//InstructionT/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//InstructionT/uId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//InstructionT/version"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//LabelT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//LabelT/booleanAttribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//LabelT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//LabelT/comment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//LabelT/lineComment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//LabelT/blank"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//LabelT/newLine"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//LabelT/token"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//LabelT/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//LabelT/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//ParameterT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//ParameterT/integerAttribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//ParameterT/stringAttribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//ParameterT/booleanAttribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//ParameterT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ParameterT/access"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ParameterT/token"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ParameterT/comment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ParameterT/lineComment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ParameterT/blank"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//ParameterT/newLine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ParameterT/informative"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ParameterT/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ParameterT/section"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ParameterT/templateReference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ParameterT/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ParameterT/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//RealAttributeT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//RealAttributeT/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//RealAttributeT/informative"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//RealAttributeT/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//RealAttributeT/systemDefined"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//RealAttributeT/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//StatementListT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//StatementListT/stlStatement"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//StlStatementT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//StlStatementT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//StlStatementT/comment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//StlStatementT/lineComment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//StlStatementT/blank"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//StlStatementT/newLine"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//StlStatementT/labelDeclaration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//StlStatementT/stlToken"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//StlStatementT/group1"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//StlStatementT/comment1"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//StlStatementT/lineComment1"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//StlStatementT/blank1"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//StlStatementT/newLine1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//StlStatementT/access"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//StlStatementT/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//StlTokenT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//StlTokenT/integerAttribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//StlTokenT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//StlTokenT/comment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//StlTokenT/lineComment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//StlTokenT/blank"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//StlTokenT/newLine"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//StlTokenT/token"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//StlTokenT/text"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//StlTokenT/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//DateAttributeT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//DateAttributeT/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//DateAttributeT/informative"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//DateAttributeT/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//DateAttributeT/systemDefined"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//DateAttributeT/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//StringAttributeT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//StringAttributeT/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//StringAttributeT/informative"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//StringAttributeT/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//StringAttributeT/systemDefined"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//StringAttributeT/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//AddressT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//AddressT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//AddressT/booleanAttribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//AddressT/area"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//AddressT/bitOffset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//AddressT/blockNumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//AddressT/informative"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//AddressT/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//AddressT/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//ConstantValueT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ConstantValueT/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ConstantValueT/informative"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ConstantValueT/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//SymbolT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//SymbolT/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//SymbolT/component"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//SymbolT/address"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//SymbolT/absoluteOffset"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//SymbolT/token"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//SymbolT/access"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//SymbolT/comment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//SymbolT/lineComment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//SymbolT/blank"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//SymbolT/newLine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//SymbolT/scope"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//SymbolT/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//TextT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//TextT/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//TextT/uId"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//AssociatedValueOperandType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//AssociatedValueOperandType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//AssociatedValueOperandType/number"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//AssociatedValuesType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//AssociatedValuesType/associatedValue"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//AssociatedValueType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//AssociatedValueType/associatedValueOperand"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//BlockTypeSupervisionsType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//BlockTypeSupervisionsType/blockTypeSupervision"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//BlockTypeSupervisionsType1"/>
+    <genClasses ecoreClass="SWComm.ecore#//BlockTypeSupervisionType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//BlockTypeSupervisionType/supervisedOperand"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//BlockTypeSupervisionType/supervisedStatus"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//BlockTypeSupervisionType/delayOperand"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//BlockTypeSupervisionType/conditions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//BlockTypeSupervisionType/categoryNumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//BlockTypeSupervisionType/subCategory1Number"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//BlockTypeSupervisionType/subCategory2Number"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//BlockTypeSupervisionType/specificField"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//BlockTypeSupervisionType/number"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//BlockTypeSupervisionType/type"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//ConditionOperandType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ConditionOperandType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ConditionOperandType/number"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//ConditionsType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//ConditionsType/condition"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//ConditionType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//ConditionType/conditionOperand"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//ConditionType/triggeringStatus"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//DelayOperandType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//DelayOperandType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//SpecificFieldTextType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SWComm.ecore#//SpecificFieldTextType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SWComm.ecore#//SpecificFieldTextType/multiLanguageText"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//SpecificFieldType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//SpecificFieldType/associatedValues"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWComm.ecore#//SpecificFieldType/specificFieldText"/>
+    </genClasses>
+    <genClasses ecoreClass="SWComm.ecore#//SupervisedOperandType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWComm.ecore#//SupervisedOperandType/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

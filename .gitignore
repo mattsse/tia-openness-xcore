@@ -15,6 +15,9 @@ gradle-app.setting
 *.launch
 .settings
 .project
-text
+.text
 *.jar
 xcore-gen
+.vscode
+*.ecore
+
